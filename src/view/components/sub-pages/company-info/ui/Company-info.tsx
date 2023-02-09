@@ -1,17 +1,17 @@
 import React, {FC, useEffect} from 'react';
-import {CompanyInfoStyles} from "../lib/styles/Company-info-styles";
+import * as S from "../lib/styles/Company-info-styles";
+import {Container} from "../../../../global-styled-components/global-styled-components";
 
 type CompanyInfoType = {};
 
 export const CompanyInfo: FC<CompanyInfoType> = ({}) => {
-  const {CompanyInfo, Container} = CompanyInfoStyles
 
   useEffect(() => {
 
   }, [])
 
   return (
-    <CompanyInfo>
+    <S.CompanyInfo>
       <Container>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut delectus, dignissimos dolorum ducimus
         ipsum libero magni, maiores nulla officia quam quas, qui quisquam suscipit veniam! Atque illum odio possimus.
@@ -22,6 +22,6 @@ export const CompanyInfo: FC<CompanyInfoType> = ({}) => {
         labore, maiores odio repudiandae sed soluta! Amet cum deserunt ducimus iure, laudantium molestiae omnis quam
         sint soluta!
       </Container>
-    </CompanyInfo>
+    </S.CompanyInfo>
   );
 };

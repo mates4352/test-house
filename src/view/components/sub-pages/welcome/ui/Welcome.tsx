@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {WelcomeStyles} from "../lib/styles/Welcome-styles";
+import * as S from "../lib/styles/Welcome-styles";
 import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
 
 type WelcomeType = {
@@ -7,17 +7,16 @@ type WelcomeType = {
 };
 
 export const Welcome: FC<WelcomeType> = ({}) => {
-  const {Welcome, Wrap, Title, Link} = WelcomeStyles
 
   return (
-    <Welcome>
-      <Title>Добро пожаловать!</Title>
+    <S.Welcome>
+      <S.Title>Добро пожаловать!</S.Title>
 
-      <Wrap>
-        <Link to={LinkMain.MAIN}>Главная страница</Link>
+      <S.Wrap>
+        <S.LinkElement to={LinkMain.MAIN}>Главная страница</S.LinkElement>
 
-        <Link to={LinkMain.MAIN}>Личный кабинет</Link>
-      </Wrap>
-    </Welcome>
+        <S.LinkElement to={LinkMain.MAIN}>Личный кабинет</S.LinkElement>
+      </S.Wrap>
+    </S.Welcome>
   );
 };

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const SelectContactStyles = {
-  SelectContact: styled.div`
-  
-  `,
+const SelectContact = styled.div`
 
-  Button: styled.button`
+`
+
+const Button = styled.button`
     
-  `,
-}
+`
+
+export {SelectContact, Button}

@@ -1,63 +1,60 @@
 import styled from "styled-components";
-import {PopupUser} from "../../../../popups/popup-user";
-import {PopupNotification} from "../../../../popups/popup-notification";
+import {CustomPopupUser} from "../../../../popups/custom-popup-user";
+import {CustomPopupNotification} from "../../../../popups/custom-popup-notification";
+import {Container} from "../../../../../global-styled-components/global-styled-components";
 
-export const HeaderStyles = {
-  Header: styled.header`
-    display: flex;
-    height: 72px;
-    background-color: bisque;
-  `,
+const Header = styled.header`
+  display: flex;
+  height: 72px;
+  background-color: bisque;
+`
 
-  Container: styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 40px;
-    box-sizing: content-box;
-  `,
+const HeaderContainer = styled(Container)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`
 
-  Wrap: styled.div`
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(min-content, max-content);
-    align-items: center;
-    column-gap: 24px;
-  `,
+const Wrap = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content, max-content);
+  align-items: center;
+  column-gap: 24px;
+`
 
-  Notification: styled.div`
-    position: relative;
-  `,
+const Notification = styled.div`
+  position: relative;
+`
 
-  NotificationButton: styled.button`
+const NotificationButton = styled.button`
     width: 30px;
     height: 30px;
     background-color: #999;
     border-radius: 50%;
-  `,
+  `
 
-  PopupNotification: styled(PopupNotification)`
-    position: absolute;
-    top: 41px;
-    left: -220px;
-    z-index: 1000;
-  `,
+const PopupNotification = styled(CustomPopupNotification)`
+  position: absolute;
+  top: 41px;
+  left: -220px;
+  z-index: 1000;
+`
 
-  PersonalCabinet: styled.div`
-    position: relative;
-  `,
+const PersonalCabinet = styled.div`
+  position: relative;
+`
 
-  PersonalCabinetButton: styled.button`
-    font-size: 20px;
-  `,
+const PersonalCabinetButton = styled.button`
+  font-size: 20px;
+`
 
-  PopupUser: styled(PopupUser)`
-    position: absolute;
-    top: 30px;
-    left: -35px;
-    width: max-content;
-  `,
-}
+const PopupUser = styled(CustomPopupUser)`
+  position: absolute;
+  top: 30px;
+  left: -35px;
+  width: max-content;
+`
+
+export {Header,HeaderContainer, Wrap, Notification, NotificationButton, PopupNotification, PersonalCabinet, PersonalCabinetButton, PopupUser}

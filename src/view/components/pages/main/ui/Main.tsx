@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {MainStyles} from "../lib/styles/Main-styles";
+import * as S from "../lib/styles/Main-styles";
 import {Header} from "../../../statics/header";
 import {Outlet} from "react-router-dom";
 import {Footer} from "../../../statics/footer";
@@ -11,18 +11,17 @@ type MainType = {
 };
 
 export const Main: FC<MainType> = ({}) => {
-  const {Main, Content} = MainStyles
   useRedirect(LinkMain.MAIN, LinkMain.Home)
 
   return (
-    <Main>
+    <S.Main>
       <Header/>
 
-      <Content>
+      <S.Content>
         <Outlet/>
-      </Content>
+      </S.Content>
 
       <Footer/>
-    </Main>
+    </S.Main>
   );
 };

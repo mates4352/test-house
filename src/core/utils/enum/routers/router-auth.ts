@@ -1,7 +1,7 @@
 export enum RouterAuth {
   AUTH = 'Auth',
-  AUTH_SIGIN = '/Auth',
+  SIG_IN = '/Auth',
   PHONE_CODE = 'Phone-code',
-  AUTH_REGISTRATION_ADMIN = 'Registration-admin',
+  REGISTRATION_ADMIN = 'Registration-admin',
   WELCOME = 'Welcome',
 }

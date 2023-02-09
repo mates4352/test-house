@@ -1,33 +1,33 @@
 import styled from "styled-components";
-import {CustomInputMask} from "../../../../actions/input";
+import {CustomInputMask} from "../../../../actions/custom-input";
 
-export const FormAdditionalContactStyles = {
-  FormAdditionalContact: styled.form`
-  
-  `,
+const FormAdditionalContact = styled.form`
 
-  Wrap: styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, minmax(min-content, max-content));
-    align-items: center;
-    column-gap: 24px;
-  `,
+`
 
-  Text: styled.p`
-  
-  `,
+const Wrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  align-items: center;
+  column-gap: 24px;
+`
 
-  ButtonOpenInput: styled.button`
-  
-  `,
+const Text = styled.p`
 
-  InputPhone: styled(CustomInputMask)`
-    max-width: 250px;
-    height: 40px;
-    font-size: 20px;
-  `,
+`
 
-  ButtonSubmit: styled.button`
-  
-  `,
-}
+const ButtonOpenInput = styled.button`
+
+`
+
+const InputPhone = styled(CustomInputMask)`
+  max-width: 250px;
+  height: 40px;
+  font-size: 20px;
+`
+
+const ButtonSubmit = styled.button`
+
+`
+
+export {FormAdditionalContact, Wrap, Text, ButtonOpenInput, InputPhone, ButtonSubmit}

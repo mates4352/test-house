@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FormAdditionalContactStyles} from "../lib/styles/Form-additional-contact-styles";
+import * as S from "../lib/styles/Form-additional-contact-styles";
 import {useFormAdditionalContactFormik} from "../lib/hooks/useFormAdditionalContactFormik";
 
 type FormAdditionalContactType = {
@@ -10,14 +10,13 @@ export const FormAdditionalContact: FC<FormAdditionalContactType> = ({
   tel,
   ...props
 }) => {
-  const {FormAdditionalContact, Wrap, Text, ButtonOpenInput, InputPhone, ButtonSubmit} = FormAdditionalContactStyles
   const [formik, isInputPhone, onShowInput] = useFormAdditionalContactFormik(tel);
 
   return (
-    <FormAdditionalContact onSubmit={formik.handleSubmit} {...props}>
+    <S.FormAdditionalContact onSubmit={formik.handleSubmit} {...props}>
       {isInputPhone ?
-        <Wrap>
-          <InputPhone
+        <S.Wrap>
+          <S.InputPhone
             name={'phone'}
             type={'tel'}
             placeholder={'Phone'}
@@ -25,14 +24,14 @@ export const FormAdditionalContact: FC<FormAdditionalContactType> = ({
             mask={"+7-999-999-99-99"}
           />
 
-          <ButtonSubmit type={'submit'}>+</ButtonSubmit>
-        </Wrap>
+          <S.ButtonSubmit type={'submit'}>+</S.ButtonSubmit>
+        </S.Wrap>
         :
-        <Wrap>
-          <Text>{tel}</Text>
-          <ButtonOpenInput type={'button'} onClick={onShowInput}>X</ButtonOpenInput>
-        </Wrap>
+        <S.Wrap>
+          <S.Text>{tel}</S.Text>
+          <S.ButtonOpenInput type={'button'} onClick={onShowInput}>X</S.ButtonOpenInput>
+        </S.Wrap>
       }
-    </FormAdditionalContact>
+    </S.FormAdditionalContact>
   );
 };

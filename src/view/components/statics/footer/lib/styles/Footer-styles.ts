@@ -1,35 +1,28 @@
 import styled from "styled-components";
 import {Link} from "react-router-dom";
 
-export const FooterStyles = {
-  Footer: styled.div`
-    padding: 12px;
-    background-color: bisque;
-  `,
+const Footer = styled.div`
+  padding: 12px;
+  background-color: bisque;
+`
 
-  Container: styled.div`
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 40px;
-    box-sizing: content-box;
-  `,
+const List = styled.ul`
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content, max-content);
+  column-gap: 24px;
+`
 
-  List: styled.ul`
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(min-content, max-content);
-    column-gap: 24px;
-  `,
+const Item = styled.li`
 
-  Item: styled.li`
+`
 
-  `,
+const LinkIcon = styled(Link)`
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #999;
+`
 
-  LinkIcon: styled(Link)`
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #999;
-  `,
-}
+export {Footer, List, Item, LinkIcon}

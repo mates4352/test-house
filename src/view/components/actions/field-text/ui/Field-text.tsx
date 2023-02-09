@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FieldTextStyles} from "../lib/styles/Field-text-styles";
+import * as S from "../lib/styles/Field-text-styles";
 import {FieldInputProps, FieldMetaProps} from "formik/dist/types";
 import {useChangeHeightTextarea} from "../lib/hooks/useChangeHeightTextarea";
 import {ErrorAnimation} from "../../../statics/error";
@@ -16,18 +16,17 @@ export const FieldText: FC<FieldtextType> = ({
   error,
   ...props
 }) => {
-  const {Wrap, Textarea} = FieldTextStyles
   const [TextareaRef, onChangeTextarea] = useChangeHeightTextarea(onChange)
   const isError = (touched && !!error);
   const isValid = (touched && !error);
 
   return (
-    <Wrap>
-      <Textarea {...props} ref={TextareaRef} onChange={onChangeTextarea}/>
+    <S.Wrap>
+      <S.Textarea {...props} ref={TextareaRef} onChange={onChangeTextarea}/>
 
       <ErrorAnimation isError={isError}>
         {error}
       </ErrorAnimation>
-    </Wrap>
+    </S.Wrap>
   );
 };

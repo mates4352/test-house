@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const PersonalDataStyles = {
-  PersonalData: styled.section`
-  
-  `,
-}
+const PersonalData = styled.section`
+
+`
+
+export {PersonalData}

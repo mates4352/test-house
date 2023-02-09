@@ -1,35 +1,29 @@
 import React, {FC} from 'react';
-import {PersonalCabinetStyles} from "../lib/styles/Personal-cabinet-styles";
+import * as S from "../lib/styles/Personal-cabinet-styles";
 import {Outlet} from "react-router-dom";
 import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
 import {useRedirect} from "../../../../../core/utils/hooks/useRedirect";
+import {ListLinks} from "../../../actions/list-links";
+import {LinkCabinet} from "../../../../../core/utils/enum/links/link-cabinet";
+import { Container } from '../../../../global-styled-components/global-styled-components';
 
 type PersonalCabinetType = {};
 
 export const PersonalCabinet: FC<PersonalCabinetType> = ({}) => {
-  const {PersonalCabinet, Container, Title, List, Item, LinkElement} = PersonalCabinetStyles
-  useRedirect(LinkMain.PERSONAL_CABINET, LinkMain.PERSONAL_CABINET_DATA)
+  useRedirect(LinkMain.PERSONAL_CABINET, LinkCabinet.PERSONAL_CABINET_DATA)
 
   return (
-    <PersonalCabinet>
+    <S.PersonalCabinet>
       <Container>
-        <Title>Личный кабинет</Title>
+        <S.Title>Личный кабинет</S.Title>
 
-        <List>
-          <Item>
-            <LinkElement to={LinkMain.PERSONAL_CABINET_DATA}>
-              Данные
-            </LinkElement>
-          </Item>
+        <ListLinks arrayLinks={[
+          {text: 'Данные', link: LinkCabinet.PERSONAL_CABINET_DATA},
+          {text: 'Список заявок', link: LinkCabinet.PERSONAL_CABINET_LIST_ORDERS}
+        ]}/>
 
-          <Item>
-            <LinkElement to={LinkMain.PERSONAL_CABINET_List_APPLICATIONS}>
-              Список заявок
-            </LinkElement>
-          </Item>
-        </List>
         <Outlet/>
       </Container>
-    </PersonalCabinet>
+    </S.PersonalCabinet>
   );
 };

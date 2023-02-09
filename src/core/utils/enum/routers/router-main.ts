@@ -9,7 +9,6 @@ export enum RouterMain {
   CONTACTS_PARAMS = 'Contacts/:id',
   DISPATCHER = 'Dispatcher',
   PERSONAL_CABINET = 'Personal-cabinet',
-  PERSONAL_CABINET_DATA = 'Data',
-  PERSONAL_CABINET_List_APPLICATIONS = 'List-applications',
-  APPLICATION = 'Application/:id',
+  ORDER = 'Order/:id',
+  ADMIN = 'Admin',
 }

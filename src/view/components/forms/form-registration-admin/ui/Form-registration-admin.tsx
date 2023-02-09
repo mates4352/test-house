@@ -1,60 +1,58 @@
 import React, {FC} from 'react';
-import {FormRegistrationAdminStyles} from "../lib/styles/Form-registration-admin-styles";
+import * as S from "../lib/styles/Form-registration-admin-styles";
 import {useFormRegistrationAdminFormik} from "../lib/hooks/useFormRegistrationAdminFormik";
-import {Input} from "../../../actions/input";
 
 type FormRegistrationAdminType = {};
 
 export const FormRegistrationAdmin: FC<FormRegistrationAdminType> = ({}) => {
-  const {FormRegistrationAdmin, Wrap, Input, InputPhone, Button} = FormRegistrationAdminStyles
   const [formik] = useFormRegistrationAdminFormik()
 
   return (
-    <FormRegistrationAdmin onSubmit={formik.handleSubmit}>
-      <Wrap>
-        <Input
+    <S.FormRegistrationAdmin onSubmit={formik.handleSubmit}>
+      <S.Wrap>
+        <S.Input
           type="text"
           placeholder={'Имя'}
           {...formik.getFieldProps('firstName')}
           {...formik.getFieldMeta('firstName')}
         />
 
-        <Input
+        <S.Input
           type="text"
           placeholder={'Фамилия'}
           {...formik.getFieldProps('lastName')}
           {...formik.getFieldMeta('lastName')}
         />
 
-        <Input
+        <S.Input
           type="text"
           placeholder={'Отчество'}
           {...formik.getFieldProps('surname')}
           {...formik.getFieldMeta('surname')}
         />
 
-        <Input
+        <S.Input
           type="email"
           placeholder={'Емайл'}
           {...formik.getFieldProps('email')}
           {...formik.getFieldMeta('email')}
         />
 
-        <Input
+        <S.Input
           type="password"
           placeholder={'Пароль'}
           {...formik.getFieldProps('password')}
           {...formik.getFieldMeta('password')}
         />
 
-        <Input
+        <S.Input
           type="password"
           placeholder={'Повторный пароль'}
           {...formik.getFieldProps('forgotPassword')}
           {...formik.getFieldMeta('forgotPassword')}
         />
 
-        <InputPhone
+        <S.InputPhone
           name={'phone'}
           type={'tel'}
           placeholder={'Номер телефона'}
@@ -62,26 +60,26 @@ export const FormRegistrationAdmin: FC<FormRegistrationAdminType> = ({}) => {
           mask={"+7-999-999-99-99"}
         />
 
-        <Input
+        <S.Input
           type="text"
           placeholder={'Должность'}
           {...formik.getFieldProps('position')}
           {...formik.getFieldMeta('position')}
         />
 
-        <Input
+        <S.Input
           type="text"
           placeholder={'Район'}
           {...formik.getFieldProps('area')}
           {...formik.getFieldMeta('area')}
         />
-      </Wrap>
+      </S.Wrap>
 
-      <Button
+      <S.Button
         type={'submit'}
         disabled={!(formik.isValid && formik.dirty)}>
         войти
-      </Button>
-    </FormRegistrationAdmin>
+      </S.Button>
+    </S.FormRegistrationAdmin>
   );
 };

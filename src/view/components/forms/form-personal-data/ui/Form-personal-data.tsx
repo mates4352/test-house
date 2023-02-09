@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FormPersonalDataStyles} from "../lib/styled/Form-personal-data-styles";
+import * as S from "../lib/styled/Form-personal-data-styles";
 import {useFormPersonalDataFormik} from "../lib/hooks/useFormPersonalDataFormik";
 import {WrapperInputLabel} from "../../../wrappers/wrapper-input-label";
 import {SelectContact} from "../../../actions/select-contact";
@@ -9,15 +9,14 @@ type FormPersonalDataType = {
 };
 
 export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
-  const {PersonalData, FormPersonalData, Input, InputPhone, Wrap, Button} = FormPersonalDataStyles
   const [formik] = useFormPersonalDataFormik()
 
   return (
-    <PersonalData>
-      <FormPersonalData onSubmit={formik.handleSubmit}>
-        <Wrap>
+    <S.PersonalData>
+      <S.FormPersonalData onSubmit={formik.handleSubmit}>
+        <S.Wrap>
           <WrapperInputLabel label={'Имя'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Имя'}
               disabled={true}
@@ -27,7 +26,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Фамилия'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Фамилия'}
               disabled={true}
@@ -37,7 +36,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Отчество'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Отчество'}
               disabled={true}
@@ -47,7 +46,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Улица'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Улица'}
               disabled={true}
@@ -57,7 +56,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Дом'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Дом'}
               disabled={true}
@@ -67,7 +66,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Квартира'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Квартира'}
               disabled={true}
@@ -78,7 +77,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Емайл'}>
-            <Input
+            <S.Input
               type="email"
               placeholder={'Емайл'}
               {...formik.getFieldProps('email')}
@@ -87,7 +86,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Номер телефона'}>
-            <InputPhone
+            <S.InputPhone
               name={'phone'}
               type={'tel'}
               placeholder={'Номер телефона'}
@@ -97,7 +96,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Машина'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Машина'}
               disabled={true}
@@ -107,7 +106,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Парковочное место'}>
-            <Input
+            <S.Input
               type="text"
               placeholder={'Парковочное место'}
               disabled={true}
@@ -115,17 +114,17 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
               {...formik.getFieldMeta('parkingSpace')}
             />
           </WrapperInputLabel>
-        </Wrap>
+        </S.Wrap>
 
 
-        <Button
+        <S.Button
           type={'submit'}
           disabled={!formik.isValid}>
           Сохранить изменения
-        </Button>
-      </FormPersonalData>
+        </S.Button>
+      </S.FormPersonalData>
 
       <SelectContact/>
-    </PersonalData>
+    </S.PersonalData>
   );
 };

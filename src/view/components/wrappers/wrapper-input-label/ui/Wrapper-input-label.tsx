@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import {WrapperInputLabelStyles} from "../lib/styles/Wrapper-input-label-styles";
+import * as S from "../lib/styles/Wrapper-input-label-styles";
 
 type WrapperInputLabelType = {
   label: string
@@ -11,13 +11,12 @@ export const WrapperInputLabel: FC<WrapperInputLabelType> = ({
   children,
   ...props
 }) => {
-  const {WrapperInputLabel, Label} = WrapperInputLabelStyles
 
   return (
-    <WrapperInputLabel {...props}>
-      <Label>{label}</Label>
+    <S.WrapperInputLabel {...props}>
+      <S.Label>{label}</S.Label>
 
       {children}
-    </WrapperInputLabel>
+    </S.WrapperInputLabel>
   );
 };

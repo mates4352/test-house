@@ -1,12 +1,11 @@
 import React, {FC} from 'react';
-import {ChatStyles} from "../lib/styles/Chat-styles";
+import * as S from "../lib/styles/Chat-styles";
 import {FormChat} from "../../../forms/form-chat";
 import {useChat} from "../lib/hooks/useChat";
 
 type ChatType = {};
 
 export const Chat: FC<ChatType> = ({}) => {
-  const {Chat, Header, Title, User, Admin, Content, Item, Message} = ChatStyles
   const [refContent] = useChat()
 
   const ArrayMessage: { id: string, status: 'admin' | 'user', text: string }[] = [
@@ -66,24 +65,24 @@ export const Chat: FC<ChatType> = ({}) => {
   ]
 
   return (
-    <Chat>
-      <Header>
-        <Admin>Admin</Admin>
-        <Title>Chat</Title>
-        <User>Максим</User>
-      </Header>
+    <S.Chat>
+      <S.Header>
+        <S.Admin>Admin</S.Admin>
+        <S.Title>Chat</S.Title>
+        <S.User>Максим</S.User>
+      </S.Header>
 
-      <Content ref={refContent}>
+      <S.Content ref={refContent}>
         {ArrayMessage.map((message) =>
-          <Item key={message.id}>
-            <Message isUserAdmin={message.status}>
+          <S.Item key={message.id}>
+            <S.Message isUserAdmin={message.status}>
               {message.text}
-            </Message>
-          </Item>
+            </S.Message>
+          </S.Item>
         )}
-      </Content>
+      </S.Content>
 
       <FormChat/>
-    </Chat>
+    </S.Chat>
   );
 };

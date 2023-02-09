@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {AuthStyles} from "../lib/styles/Auth-styles";
+import * as S from "../lib/styles/Auth-styles";
 import {Outlet} from "react-router-dom";
 
 type AuthType = {
@@ -7,11 +7,10 @@ type AuthType = {
 };
 
 export const Auth: FC<AuthType> = ({}) => {
-  const {Auth} = AuthStyles
 
   return (
-    <Auth>
+    <S.Auth>
       <Outlet/>
-    </Auth>
+    </S.Auth>
   );
 };

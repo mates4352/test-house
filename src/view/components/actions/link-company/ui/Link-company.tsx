@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {LinkCompanyStyles} from "../lib/styles/Link-company-styles";
+import * as S from "../lib/styles/Link-company-styles";
 import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
 
 type LinkCompanyType = {
@@ -12,14 +12,13 @@ export const LinkCompany: FC<LinkCompanyType> = ({
   text,
   ...props
 }) => {
-  const {LinkCompany, Wrap, Image, Text} = LinkCompanyStyles
 
   return (
-    <LinkCompany to={LinkMain.CONTACTS + '/1'} {...props}>
-      <Wrap>
-        <Image/>
-        <Text>{text}</Text>
-      </Wrap>
-    </LinkCompany>
+    <S.LinkCompany to={LinkMain.CONTACTS + '/1'} {...props}>
+      <S.Wrap>
+        <S.Image/>
+        <S.Text>{text}</S.Text>
+      </S.Wrap>
+    </S.LinkCompany>
   );
 };

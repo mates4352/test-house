@@ -1,67 +1,63 @@
 import React, {FC} from 'react';
-import {NewsStyles} from "../lib/styles/News-styles";
-import {LinkNews} from "../../../actions/link-news";
+import * as S from "../lib/styles/News-styles";
+import { Container } from '../../../../global-styled-components/global-styled-components';
+import {ListNews} from "../../../statics/list-news";
 
 type NewsType = {};
 
 export const News: FC<NewsType> = ({}) => {
-  const {News, Container, Title, List, Item} = NewsStyles
+
+  const arrayNews = [
+    {
+      id: '1',
+      status: 'area',
+      image: '',
+      previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+    },
+
+    {
+      id: '1',
+      status: 'area',
+      image: '',
+      previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+    },
+
+    {
+      id: '1',
+      status: 'area',
+      image: '',
+      previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+    },
+
+    {
+      id: '1',
+      status: 'area',
+      image: '',
+      previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+    },
+
+    {
+      id: '1',
+      status: 'area',
+      image: '',
+      previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+    },
+
+    {
+      id: '1',
+      status: 'area',
+      image: '',
+      previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+    },
+
+  ]
 
   return (
-    <News>
+    <S.News>
       <Container>
-        <Title>Новости</Title>
-          <List>
-            <Item>
-              <LinkNews
-                srcImage={''}
-                text={''}
-                id={''}/>
-            </Item>
-
-            <Item>
-              <LinkNews
-                srcImage={''}
-                text={''}
-                id={''}/>
-            </Item>
-
-            <Item>
-              <LinkNews
-                srcImage={''}
-                text={''}
-                id={''}/>
-            </Item>
-
-            <Item>
-              <LinkNews
-                srcImage={''}
-                text={''}
-                id={''}/>
-            </Item>
-
-            <Item>
-              <LinkNews
-                srcImage={''}
-                text={''}
-                id={''}/>
-            </Item>
-
-            <Item>
-              <LinkNews
-                srcImage={''}
-                text={''}
-                id={''}/>
-            </Item>
-
-            <Item>
-              <LinkNews
-                srcImage={''}
-                text={''}
-                id={''}/>
-            </Item>
-          </List>
+        <S.Title>Новости</S.Title>
+        <ListNews arrayNews={arrayNews}/>
       </Container>
-    </News>
+    </S.News>
   );
 };

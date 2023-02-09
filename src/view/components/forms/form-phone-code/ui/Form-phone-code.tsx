@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {FormPhoneCodeStyles} from "../lib/styles/Form-phone-code-styles";
+import * as S from "../lib/styles/Form-phone-code-styles";
 import {useFormPhoneCodeFormik} from "../lib/hooks/useFormPhoneCodeFormik";
 
 type FormPhoneCodeType = {
@@ -7,12 +7,11 @@ type FormPhoneCodeType = {
 };
 
 export const FormPhoneCode: FC<FormPhoneCodeType> = ({}) => {
-  const {FormPhoneCode, InputCode, Button} = FormPhoneCodeStyles
   const [formik] = useFormPhoneCodeFormik();
 
   return (
-    <FormPhoneCode onSubmit={formik.handleSubmit}>
-      <InputCode
+    <S.FormPhoneCode onSubmit={formik.handleSubmit}>
+      <S.InputCode
         type="text"
         placeholder={'Code'}
         maxLength={6}
@@ -20,11 +19,11 @@ export const FormPhoneCode: FC<FormPhoneCodeType> = ({}) => {
         {...formik.getFieldMeta('code')}
       />
 
-      <Button
+      <S.Button
         type={'submit'}
         disabled={!(formik.isValid && formik.dirty)}>
         войти
-      </Button>
-    </FormPhoneCode>
+      </S.Button>
+    </S.FormPhoneCode>
   );
 };

@@ -1,5 +1,5 @@
 import React, {FC, ReactNode} from 'react';
-import {ErrorStyles} from "../lib/styles/ErrorStyles";
+import * as S from "../lib/styles/ErrorStyles";
 
 export type ErrorType = {
   isError: boolean
@@ -11,11 +11,10 @@ export const Error: FC<ErrorType> = ({
   children,
   ...props
 }) => {
-  const {Error} = ErrorStyles
 
   return (
-    <Error  {...props}>
+    <S.Error  {...props}>
       {children}
-    </Error>
+    </S.Error>
   );
 };

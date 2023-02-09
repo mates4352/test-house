@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {MenuDesktopStyles} from "../lib/styles/Menu-desktop-styles";
+import * as S from "../lib/styles/Menu-desktop-styles";
 import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
 
 type MenuDesktopType = {
@@ -7,35 +7,40 @@ type MenuDesktopType = {
 };
 
 export const MenuDesktop: FC<MenuDesktopType> = ({}) => {
-  const {MenuDesktop, List, Item, LinkElement} = MenuDesktopStyles
 
   return (
-    <MenuDesktop>
-      <List>
-        <Item>
-          <LinkElement to={LinkMain.Home}>
+    <S.MenuDesktop>
+      <S.List>
+        <S.Item>
+          <S.LinkElement to={LinkMain.Home}>
             Главная
-          </LinkElement>
-        </Item>
+          </S.LinkElement>
+        </S.Item>
 
-        <Item>
-          <LinkElement to={LinkMain.NEWS}>
+        <S.Item>
+          <S.LinkElement to={LinkMain.NEWS}>
             Новости
-          </LinkElement>
-        </Item>
+          </S.LinkElement>
+        </S.Item>
 
-        <Item>
-          <LinkElement to={LinkMain.APPEAL}>
+        <S.Item>
+          <S.LinkElement to={LinkMain.APPEAL}>
             Обращение
-          </LinkElement>
-        </Item>
+          </S.LinkElement>
+        </S.Item>
 
-        <Item>
-          <LinkElement to={LinkMain.CONTACTS}>
+        <S.Item>
+          <S.LinkElement to={LinkMain.CONTACTS}>
             Справочник
-          </LinkElement>
-        </Item>
-      </List>
-    </MenuDesktop>
+          </S.LinkElement>
+        </S.Item>
+
+        <S.Item>
+          <S.LinkElement to={LinkMain.ADMIN}>
+            Администрирование
+          </S.LinkElement>
+        </S.Item>
+      </S.List>
+    </S.MenuDesktop>
   );
 };

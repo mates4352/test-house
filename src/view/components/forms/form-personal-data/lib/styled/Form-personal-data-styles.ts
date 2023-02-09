@@ -1,41 +1,41 @@
 import styled from "styled-components";
-import {CustomInputMask, Input} from "../../../../actions/input";
-import {Button} from "../../../../actions/button";
+import {CustomInputMask, CustomInput} from "../../../../actions/custom-input";
+import {CustomButton} from "../../../../actions/custom-button";
 
-export const FormPersonalDataStyles = {
-  PersonalData: styled.div`
+const PersonalData =  styled.div`
     display: grid;
     grid-template-columns: repeat(2, minmax(min-content, max-content));
     column-gap: 48px;
-  `,
+  `
 
-  FormPersonalData: styled.form`
+const FormPersonalData =  styled.form`
     max-width: 550px;
-  `,
+  `
 
-  Wrap: styled.div`
+const Wrap =  styled.div`
     display: grid;
     grid-template-columns: 1fr;
     justify-content: start;
     gap: 12px 24px;
     margin-bottom: 24px;
-  `,
+  `
 
-  Input: styled(Input)`
+const Input =  styled(CustomInput)`
     height: 40px;
     font-size: 20px;
-  `,
+  `
 
-  InputPhone: styled(CustomInputMask)`
+const InputPhone =  styled(CustomInputMask)`
     height: 40px;
     font-size: 20px;
-  `,
+  `
 
-  Button: styled(Button)`
+const Button =  styled(CustomButton)`
     width: 250px;
     height: 55px;
     margin-left: auto;
     font-size: 18px;
     font-weight: 600;
   `
-}
+
+export {PersonalData, FormPersonalData, Wrap, Input, InputPhone, Button}

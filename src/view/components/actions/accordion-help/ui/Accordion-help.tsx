@@ -1,5 +1,5 @@
 import React, {FC, ReactNode, useState} from 'react';
-import {AccordionHelpStyles} from "../lib/styles/Accordion-help-styles";
+import * as S from "../lib/styles/Accordion-help-styles";
 import {AnimationShow} from "../../../animation/AnimationShow";
 
 type AccordionHelpType = {
@@ -12,7 +12,6 @@ export const AccordionHelp: FC<AccordionHelpType> = React.memo(({
   children,
   ...props
 }) => {
-  const {AccordionHelp, Button, Content} = AccordionHelpStyles
   const [isContent, setContent] = useState<boolean>(false)
   const onClickButton = () => {
     setContent(!isContent)
@@ -25,16 +24,16 @@ export const AccordionHelp: FC<AccordionHelpType> = React.memo(({
   }
 
   return (
-    <AccordionHelp {...props}>
-      <Button onClick={onClickButton}>
+    <S.AccordionHelp {...props}>
+      <S.Button onClick={onClickButton}>
         {question}
-      </Button>
+      </S.Button>
 
       <AnimationShow isAnimation={isContent} variants={AnimationShowOption}>
-        <Content>
+        <S.Content>
           {children}
-        </Content>
+        </S.Content>
       </AnimationShow>
-    </AccordionHelp>
+    </S.AccordionHelp>
   );
 })

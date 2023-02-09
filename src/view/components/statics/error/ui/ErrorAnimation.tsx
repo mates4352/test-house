@@ -1,4 +1,4 @@
-import {ErrorStyles} from "../lib/styles/ErrorStyles";
+import * as S from "../lib/styles/ErrorStyles";
 import {AnimationShow} from "../../../animation/AnimationShow";
 import {FC} from "react";
 import {ErrorType} from "./Error";
@@ -10,13 +10,12 @@ export const ErrorAnimation: FC<ErrorAnimationType> = ({
   children,
   ...props
 }) => {
-  const {Error} = ErrorStyles
 
   return (
     <AnimationShow isAnimation={isError}>
-      <Error  {...props}>
+      <S.Error  {...props}>
         {children}
-      </Error>
+      </S.Error>
     </AnimationShow>
   );
 };

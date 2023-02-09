@@ -1,38 +1,38 @@
 import React, {FC} from 'react';
-import {FooterStyles} from "../lib/styles/Footer-styles";
+import * as S from "../lib/styles/Footer-styles";
+import {Container} from "../../../../global-styled-components/global-styled-components";
 
 type FooterType = {
 
 };
 
 export const Footer: FC<FooterType> = ({}) => {
-  const {Footer, Container, List, Item, LinkIcon} = FooterStyles
 
   return (
-    <Footer>
+    <S.Footer>
       <Container>
-        <List>
-          <Item>
-            <LinkIcon to={''}/>
-          </Item>
+        <S.List>
+          <S.Item>
+            <S.LinkIcon to={''}/>
+          </S.Item>
 
-          <Item>
-            <LinkIcon to={''}/>
-          </Item>
+          <S.Item>
+            <S.LinkIcon to={''}/>
+          </S.Item>
 
-          <Item>
-            <LinkIcon to={''}/>
-          </Item>
+          <S.Item>
+            <S.LinkIcon to={''}/>
+          </S.Item>
 
-          <Item>
-            <LinkIcon to={''}/>
-          </Item>
+          <S.Item>
+            <S.LinkIcon to={''}/>
+          </S.Item>
 
-          <Item>
-            <LinkIcon to={''}/>
-          </Item>
-        </List>
+          <S.Item>
+            <S.LinkIcon to={''}/>
+          </S.Item>
+        </S.List>
       </Container>
-    </Footer>
+    </S.Footer>
   );
 };

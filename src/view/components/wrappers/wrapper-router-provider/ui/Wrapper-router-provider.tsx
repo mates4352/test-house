@@ -16,9 +16,16 @@ import {RouterAuth} from "../../../../../core/utils/enum/routers/router-auth";
 import {RouterMain} from "../../../../../core/utils/enum/routers/router-main";
 import {CompanyInfo} from "../../../sub-pages/company-info";
 import {NewsInfo} from "../../../sub-pages/news-info";
-import {ListApplications} from "../../../sub-pages/list-applications";
-import {Application} from "../../../sub-pages/application";
+import {ListOrders} from "../../../sub-pages/list-orders";
+import {Order} from "../../../sub-pages/order";
 import {PersonalData} from "../../../sub-pages/personal-data";
+import {Admin} from "../../../sub-pages/admin";
+import {RouterCabinet} from "../../../../../core/utils/enum/routers/router-cabinet";
+import {RouterAdmin} from "../../../../../core/utils/enum/routers/router-admin";
+import {AdminListOrders} from "../../../sub-pages/admin-list-orders";
+import {AdminListModerators} from "../../../sub-pages/admin-list-moderators";
+import {AdminListLodgers} from "../../../sub-pages/admin-list-lodgers";
+import {AdminListNews} from "../../../sub-pages/admin-list-news";
 
 type WrapperRouterProviderType = {};
 
@@ -34,7 +41,7 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
       element: <Auth/>,
       children: [
         {
-          path: RouterAuth.AUTH_SIGIN,
+          path: RouterAuth.SIG_IN,
           element: <SigIn/>
         },
 
@@ -44,7 +51,7 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
         },
 
         {
-          path: RouterAuth.AUTH_REGISTRATION_ADMIN,
+          path: RouterAuth.REGISTRATION_ADMIN,
           element: <RegistrationAdmin/>
         },
 
@@ -99,20 +106,46 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
           element: <PersonalCabinet/>,
           children: [
             {
-              path: RouterMain.PERSONAL_CABINET_DATA,
+              path: RouterCabinet.PERSONAL_CABINET_DATA,
               element: <PersonalData/>
             },
 
             {
-              path: RouterMain.PERSONAL_CABINET_List_APPLICATIONS,
-              element: <ListApplications/>
+              path: RouterCabinet.PERSONAL_CABINET_LIST_ORDERS,
+              element: <ListOrders/>
             }
           ]
         },
 
         {
-          path: RouterMain.APPLICATION,
-          element: <Application/>
+          path: RouterMain.ORDER,
+          element: <Order/>
+        },
+
+        {
+          path: RouterMain.ADMIN,
+          element: <Admin/>,
+          children: [
+            {
+              path: RouterAdmin.LIST_ORDERS,
+              element: <AdminListOrders/>
+            },
+
+            {
+              path: RouterAdmin.LIST_MODERATORS,
+              element: <AdminListModerators/>
+            },
+
+            {
+              path: RouterAdmin.LIST_LODGERS,
+              element: <AdminListLodgers/>
+            },
+
+            {
+              path: RouterAdmin.LIST_NEWS,
+              element: <AdminListNews/>
+            },
+          ]
         },
       ]
     },

@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import {Input} from "../../../../actions/input";
-import {Button} from "../../../../actions/button";
+import {CustomInput} from "../../../../actions/custom-input";
+import {CustomButton} from "../../../../actions/custom-button";
 
-export const FormPhoneCodeStyles = {
-  FormPhoneCode: styled.form`
-  
-  `,
+const FormPhoneCode = styled.form`
 
-  InputCode: styled(Input)`
-    max-width: 250px;
-    height: 40px;
-    font-size: 20px;
-  `,
+`
 
-  Button: styled(Button)`
-    width: 70px;
-    height: 40px;
-    margin: 20px auto 0 auto;
-  `
-}
+const InputCode = styled(CustomInput)`
+  max-width: 250px;
+  height: 40px;
+  font-size: 20px;
+`
+
+const Button = styled(CustomButton)`
+  width: 70px;
+  height: 40px;
+  margin: 20px auto 0 auto;
+`
+
+export {FormPhoneCode, InputCode, Button}

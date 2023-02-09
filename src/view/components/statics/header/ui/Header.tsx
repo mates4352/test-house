@@ -1,23 +1,11 @@
 import React, {FC} from 'react';
-import {HeaderStyles} from "../lib/styles/Header-styles";
+import * as S from "../lib/styles/Header-styles";
 import {MenuDesktop} from "../../menu-desktop";
-import {PopupNotification} from "../../../popups/popup-notification";
 import {useHeader} from "../lib/hooks/useHeader";
 
 type HeaderType = {};
 
 export const Header: FC<HeaderType> = ({}) => {
-  const {
-    Header,
-    Container,
-    Wrap,
-    Notification,
-    NotificationButton,
-    PopupNotification,
-    PersonalCabinet,
-    PersonalCabinetButton,
-    PopupUser
-  } = HeaderStyles
   const [
     refPopupUser,
     refPopupNotification,
@@ -27,30 +15,30 @@ export const Header: FC<HeaderType> = ({}) => {
     onChangePopupNotification] = useHeader()
 
   return (
-    <Header>
-      <Container>
+    <S.Header>
+      <S.HeaderContainer>
         <MenuDesktop/>
 
-        <Wrap>
-          <Notification>
-            <NotificationButton onClick={onChangePopupNotification(!isPopupNotification)}/>
+        <S.Wrap>
+          <S.Notification>
+            <S.NotificationButton onClick={onChangePopupNotification(!isPopupNotification)}/>
 
             {isPopupNotification &&
-                <PopupNotification ref={refPopupNotification}/>
+                <S.PopupNotification ref={refPopupNotification}/>
             }
-          </Notification>
+          </S.Notification>
 
-          <PersonalCabinet>
-            <PersonalCabinetButton onClick={onChangeLinkCabinet(!isLinkCabinet)}>
+          <S.PersonalCabinet>
+            <S.PersonalCabinetButton onClick={onChangeLinkCabinet(!isLinkCabinet)}>
               Личный кабинет
-            </PersonalCabinetButton>
+            </S.PersonalCabinetButton>
 
             {isLinkCabinet &&
-                <PopupUser ref={refPopupUser}/>
+                <S.PopupUser ref={refPopupUser}/>
             }
-          </PersonalCabinet>
-        </Wrap>
-      </Container>
-    </Header>
+          </S.PersonalCabinet>
+        </S.Wrap>
+      </S.HeaderContainer>
+    </S.Header>
   );
 };

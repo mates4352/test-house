@@ -1,11 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 import {
   AnimatePresence,
-  AnimationControls,
   motion,
-  Target,
-  TargetAndTransition,
-  VariantLabels,
   Variants
 } from "framer-motion";
 

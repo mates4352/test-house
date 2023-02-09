@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
-import {NewsInfoStyles} from "../lib/styles/News-info-styles";
+import * as S from "../lib/styles/News-info-styles";
+import {Container} from "../../../../global-styled-components/global-styled-components";
 
 type NewsInfoType = {};
 
 export const NewsInfo: FC<NewsInfoType> = ({}) => {
-  const {NewsInfo, Container} = NewsInfoStyles
 
   return (
-    <NewsInfo>
+    <S.NewsInfo>
       <Container>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor ea quaerat quibusdam suscipit unde! Accusamus
         accusantium asperiores at consequuntur cum, delectus deserunt ducimus est eveniet explicabo facere impedit ipsam
@@ -36,6 +36,6 @@ export const NewsInfo: FC<NewsInfoType> = ({}) => {
         vero voluptate voluptatum! Architecto cumque ea est, ex, excepturi magni quod saepe sunt tenetur voluptas
         voluptatum!
       </Container>
-    </NewsInfo>
+    </S.NewsInfo>
   );
 };

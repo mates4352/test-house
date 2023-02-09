@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import {CustomInputMask} from "../../../../actions/input";
-import {Button} from "../../../../actions/button";
+import {CustomInputMask} from "../../../../actions/custom-input";
+import {CustomButton} from "../../../../actions/custom-button";
 
-export const FormSigInStyles = {
-  FormSigIn: styled.form`
-    
-  `,
+const FormSigIn = styled.form`
 
-  InputPhone: styled(CustomInputMask)`
-    max-width: 250px;
-    height: 40px;
-    font-size: 20px;
-  `,
+`
 
-  Button: styled(Button)`
-    width: 110px;
-    height: 40px;
-    margin: 20px auto 0 auto;
-  `
-}
+const InputPhone = styled(CustomInputMask)`
+  max-width: 250px;
+  height: 40px;
+  font-size: 20px;
+`
+
+const Button = styled(CustomButton)`
+  width: 110px;
+  height: 40px;
+  margin: 20px auto 0 auto;
+`
+
+export {FormSigIn, InputPhone, Button}

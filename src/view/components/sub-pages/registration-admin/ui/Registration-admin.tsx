@@ -1,20 +1,19 @@
 import React, {FC} from 'react';
-import {RegistrationAdminStyles} from "../lib/styles/Registration-admin-styles";
+import * as S from "../lib/styles/Registration-admin-styles";
 import {LinkAuth} from "../../../../../core/utils/enum/links/link-auth";
 import {FormRegistrationAdmin} from "../../../forms/form-registration-admin";
 
 type RegistrationAdminType = {};
 
 export const RegistrationAdmin: FC<RegistrationAdminType> = ({}) => {
-  const {RegistrationAdmin, Title, LinkElement} = RegistrationAdminStyles
 
   return (
-    <RegistrationAdmin>
-      <Title>Registration-admin</Title>
+    <S.RegistrationAdmin>
+      <S.Title>Registration-admin</S.Title>
 
       <FormRegistrationAdmin/>
 
-      <LinkElement to={LinkAuth.AUTH}>Назад</LinkElement>
-    </RegistrationAdmin>
+      <S.LinkElement to={LinkAuth.AUTH}>Назад</S.LinkElement>
+    </S.RegistrationAdmin>
   );
 };
