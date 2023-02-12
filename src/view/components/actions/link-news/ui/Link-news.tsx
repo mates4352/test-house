@@ -1,23 +1,27 @@
 import React, {FC} from 'react';
 import  * as  S from  './../lib/styles/Link-news-styles'
-import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
 
 type LinkNewsType = {
   srcImage: string
   previewText: string
   id: string
+  link: string
+  admin?: boolean
 };
 
 export const LinkNews: FC<LinkNewsType> = ({
   srcImage,
   previewText,
   id,
+  link,
+  admin,
   ...props
 }) => {
 
   return (
-    <S.LinkNews to={LinkMain.NEWS + `/${id}`} {...props}>
-      <S.PreviewText>{previewText}</S.PreviewText>
+    <S.LinkNews {...props} to={link+ `/${id}`}>
+      {!admin && <S.PreviewText>{previewText}</S.PreviewText>}
+      {admin && <S.AdminPreviewText>Редактировать</S.AdminPreviewText>}
     </S.LinkNews>
   );
 };

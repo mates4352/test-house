@@ -26,6 +26,9 @@ import {AdminListOrders} from "../../../sub-pages/admin-list-orders";
 import {AdminListModerators} from "../../../sub-pages/admin-list-moderators";
 import {AdminListLodgers} from "../../../sub-pages/admin-list-lodgers";
 import {AdminListNews} from "../../../sub-pages/admin-list-news";
+import {AdminCreateNews} from "../../../sub-pages/admin-create-news";
+import {AdminListRouting} from "../../../sub-pages/admin-list-routing";
+import {RouterList} from "../../../../../core/utils/enum/routers/router-list";
 
 type WrapperRouterProviderType = {};
 
@@ -127,23 +130,37 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
           element: <Admin/>,
           children: [
             {
-              path: RouterAdmin.LIST_ORDERS,
-              element: <AdminListOrders/>
-            },
+              path: RouterAdmin.LIST,
+              element: <AdminListRouting/>,
+              children: [
+                {
+                  path: RouterList.LIST_ORDERS,
+                  element: <AdminListOrders/>
+                },
 
-            {
-              path: RouterAdmin.LIST_MODERATORS,
-              element: <AdminListModerators/>
-            },
+                {
+                  path: RouterList.LIST_MODERATORS,
+                  element: <AdminListModerators/>
+                },
 
-            {
-              path: RouterAdmin.LIST_LODGERS,
-              element: <AdminListLodgers/>
-            },
+                {
+                  path: RouterList.LIST_LODGERS,
+                  element: <AdminListLodgers/>
+                },
 
+                {
+                  path: RouterList.LIST_NEWS,
+                  element: <AdminListNews/>,
+                },
+              ]
+            },
             {
-              path: RouterAdmin.LIST_NEWS,
-              element: <AdminListNews/>
+              path: RouterAdmin.LIST_CREATE_NEWS,
+              element: <AdminCreateNews/>
+            },
+            {
+              path: RouterAdmin.LIST_CREATE_NEWS_PARAMS,
+              element: <AdminCreateNews/>
             },
           ]
         },

@@ -2,15 +2,8 @@ import {useFormik} from "formik";
 import {
   ValidationAdditionalContactSchema
 } from "../../../../../../core/utils/helpers/validates/validation-schema-additional-contact";
-import {useState} from "react";
 
-export const useFormAdditionalContactFormik = (phone: string) => {
-  const [isInputPhone, setInputPhone] = useState<boolean>(false)
-
-  const onShowInput = () => {
-    setInputPhone((value) => !value)
-  }
-
+export const useFormAdditionalContactFormik = (phone: string, onShowInput: () => void) => {
   const formik = useFormik({
     initialValues: {
       phone
@@ -24,5 +17,5 @@ export const useFormAdditionalContactFormik = (phone: string) => {
     },
   });
 
-  return [formik, isInputPhone, onShowInput] as const
+  return [formik] as const
 }

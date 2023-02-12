@@ -1,6 +1,5 @@
 export enum RouterAdmin {
-  LIST_ORDERS = 'List-orders',
-  LIST_MODERATORS = 'List-moderators',
-  LIST_NEWS = 'List-news',
-  LIST_LODGERS = 'List-lodgers',
+  LIST = 'List',
+  LIST_CREATE_NEWS = 'Create-news',
+  LIST_CREATE_NEWS_PARAMS = 'Create-news/:id',
 }
