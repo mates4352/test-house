@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import * as S from "../lib/styles/contacts-styles";
 import {LinkCompany} from "../../../actions/link-company";
 import uuid from "react-uuid";
@@ -8,7 +8,7 @@ import {Container} from '../../../../global-styled-components/global-styled-comp
 type ContactsType = {};
 
 export const Contacts: FC<ContactsType> = ({}) => {
-  const arrayCompany = [
+  const [arrayCompany, setArrayCompany] = useState<any>([
     {
       id: uuid(),
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem nam nisi, praesentium recusandae suscipit',
@@ -26,19 +26,35 @@ export const Contacts: FC<ContactsType> = ({}) => {
       text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem nam nisi, praesentium recusandae suscipit',
       image: '',
     },
+  ])
 
-    {
-      id: uuid(),
-      text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem nam nisi, praesentium recusandae suscipit',
-      image: '',
-    },
-  ]
+  const getArrayNews = () => {
+    setArrayCompany(arrayCompany.concat([
+      {
+        id: uuid(),
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem nam nisi, praesentium recusandae suscipit',
+        image: '',
+      },
+
+      {
+        id: uuid(),
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem nam nisi, praesentium recusandae suscipit',
+        image: '',
+      },
+
+      {
+        id: uuid(),
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem nam nisi, praesentium recusandae suscipit',
+        image: '',
+      },
+    ]))
+  }
 
   return (
     <S.Contacts>
       <Container>
         <S.List>
-          {arrayCompany.map(el =>
+          {arrayCompany.map((el: any) =>
             <S.Item>
               <LinkCompany
                 text={el.text}
@@ -47,6 +63,8 @@ export const Contacts: FC<ContactsType> = ({}) => {
             </S.Item>
           )}
         </S.List>
+
+        <S.Button type={'button'} onClick={getArrayNews}>Загрузить еще</S.Button>
       </Container>
     </S.Contacts>
   );

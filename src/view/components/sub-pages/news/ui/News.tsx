@@ -1,7 +1,6 @@
 import React, {FC, useState} from 'react';
 import * as S from "../lib/styles/News-styles";
 import { Container } from '../../../../global-styled-components/global-styled-components';
-import {ListNews} from "../../../statics/list-news";
 import uuid from "react-uuid";
 import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
 
