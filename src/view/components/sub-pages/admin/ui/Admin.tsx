@@ -4,7 +4,7 @@ import {Outlet} from "react-router-dom";
 import {LinkAdmin} from "../../../../../core/utils/enum/links/link-admin";
 import {useRedirect} from "../../../../../core/utils/hooks/useRedirect";
 import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
-import {Container} from "../../../../global-styled-components/global-styled-components";
+import * as G from "../../../../global-styled-components/global-styled-components";
 
 type AdminType = {};
 
@@ -13,9 +13,9 @@ export const Admin: FC<AdminType> = ({}) => {
 
   return (
     <S.Admin>
-      <Container>
+      <G.Container>
         <Outlet/>
-      </Container>
+      </G.Container>
     </S.Admin>
   );
 };

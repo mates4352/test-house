@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import * as S from "../lib/styles/Order-styles";
 import {Chat} from "../../../statics/chat";
-import { Container } from '../../../../global-styled-components/global-styled-components';
+import * as G from '../../../../global-styled-components/global-styled-components';
 
 type OrderType = {};
 
@@ -9,7 +9,7 @@ export const Order: FC<OrderType> = ({}) => {
 
   return (
     <S.Order>
-      <Container>
+      <G.Container>
         <S.Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis earum error excepturi facilis, inventore
           natus pariatur quaerat quod rem unde. Alias animi dolor enim laboriosam odit velit voluptatibus? Animi
@@ -21,7 +21,7 @@ export const Order: FC<OrderType> = ({}) => {
         </S.Text>
 
         <Chat/>
-      </Container>
+      </G.Container>
     </S.Order>
   );
 };

@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import * as S from "../lib/styles/Appeal-styles";
 import {AccordionHelp} from "../../../actions/accordion-help";
 import {FormAppeal} from "../../../forms/form-appeal";
-import {Container} from "../../../../global-styled-components/global-styled-components";
+import * as G from "../../../../global-styled-components/global-styled-components";
 
 type AppealType = {};
 
@@ -10,7 +10,7 @@ export const Appeal: FC<AppealType> = ({}) => {
 
   return (
     <S.Appeal>
-      <Container>
+      <G.Container>
         <FormAppeal/>
 
         <S.List>
@@ -38,7 +38,7 @@ export const Appeal: FC<AppealType> = ({}) => {
             </AccordionHelp>
           </li>
         </S.List>
-      </Container>
+      </G.Container>
     </S.Appeal>
   );
 };

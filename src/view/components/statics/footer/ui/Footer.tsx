@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import * as S from "../lib/styles/Footer-styles";
-import {Container} from "../../../../global-styled-components/global-styled-components";
+import * as G from "../../../../global-styled-components/global-styled-components";
 
 type FooterType = {
 
@@ -10,7 +10,7 @@ export const Footer: FC<FooterType> = ({}) => {
 
   return (
     <S.Footer>
-      <Container>
+      <G.Container>
         <S.List>
           <S.Item>
             <S.LinkIcon to={''}/>
@@ -32,7 +32,7 @@ export const Footer: FC<FooterType> = ({}) => {
             <S.LinkIcon to={''}/>
           </S.Item>
         </S.List>
-      </Container>
+      </G.Container>
     </S.Footer>
   );
 };

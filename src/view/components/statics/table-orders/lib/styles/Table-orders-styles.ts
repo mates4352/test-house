@@ -1,23 +1,21 @@
 import styled, {css} from "styled-components";
 import {Link} from "react-router-dom";
+import {StatusOrder} from "../../../../../../core/utils/enum/status/status-order";
 import {
   CustomPopupEditStatusOrder
-} from "../../../../../popups/custom-popup-edit-status-order/ui/Custom-popup-edit-status-order";
-import {StatusOrder} from "../../../../../../../core/utils/enum/status/status-order";
+} from "../../../../popups/custom-popup-edit-status-order/ui/Custom-popup-edit-status-order";
 
 type TrType = {
   status?: StatusOrder.SENT | StatusOrder.IN_PROCESSING | StatusOrder.ACCEPTED
 }
 
-const ListOrders = styled.div`
-`
-
 const Table = styled.table`
   display: grid;
-  grid-template-columns: repeat(3, 1fr) repeat(3, minmax(min-content, max-content));
+  grid-template-columns: repeat(3, 1fr) repeat(1, minmax(min-content, max-content));
   row-gap: 12px;
-  background-color: #a8ffd5;
   border-radius: 24px;
+  box-shadow: 0 0 3px #999;
+  padding: 0 24px 24px;
   border-collapse: collapse;
 `
 
@@ -31,22 +29,22 @@ const Tbody = styled.tbody`
 
 const Tr = styled.tr<TrType>`
   display: contents;
-  
+
   ${props => props.status === StatusOrder.SENT && css`
     td {
-      background-color: #ff8080;
+      background-color: #ffa2a2;
     }
   `}
 
   ${props => props.status === StatusOrder.IN_PROCESSING && css`
     td {
-      background-color: #ffd27f;
+      background-color: #ffda99;
     }
   `}
 
   ${props => props.status === StatusOrder.ACCEPTED && css`
     td {
-      background-color: #5fbd5f;
+      background-color: #8cd98c;
     }
   `}
 `
@@ -55,7 +53,7 @@ const Th = styled.th`
   text-align: left;
   padding: 16px 0;
   font-size: 20px;
-  
+
   ${Tr} &:first-of-type {
     padding-left: 24px;
   }
@@ -88,12 +86,19 @@ const Td = styled.td`
   }
 `
 
-const LinkElement = styled(Link)`
-
+const Wrap = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content, max-content);
+  column-gap: 12px;
 `
 
-const WrapStatus = styled.div`
+const WrapButtons = styled.div`
   position: relative;
+`
+
+const LinkElement = styled(Link)`
+
 `
 
 const PopupEditStatus = styled(CustomPopupEditStatusOrder)`
@@ -116,4 +121,4 @@ const Date = styled.time`
   justify-self: flex-end;
 `
 
-export {ListOrders, Table, Thead, Tbody, Tr, Th, Td, LinkElement, WrapStatus, Status, Name, Date, PopupEditStatus}
+export {Table, Thead, Tbody, Tr, Th, Td, LinkElement, Wrap, WrapButtons, Status, Name, Date, PopupEditStatus}

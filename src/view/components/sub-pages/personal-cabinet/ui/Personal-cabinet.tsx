@@ -5,7 +5,7 @@ import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
 import {useRedirect} from "../../../../../core/utils/hooks/useRedirect";
 import {ListLinks} from "../../../actions/list-links";
 import {LinkCabinet} from "../../../../../core/utils/enum/links/link-cabinet";
-import { Container } from '../../../../global-styled-components/global-styled-components';
+import * as G from '../../../../global-styled-components/global-styled-components';
 
 type PersonalCabinetType = {};
 
@@ -14,7 +14,7 @@ export const PersonalCabinet: FC<PersonalCabinetType> = ({}) => {
 
   return (
     <S.PersonalCabinet>
-      <Container>
+      <G.Container>
         <S.Title>Личный кабинет</S.Title>
 
         <ListLinks arrayLinks={[
@@ -23,7 +23,7 @@ export const PersonalCabinet: FC<PersonalCabinetType> = ({}) => {
         ]}/>
 
         <Outlet/>
-      </Container>
+      </G.Container>
     </S.PersonalCabinet>
   );
 };

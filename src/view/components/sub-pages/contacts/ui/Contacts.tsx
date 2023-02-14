@@ -3,7 +3,7 @@ import * as S from "../lib/styles/contacts-styles";
 import {LinkCompany} from "../../../actions/link-company";
 import uuid from "react-uuid";
 import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
-import {Container} from '../../../../global-styled-components/global-styled-components';
+import * as G from '../../../../global-styled-components/global-styled-components';
 
 type ContactsType = {};
 
@@ -52,10 +52,10 @@ export const Contacts: FC<ContactsType> = ({}) => {
 
   return (
     <S.Contacts>
-      <Container>
+      <G.Container>
         <S.List>
-          {arrayCompany.map((el: any) =>
-            <S.Item>
+          {arrayCompany.map((el: any, index: number) =>
+            <S.Item key={index}>
               <LinkCompany
                 text={el.text}
                 srcImage={el.image}
@@ -65,7 +65,7 @@ export const Contacts: FC<ContactsType> = ({}) => {
         </S.List>
 
         <S.Button type={'button'} onClick={getArrayNews}>Загрузить еще</S.Button>
-      </Container>
+      </G.Container>
     </S.Contacts>
   );
 };
