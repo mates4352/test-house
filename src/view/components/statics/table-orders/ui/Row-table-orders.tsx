@@ -23,7 +23,7 @@ export const RowTableOrders: FC<RowTableOrdersType> = React.memo(({
     setPopup(value => !value)
   }
   const [refPopup] = useOnClickOutside(onShowPopup)
-  console.log('hello')
+
   return (
     <S.Tr {...props} status={el.status}>
       <S.Td>
