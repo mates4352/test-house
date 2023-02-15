@@ -60,4 +60,9 @@ const PaginationButton = styled.button<PaginationButtonType>`
   }
 `
 
-export {Pagination, Wrap, PaginationButtonPrev, PaginationButtonNext, List, Item, PaginationButton}
+const Point = styled.div`
+  display: inline-block;
+  margin-left: 15px; 
+`
+
+export {Pagination, Wrap, PaginationButtonPrev, PaginationButtonNext, List, Item, PaginationButton, Point}

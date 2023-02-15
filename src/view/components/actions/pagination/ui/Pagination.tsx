@@ -1,95 +1,91 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import * as S from "../lib/styles/Pagination-styles";
 import {SelectOptions} from "../../select-options";
+import {usePagination} from "../lib/hook/usePagination";
+import {AnimationShow} from "../../../animation/AnimationShow";
 
 type PaginationType = {
-  arrayOptionSelect: Array<number>
-  selectOptionValue: number
-  onCallbackSelect?: () => void
-  currentPage: number
-  pageCount: number // для select
-  maxPageNumber: number
-  pageCurrentCount: number
+  maxPageNumber: number // Максимльное кол-во кнопок в pagination.
+  selectOptionValue: number // Начальное значение при отображение select.
+  arrayOptionSelect: Array<number> // Список опций для выбора кол-во чего либо.
+  pageCurrentCount: number // Общеее кол-во элементов массива.
+  currentPage: number // Текущая страница
+  pageCount: number // Кол-во отображаемых элементов на странице связано с select
+  onCallbackSelect?: () => void // Колбек при выборе option в select
+  onClickPaginationButton?: (value: number) => void
 };
 
 export const Pagination: FC<PaginationType> = ({
   arrayOptionSelect,
   selectOptionValue,
-  onCallbackSelect,
   currentPage,
   pageCount,
   pageCurrentCount,
   maxPageNumber,
+  onCallbackSelect,
+  onClickPaginationButton,
   ...props
 }) => {
-  const [maxNumber, setMaxNumber] = useState<number>(maxPageNumber)
-  const [selectValue, setSelectValue] = useState<number>(selectOptionValue)
-  const [arraySelect, setArraySelect] = useState(arrayOptionSelect)
-  const arrayButton: number[] = []
-  const maxNumberCount = Math.ceil(pageCurrentCount / pageCount)
+  const [
+    maxNumber,
+    arrayButton,
+    disabledButtonPrevNext,
+    onChangeMaxNumber,
+    isPaginationButton,
+    arraySelect,
+    selectValue,
+    onChangeArraySelect,
+    onChangeCurrentPage
+  ] = usePagination(
+    maxPageNumber,
+    selectOptionValue,
+    arrayOptionSelect,
+    pageCurrentCount,
+    pageCount,
+    onCallbackSelect,
+    onClickPaginationButton,
+  )
 
-  const onChangeArraySelect = (value: number) => () => {
-    const array = arraySelect.filter(el => el !== value)
-    array.push(selectValue)
-    array.sort((a: number, b: number) => a - b)
-    setSelectValue(value)
-    setArraySelect(array)
-    if(onCallbackSelect) onCallbackSelect()
-  }
-
-  if(maxNumberCount > 5 && maxNumberCount) {
-    for(let i = maxNumber - 4, j = 0; i <= maxNumber; i++, j++) {
-      arrayButton[j] = i
-    }
-  } else {
-    for(let i = 1; i <= maxNumberCount; i++) {
-      arrayButton[i] = i
-    }
+  const AnimationOption = {
+    initial: {width: 0, scale: '0', opacity: 0},
+    animate: {width: 'auto', scale: '1', opacity: 1},
+    exit: {width: 0, scale: '0', opacity: 0},
   }
 
   return (
     <S.Pagination {...props}>
       <S.Wrap>
-
-        <S.PaginationButtonPrev disabled={maxNumber <= 5} onClick={() => {
-          setMaxNumber((value: number) => value -= 1)
-        }}>
+        <S.PaginationButtonPrev
+          disabled={disabledButtonPrevNext("prev")}
+          onClick={onChangeMaxNumber('-', 1)}>
           Prev
         </S.PaginationButtonPrev>
 
-        {maxNumber >= 10 &&
-            <>
-                <S.PaginationButton onClick={() => setMaxNumber((value: number) => value -= 5)}>
-                  {maxNumber + -5}
-                </S.PaginationButton>
-                ...
-            </>
-
-        }
+        <AnimationShow isAnimation={isPaginationButton('-')} variants={AnimationOption}>
+          <S.PaginationButton onClick={onChangeMaxNumber('-', maxPageNumber)}>
+            {maxNumber + -maxPageNumber}
+          </S.PaginationButton>
+        </AnimationShow>
 
         <S.List>
           {arrayButton.map(button =>
             <S.Item key={button}>
-              <S.PaginationButton currentPage={currentPage === button}>
+              <S.PaginationButton currentPage={currentPage === button} onClick={onChangeCurrentPage(button)}>
                 {button}
               </S.PaginationButton>
             </S.Item>
           )}
         </S.List>
 
-        {(maxNumberCount > 5 && !(maxNumberCount <= arrayButton[arrayButton.length - 1] + 5)) &&
-            <>
-                ...
-                <S.PaginationButton onClick={() => setMaxNumber((value: number) => value += 5)}>
-                  {maxNumber + 1}
-                </S.PaginationButton>
-            </>
-        }
+        <AnimationShow isAnimation={isPaginationButton('+')} variants={AnimationOption}>
+          <S.PaginationButton onClick={onChangeMaxNumber('+', maxPageNumber)}>
+            {maxNumber + maxPageNumber}
+          </S.PaginationButton>
+        </AnimationShow>
 
-        <S.PaginationButtonNext disabled={maxNumberCount <= 5 || maxNumberCount <= arrayButton[arrayButton.length - 1]}
-                                onClick={() => {
-                                  setMaxNumber((value: number) => value += 1)
-                                }}>
+        <S.PaginationButtonNext
+          disabled={disabledButtonPrevNext()}
+          onClick={onChangeMaxNumber('+', 1)}>
           Prev
         </S.PaginationButtonNext>
       </S.Wrap>

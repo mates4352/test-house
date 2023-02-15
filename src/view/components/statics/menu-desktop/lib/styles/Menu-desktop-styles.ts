@@ -18,9 +18,15 @@ const Item = styled.li`
 
 const LinkElement = styled(NavLink)`
   font-size: 20px;
-
+  font-weight: 500;
+  transition: color 200ms ease;
+  
+  &:hover {
+    color: #6780ff;
+  }
+  
   &.active {
-    color: yellowgreen;
+    color: #6780ff;
   }
 `
 

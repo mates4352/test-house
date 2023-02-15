@@ -22,14 +22,14 @@ const Item = styled.li`
 
 const LinkElement = styled(NavLink)`
   font-size: 20px;
-  transition: color 300ms ease;
-
-  &.active {
-    color: yellowgreen;
-  }
+  transition: color 200ms ease;
 
   &:hover {
-    color: yellowgreen;
+    color: #6780ff;
+  }
+
+  &.active {
+    color: #6780ff;
   }
 `
 

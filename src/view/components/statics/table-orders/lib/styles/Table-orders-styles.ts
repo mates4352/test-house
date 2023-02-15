@@ -14,7 +14,8 @@ const Table = styled.table`
   grid-template-columns: repeat(3, 1fr) repeat(1, minmax(min-content, max-content));
   row-gap: 12px;
   border-radius: 24px;
-  box-shadow: 0 0 3px #999;
+  box-shadow: 0 0 3px #c0c8ff;
+  background-color: #f8f8ff;
   padding: 0 24px 24px;
   border-collapse: collapse;
 `
@@ -32,19 +33,19 @@ const Tr = styled.tr<TrType>`
 
   ${props => props.status === StatusOrder.SENT && css`
     td {
-      background-color: #ffa2a2;
+      background-color: #d4d4ff;
     }
   `}
 
   ${props => props.status === StatusOrder.IN_PROCESSING && css`
     td {
-      background-color: #ffda99;
+      background-color: #ffe5bf;
     }
   `}
 
   ${props => props.status === StatusOrder.ACCEPTED && css`
     td {
-      background-color: #8cd98c;
+      background-color: #bae4e5;
     }
   `}
 `
@@ -53,7 +54,6 @@ const Th = styled.th`
   text-align: left;
   padding: 16px 0;
   font-size: 20px;
-
   ${Tr} &:first-of-type {
     padding-left: 24px;
   }

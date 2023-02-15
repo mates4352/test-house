@@ -6,7 +6,8 @@ import {Container} from "../../../../../global-styled-components/global-styled-c
 const Header = styled.header`
   display: flex;
   height: 72px;
-  background-color: bisque;
+  background-color: #f5f5ff;
+  box-shadow: 0 1px 4px #e7e7ff;
 `
 
 const HeaderContainer = styled(Container)`
@@ -31,7 +32,7 @@ const Notification = styled.div`
 const NotificationButton = styled.button`
     width: 30px;
     height: 30px;
-    background-color: #999;
+    background-color: #8989ff;
     border-radius: 50%;
   `
 
@@ -48,6 +49,7 @@ const PersonalCabinet = styled.div`
 
 const PersonalCabinetButton = styled.button`
   font-size: 20px;
+  font-weight: 500;
 `
 
 const PopupUser = styled(CustomPopupUser)`

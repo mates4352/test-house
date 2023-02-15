@@ -21,7 +21,7 @@ const PreviewText = styled.p`
   left: 0;
   transform: translateY(100%);
   padding: 20px;
-  background-color: #ff9f9f;
+  background-color: rgba(206, 206, 255, 0.77);
   transition: transform 300ms ease;
 
   ${LinkNews}:hover & {

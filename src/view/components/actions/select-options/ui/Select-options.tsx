@@ -1,5 +1,6 @@
 import React, {FC, useState} from 'react';
 import * as S from "../lib/styles/Select-options-styles";
+import {useOnClickOutside} from "../../../../../core/utils/hooks/useOnClickOutside";
 
 type SelectOptionsType = {
   arrayOptions: any
@@ -14,12 +15,13 @@ export const SelectOptions: FC<SelectOptionsType> = ({
   ...props
 }) => {
   const [isSelect, setSelect] = useState<boolean>(false)
+  const [ref] = useOnClickOutside(() => setSelect(false))
   const onOpenSelect = () => {
     setSelect(value => !value)
   }
 
   return (
-    <S.SelectOptions {...props}>
+    <S.SelectOptions {...props} ref={ref}>
       <S.SelectButtonOpen type={'button'} onClick={onOpenSelect}>
         {selectValue}
       </S.SelectButtonOpen>
