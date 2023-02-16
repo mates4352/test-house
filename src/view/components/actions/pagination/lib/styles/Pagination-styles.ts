@@ -21,10 +21,16 @@ const Wrap = styled.div`
 
 const PaginationButtonPrev = styled.button`
   margin-right: 14px;
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 const PaginationButtonNext = styled.button`
   margin-left: 14px;
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;
 
 const List = styled.ul`

@@ -18,7 +18,7 @@ const CustomInput = styled.input<CustomInputStylesType>`
   padding: 4px 12px;
   border-radius: 4px;
   transition: border 350ms ease;
-  border: 2px solid #ffbea6;
+  border: 2px solid #a6d7ff;
 
   ${props =>
     props.isError &&

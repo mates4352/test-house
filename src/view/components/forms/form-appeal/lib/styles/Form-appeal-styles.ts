@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { CustomButton } from '../../../../actions/custom-button';
+import { CustomInput } from '../../../../actions/custom-input';
 
 const FormAppeal = styled.form`
   display: flex;
@@ -7,6 +8,11 @@ const FormAppeal = styled.form`
   align-items: center;
   width: 100%;
   margin-bottom: 48px;
+  row-gap: 24px;
+`;
+
+const Input = styled(CustomInput)`
+  height: 40px;
 `;
 
 const ButtonForm = styled(CustomButton)`
@@ -15,4 +21,4 @@ const ButtonForm = styled(CustomButton)`
   height: 60px;
 `;
 
-export { FormAppeal, ButtonForm };
+export { FormAppeal, Input, ButtonForm };

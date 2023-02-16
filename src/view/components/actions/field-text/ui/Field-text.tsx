@@ -25,6 +25,8 @@ export const FieldText: FC<FieldtextType> = ({
     <S.Wrap>
       <S.Textarea
         {...props}
+        isValid={isValid}
+        isError={isError}
         ref={TextareaRef}
         onChange={onChangeTextarea}
       />

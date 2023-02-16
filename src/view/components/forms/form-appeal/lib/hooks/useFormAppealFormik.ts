@@ -4,6 +4,7 @@ import { ValidationAppealSchema } from '../../../../../../core/utils/helpers/val
 export const useFormAppealFormik = () => {
   const formik = useFormik({
     initialValues: {
+      subject: '',
       appeal: '',
     },
 
