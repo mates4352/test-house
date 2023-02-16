@@ -1,2 +1,2 @@
-import {PhoneCode} from './ui/Phone-code';
-export {PhoneCode}
+import { PhoneCode } from './ui/Phone-code';
+export { PhoneCode };

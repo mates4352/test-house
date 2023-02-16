@@ -1,16 +1,10 @@
-import React, {FC} from 'react';
-import {AdminCreateNewsStyles} from "../lib/styles/Admin-create-news-styles";
+import React, { FC } from 'react';
+import { AdminCreateNewsStyles } from '../lib/styles/Admin-create-news-styles';
 
-type AdminCreateNewsType = {
-
-};
+type AdminCreateNewsType = {};
 
 export const AdminCreateNews: FC<AdminCreateNewsType> = ({}) => {
-  const {AdminCreateNews} = AdminCreateNewsStyles
+  const { AdminCreateNews } = AdminCreateNewsStyles;
 
-  return (
-    <AdminCreateNews>
-      AdminCreateNews
-    </AdminCreateNews>
-  );
+  return <AdminCreateNews>AdminCreateNews</AdminCreateNews>;
 };

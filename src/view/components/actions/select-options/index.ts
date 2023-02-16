@@ -1,2 +1,2 @@
-import {SelectOptions} from './ui/Select-options'
-export {SelectOptions}
+import { SelectOptions } from './ui/Select-options';
+export { SelectOptions };

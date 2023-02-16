@@ -1,10 +1,8 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Form-phone-code-styles";
-import {useFormPhoneCodeFormik} from "../lib/hooks/useFormPhoneCodeFormik";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Form-phone-code-styles';
+import { useFormPhoneCodeFormik } from '../lib/hooks/useFormPhoneCodeFormik';
 
-type FormPhoneCodeType = {
-
-};
+type FormPhoneCodeType = {};
 
 export const FormPhoneCode: FC<FormPhoneCodeType> = ({}) => {
   const [formik] = useFormPhoneCodeFormik();

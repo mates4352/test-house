@@ -1,10 +1,8 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Form-sig-in-styles";
-import {useFormSigInFormik} from "../lib/hooks/useFormSigInFormik";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Form-sig-in-styles';
+import { useFormSigInFormik } from '../lib/hooks/useFormSigInFormik';
 
-type FormSigInType = {
-
-};
+type FormSigInType = {};
 
 export const FormSigIn: FC<FormSigInType> = ({}) => {
   const [formik] = useFormSigInFormik();
@@ -16,7 +14,7 @@ export const FormSigIn: FC<FormSigInType> = ({}) => {
         type={'tel'}
         placeholder={'Phone'}
         formik={formik}
-        mask={"+7-999-999-99-99"}
+        mask={'+7-999-999-99-99'}
       />
 
       <S.Button

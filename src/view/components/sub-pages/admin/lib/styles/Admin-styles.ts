@@ -1,6 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Admin = styled.section`
-
-`
-export {Admin}
+const Admin = styled.section``;
+export { Admin };

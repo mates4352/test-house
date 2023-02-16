@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrap = styled.div`
   display: grid;
@@ -6,7 +6,7 @@ const Wrap = styled.div`
   justify-items: center;
   row-gap: 12px;
   width: 100%;
-`
+`;
 const Textarea = styled.textarea<any>`
   width: 100%;
   min-height: 120px;
@@ -14,6 +14,6 @@ const Textarea = styled.textarea<any>`
   border-radius: 12px;
   overflow: hidden;
   resize: none;
-`
+`;
 
-export {Wrap, Textarea}
+export { Wrap, Textarea };

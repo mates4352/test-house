@@ -1,90 +1,28 @@
-import React, {FC, useState} from 'react';
-import * as S from "../lib/styles/News-styles";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/News-styles';
 import * as G from '../../../../global-styled-components/global-styled-components';
-import uuid from "react-uuid";
-import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
+import { LinkMain } from '../../../../../core/utils/enum/links/link-main';
+import { ListLinks } from '../../../actions/list-links';
+import { LinkNews } from '../../../../../core/utils/enum/links/link-news';
+import { Outlet } from 'react-router-dom';
+import { useRedirect } from '../../../../../core/utils/hooks/useRedirect';
 
 type NewsType = {};
 
 export const News: FC<NewsType> = ({}) => {
-  const [arrayNews, setArrayNews] = useState<any>(
-    [
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-    ]
-  )
-
-  const getArrayNews = () => {
-    setArrayNews(arrayNews.concat([
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-
-      {
-        id: uuid(),
-        status: 'area',
-        image: '',
-        previewText: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-      },
-    ]))
-  }
-
+  useRedirect(LinkMain.NEWS, LinkNews.LIST_MAIN_NEWS);
 
   return (
     <S.News>
       <G.Container>
         <S.Title>Новости</S.Title>
-        <S.List arrayNews={arrayNews} link={LinkMain.NEWS}/>
-        <S.Button type={'button'} onClick={getArrayNews}>Загрузить еще</S.Button>
+        <ListLinks
+          arrayLinks={[
+            { text: 'Главные новости', link: LinkNews.LIST_MAIN_NEWS },
+            { text: 'Новости района', link: LinkNews.LIST_DISTRICT_NEWS },
+          ]}
+        />
+        <Outlet />
       </G.Container>
     </S.News>
   );

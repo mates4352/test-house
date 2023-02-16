@@ -1,11 +1,11 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Form-registration-admin-styles";
-import {useFormRegistrationAdminFormik} from "../lib/hooks/useFormRegistrationAdminFormik";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Form-registration-admin-styles';
+import { useFormRegistrationAdminFormik } from '../lib/hooks/useFormRegistrationAdminFormik';
 
 type FormRegistrationAdminType = {};
 
 export const FormRegistrationAdmin: FC<FormRegistrationAdminType> = ({}) => {
-  const [formik] = useFormRegistrationAdminFormik()
+  const [formik] = useFormRegistrationAdminFormik();
 
   return (
     <S.FormRegistrationAdmin onSubmit={formik.handleSubmit}>
@@ -57,7 +57,7 @@ export const FormRegistrationAdmin: FC<FormRegistrationAdminType> = ({}) => {
           type={'tel'}
           placeholder={'Номер телефона'}
           formik={formik}
-          mask={"+7-999-999-99-99"}
+          mask={'+7-999-999-99-99'}
         />
 
         <S.Input

@@ -1,2 +1,2 @@
-import {ListNews} from './ui/List-news'
-export {ListNews}
+import { ListNews } from './ui/List-news';
+export { ListNews };

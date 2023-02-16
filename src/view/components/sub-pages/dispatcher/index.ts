@@ -1,2 +1,2 @@
-import {Dispatcher} from './ui/Dispatcher'
-export {Dispatcher}
+import { Dispatcher } from './ui/Dispatcher';
+export { Dispatcher };

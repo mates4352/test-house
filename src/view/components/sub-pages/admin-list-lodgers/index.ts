@@ -1,2 +1,2 @@
-import {AdminListLodgers} from './ui/Admin-list-lodgers'
-export {AdminListLodgers}
+import { AdminListLodgers } from './ui/Admin-list-lodgers';
+export { AdminListLodgers };

@@ -1,8 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const CompanyInfo = styled.div`
+const CompanyInfo = styled.div``;
 
-`
-
-
-export {CompanyInfo}
+export { CompanyInfo };

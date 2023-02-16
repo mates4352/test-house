@@ -1,7 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const NewsInfo = styled.section`
+const NewsInfo = styled.section``;
 
-`
-
-export {NewsInfo}
+export { NewsInfo };

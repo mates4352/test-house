@@ -1,2 +1,2 @@
-import {FormPersonalData} from './ui/Form-personal-data'
-export {FormPersonalData}
+import { FormPersonalData } from './ui/Form-personal-data';
+export { FormPersonalData };

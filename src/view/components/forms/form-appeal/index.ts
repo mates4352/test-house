@@ -1,2 +1,2 @@
-import {FormAppeal} from './ui/Form-appeal'
-export {FormAppeal}
+import { FormAppeal } from './ui/Form-appeal';
+export { FormAppeal };

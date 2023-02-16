@@ -1,18 +1,18 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Pagination-styles";
-import {SelectOptions} from "../../select-options";
-import {usePagination} from "../lib/hook/usePagination";
-import {AnimationShow} from "../../../animation/AnimationShow";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Pagination-styles';
+import { SelectOptions } from '../../select-options';
+import { usePagination } from '../lib/hook/usePagination';
+import { AnimationShow } from '../../../animation/AnimationShow';
 
 type PaginationType = {
-  maxPageNumber: number // Максимльное кол-во кнопок в pagination.
-  selectOptionValue: number // Начальное значение при отображение select.
-  arrayOptionSelect: Array<number> // Список опций для выбора кол-во чего либо.
-  pageCurrentCount: number // Общеее кол-во элементов массива.
-  currentPage: number // Текущая страница
-  pageCount: number // Кол-во отображаемых элементов на странице связано с select
-  onCallbackSelect?: () => void // Колбек при выборе option в select
-  onClickPaginationButton?: (value: number) => void
+  maxPageNumber: number; // Максимльное кол-во кнопок в pagination.
+  selectOptionValue: number; // Начальное значение при отображение select.
+  arrayOptionSelect: Array<number>; // Список опций для выбора кол-во чего либо.
+  pageCurrentCount: number; // Общеее кол-во элементов массива.
+  currentPage: number; // Текущая страница
+  pageCount: number; // Кол-во отображаемых элементов на странице связано с select
+  onCallbackSelect?: () => void; // Колбек при выборе option в select
+  onClickPaginationButton?: (value: number) => void;
 };
 
 export const Pagination: FC<PaginationType> = ({
@@ -35,7 +35,7 @@ export const Pagination: FC<PaginationType> = ({
     arraySelect,
     selectValue,
     onChangeArraySelect,
-    onChangeCurrentPage
+    onChangeCurrentPage,
   ] = usePagination(
     maxPageNumber,
     selectOptionValue,
@@ -44,41 +44,51 @@ export const Pagination: FC<PaginationType> = ({
     pageCount,
     onCallbackSelect,
     onClickPaginationButton,
-  )
+  );
 
   const AnimationOption = {
-    initial: {width: 0, scale: '0', opacity: 0},
-    animate: {width: 'auto', scale: '1', opacity: 1},
-    exit: {width: 0, scale: '0', opacity: 0},
-  }
+    initial: { width: 0, scale: '0', opacity: 0 },
+    animate: { width: 'auto', scale: '1', opacity: 1 },
+    exit: { width: 0, scale: '0', opacity: 0 },
+  };
 
   return (
     <S.Pagination {...props}>
       <S.Wrap>
         <S.PaginationButtonPrev
-          disabled={disabledButtonPrevNext("prev")}
+          disabled={disabledButtonPrevNext('prev')}
           onClick={onChangeMaxNumber('-', 1)}>
           Prev
         </S.PaginationButtonPrev>
 
-        <AnimationShow isAnimation={isPaginationButton('-')} variants={AnimationOption}>
-          <S.PaginationButton onClick={onChangeMaxNumber('-', maxPageNumber)}>
+        <AnimationShow
+          isAnimation={isPaginationButton('-')}
+          variants={AnimationOption}>
+          <S.PaginationButton
+            onClick={onChangeMaxNumber('-', maxPageNumber)}
+            margin={'0 20px'}>
             {maxNumber + -maxPageNumber}
           </S.PaginationButton>
         </AnimationShow>
 
         <S.List>
-          {arrayButton.map(button =>
+          {arrayButton.map(button => (
             <S.Item key={button}>
-              <S.PaginationButton currentPage={currentPage === button} onClick={onChangeCurrentPage(button)}>
+              <S.PaginationButton
+                currentPage={currentPage === button}
+                onClick={onChangeCurrentPage(button)}>
                 {button}
               </S.PaginationButton>
             </S.Item>
-          )}
+          ))}
         </S.List>
 
-        <AnimationShow isAnimation={isPaginationButton('+')} variants={AnimationOption}>
-          <S.PaginationButton onClick={onChangeMaxNumber('+', maxPageNumber)}>
+        <AnimationShow
+          isAnimation={isPaginationButton('+')}
+          variants={AnimationOption}>
+          <S.PaginationButton
+            onClick={onChangeMaxNumber('+', maxPageNumber)}
+            margin={'0 20px'}>
             {maxNumber + maxPageNumber}
           </S.PaginationButton>
         </AnimationShow>
@@ -93,7 +103,8 @@ export const Pagination: FC<PaginationType> = ({
       <SelectOptions
         selectValue={selectValue}
         arrayOptions={arraySelect}
-        onChooseOption={onChangeArraySelect}/>
+        onChooseOption={onChangeArraySelect}
+      />
     </S.Pagination>
   );
 };

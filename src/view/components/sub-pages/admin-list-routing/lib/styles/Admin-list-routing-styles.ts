@@ -1,7 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const AdminListRouting = styled.div`
+const AdminListRouting = styled.div``;
 
-`
-
-export {AdminListRouting}
+export { AdminListRouting };

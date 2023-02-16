@@ -1,10 +1,7 @@
-import styled from "styled-components";
-import {CustomInput} from "../../../../actions/custom-input";
+import styled from 'styled-components';
+import { CustomInput } from '../../../../actions/custom-input';
 
-
-const FormChat = styled.form`
-
-`
+const FormChat = styled.form``;
 
 const Input = styled(CustomInput)`
   width: 100%;
@@ -13,6 +10,6 @@ const Input = styled(CustomInput)`
   border: none;
   box-shadow: 0 0 3px #a8a8a8;
   border-radius: unset;
-`
+`;
 
-export {FormChat, Input}
+export { FormChat, Input };

@@ -1,11 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const SelectContact = styled.div`
+const SelectContact = styled.div``;
 
-`
+const Button = styled.button``;
 
-const Button = styled.button`
-    
-`
-
-export {SelectContact, Button}
+export { SelectContact, Button };

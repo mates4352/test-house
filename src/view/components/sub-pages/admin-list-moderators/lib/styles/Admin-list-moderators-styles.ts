@@ -1,6 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const AdminListModerators = styled.div`
-
-`
-export {AdminListModerators}
+const AdminListModerators = styled.div``;
+export { AdminListModerators };

@@ -1,13 +1,11 @@
-import styled from "styled-components";
-import {ListNews} from "../../../../statics/list-news";
+import styled from 'styled-components';
+import { ListNews } from '../../../../statics/list-news';
 
-const AdminListNews = styled.div`
-  
-`
+const AdminListNews = styled.div``;
 
 const List = styled(ListNews)`
   margin-bottom: 32px;
-`
+`;
 
 const Button = styled.button`
   display: block;
@@ -20,6 +18,6 @@ const Button = styled.button`
   &:hover {
     background-color: #ffdb9c;
   }
-`
+`;
 
-export {AdminListNews, List, Button}
+export { AdminListNews, List, Button };

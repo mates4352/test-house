@@ -1,7 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AdminCreateNewsStyles = {
-  AdminCreateNews: styled.div`
-  
-  `,
-}
+  AdminCreateNews: styled.div``,
+};

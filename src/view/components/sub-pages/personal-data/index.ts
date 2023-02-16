@@ -1,2 +1,2 @@
-import {PersonalData} from './ui/Personal-data'
-export {PersonalData}
+import { PersonalData } from './ui/Personal-data';
+export { PersonalData };

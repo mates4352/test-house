@@ -1,10 +1,7 @@
-import {useEffect} from "react";
+import { useEffect } from 'react';
 
 export const useOrder = () => {
+  useEffect(() => {}, []);
 
-  useEffect(() => {
-
-  }, [])
-
-  return []
-}
+  return [];
+};

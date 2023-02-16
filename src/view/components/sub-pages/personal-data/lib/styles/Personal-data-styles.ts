@@ -1,7 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const PersonalData = styled.section`
+const PersonalData = styled.section``;
 
-`
-
-export {PersonalData}
+export { PersonalData };

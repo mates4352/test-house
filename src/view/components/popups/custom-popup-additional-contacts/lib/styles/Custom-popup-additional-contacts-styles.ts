@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const CustomPopupAdditionalContacts = styled.div`
   width: max-content;
@@ -7,18 +7,16 @@ const CustomPopupAdditionalContacts = styled.div`
   border-radius: 12px;
   box-shadow: 0 0 3px #999;
   padding: 12px 8px;
-`
+`;
 
 const List = styled.ul`
   display: grid;
   grid-auto-rows: minmax(min-content, max-content);
   row-gap: 12px;
   margin-bottom: 8px;
-`
+`;
 
-const Item = styled.li`
-
-`
+const Item = styled.li``;
 
 const Plus = styled.button`
   display: flex;
@@ -30,6 +28,6 @@ const Plus = styled.button`
   font-size: 18px;
   border: 1px solid darkslategray;
   border-radius: 50%;
-`
+`;
 
-export {CustomPopupAdditionalContacts, List, Plus, Item}
+export { CustomPopupAdditionalContacts, List, Plus, Item };

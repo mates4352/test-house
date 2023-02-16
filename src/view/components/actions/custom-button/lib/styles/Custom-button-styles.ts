@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const CustomButton = styled.button<any>`
   display: flex;
@@ -17,5 +17,5 @@ const CustomButton = styled.button<any>`
   &:disabled:hover {
     background-color: aliceblue;
   }
-`
-export {CustomButton}
+`;
+export { CustomButton };

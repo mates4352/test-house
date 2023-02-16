@@ -1,11 +1,10 @@
-import styled, {css} from "styled-components";
+import styled, { css } from 'styled-components';
 
 type MessageType = {
-  isUserAdmin: 'user' | 'admin'
-}
+  isUserAdmin: 'user' | 'admin';
+};
 
-const Chat = styled.section`
-`
+const Chat = styled.section``;
 
 const Header = styled.header`
   display: flex;
@@ -14,19 +13,19 @@ const Header = styled.header`
   padding: 18px;
 
   box-shadow: 0 1px 3px #afafaf;
-`
+`;
 
 const Title = styled.h2`
   font-size: 20px;
-`
+`;
 
 const User = styled.div`
   font-size: 20px;
-`
+`;
 
 const Admin = styled.div`
   font-size: 20px;
-`
+`;
 
 const Content = styled.ul`
   width: 99%;
@@ -52,32 +51,36 @@ const Content = styled.ul`
       background-color: #6187ff;
     }
   }
-`
+`;
 
 const Item = styled.li`
-    display: flex;
-    margin-bottom: 24px;
+  display: flex;
+  margin-bottom: 24px;
 
-    &:last-of-type {
-      margin-bottom: unset;
-    }
-  `
+  &:last-of-type {
+    margin-bottom: unset;
+  }
+`;
 
 const Message = styled.article<MessageType>`
   max-width: 80%;
   padding: 12px;
   border-radius: 12px;
 
-  ${props => props.isUserAdmin === 'user' && css`
-    justify-content: flex-start;
-    background-color: #76caff;
-  `}
+  ${props =>
+    props.isUserAdmin === 'user' &&
+    css`
+      justify-content: flex-start;
+      background-color: #76caff;
+    `}
 
-  ${props => props.isUserAdmin === 'admin' && css`
-    justify-content: flex-end;
-    margin-left: auto;
-    background-color: #acbaff;
-  `}
-`
+  ${props =>
+    props.isUserAdmin === 'admin' &&
+    css`
+      justify-content: flex-end;
+      margin-left: auto;
+      background-color: #acbaff;
+    `}
+`;
 
-export {Message, Item, Content, Header, Title, User, Chat, Admin}
+export { Message, Item, Content, Header, Title, User, Chat, Admin };

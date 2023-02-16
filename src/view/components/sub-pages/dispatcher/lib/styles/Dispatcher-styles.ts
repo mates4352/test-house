@@ -1,7 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Dispatcher = styled.div`
+const Dispatcher = styled.div``;
 
-`
-
-export {Dispatcher}
+export { Dispatcher };

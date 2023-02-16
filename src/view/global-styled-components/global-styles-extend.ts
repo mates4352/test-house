@@ -1,3 +1,1 @@
-export const extend = {
-
-}
+export const extend = {};

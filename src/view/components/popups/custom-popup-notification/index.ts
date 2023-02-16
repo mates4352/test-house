@@ -1,2 +1,2 @@
-import {CustomPopupNotification} from './ui/Custom-popup-notification'
-export {CustomPopupNotification}
+import { CustomPopupNotification } from './ui/Custom-popup-notification';
+export { CustomPopupNotification };

@@ -1,2 +1,2 @@
-import {PersonalCabinet} from './ui/Personal-cabinet'
-export {PersonalCabinet}
+import { PersonalCabinet } from './ui/Personal-cabinet';
+export { PersonalCabinet };

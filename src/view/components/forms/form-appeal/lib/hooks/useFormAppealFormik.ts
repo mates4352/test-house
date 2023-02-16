@@ -1,5 +1,5 @@
-import {useFormik} from "formik";
-import {ValidationAppealSchema} from "../../../../../../core/utils/helpers/validates/validation-appeal-schema";
+import { useFormik } from 'formik';
+import { ValidationAppealSchema } from '../../../../../../core/utils/helpers/validates/validation-appeal-schema';
 
 export const useFormAppealFormik = () => {
   const formik = useFormik({
@@ -10,10 +10,10 @@ export const useFormAppealFormik = () => {
     validationSchema: ValidationAppealSchema,
 
     onSubmit: values => {
-      console.log(values)
+      console.log(values);
       formik.resetForm();
     },
   });
 
-  return [formik]
-}
+  return [formik];
+};

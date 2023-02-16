@@ -1,2 +1,2 @@
-import {CustomButton} from './ui/Custom-button'
-export {CustomButton}
+import { CustomButton } from './ui/Custom-button';
+export { CustomButton };

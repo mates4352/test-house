@@ -1,5 +1,5 @@
-import {useFormik} from "formik";
-import {ValidationPersonalDataSchema} from "../../../../../../core/utils/helpers/validates/validation-personal-data";
+import { useFormik } from 'formik';
+import { ValidationPersonalDataSchema } from '../../../../../../core/utils/helpers/validates/validation-personal-data';
 
 export const useFormPersonalDataFormik = () => {
   const formik = useFormik({
@@ -19,10 +19,10 @@ export const useFormPersonalDataFormik = () => {
     validationSchema: ValidationPersonalDataSchema,
 
     onSubmit: values => {
-      console.log(values)
+      console.log(values);
       formik.resetForm();
     },
   });
 
-  return [formik]
-}
+  return [formik];
+};

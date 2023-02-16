@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Header-styles";
-import {MenuDesktop} from "../../menu-desktop";
-import {useHeader} from "../lib/hooks/useHeader";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Header-styles';
+import { MenuDesktop } from '../../menu-desktop';
+import { useHeader } from '../lib/hooks/useHeader';
 
 type HeaderType = {};
 
@@ -12,30 +12,32 @@ export const Header: FC<HeaderType> = ({}) => {
     isLinkCabinet,
     isPopupNotification,
     onChangeLinkCabinet,
-    onChangePopupNotification] = useHeader()
+    onChangePopupNotification,
+  ] = useHeader();
 
   return (
     <S.Header>
       <S.HeaderContainer>
-        <MenuDesktop/>
+        <MenuDesktop />
 
         <S.Wrap>
           <S.Notification>
-            <S.NotificationButton onClick={onChangePopupNotification(!isPopupNotification)}/>
+            <S.NotificationButton
+              onClick={onChangePopupNotification(!isPopupNotification)}
+            />
 
-            {isPopupNotification &&
-                <S.PopupNotification ref={refPopupNotification}/>
-            }
+            {isPopupNotification && (
+              <S.PopupNotification ref={refPopupNotification} />
+            )}
           </S.Notification>
 
           <S.PersonalCabinet>
-            <S.PersonalCabinetButton onClick={onChangeLinkCabinet(!isLinkCabinet)}>
+            <S.PersonalCabinetButton
+              onClick={onChangeLinkCabinet(!isLinkCabinet)}>
               Личный кабинет
             </S.PersonalCabinetButton>
 
-            {isLinkCabinet &&
-                <S.PopupUser ref={refPopupUser}/>
-            }
+            {isLinkCabinet && <S.PopupUser ref={refPopupUser} />}
           </S.PersonalCabinet>
         </S.Wrap>
       </S.HeaderContainer>

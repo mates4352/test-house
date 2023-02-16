@@ -1,12 +1,12 @@
-import React, {FC} from 'react';
-import  * as  S from  './../lib/styles/Link-news-styles'
+import React, { FC } from 'react';
+import * as S from './../lib/styles/Link-news-styles';
 
 type LinkNewsType = {
-  srcImage: string
-  previewText: string
-  id: string
-  link: string
-  admin?: boolean
+  srcImage: string;
+  previewText: string;
+  id: string;
+  link: string;
+  admin?: boolean;
 };
 
 export const LinkNews: FC<LinkNewsType> = ({
@@ -17,9 +17,10 @@ export const LinkNews: FC<LinkNewsType> = ({
   admin,
   ...props
 }) => {
-
   return (
-    <S.LinkNews {...props} to={link+ `/${id}`}>
+    <S.LinkNews
+      {...props}
+      to={link + `/${id}`}>
       {!admin && <S.PreviewText>{previewText}</S.PreviewText>}
       {admin && <S.AdminPreviewText>Редактировать</S.AdminPreviewText>}
     </S.LinkNews>

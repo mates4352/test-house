@@ -1,9 +1,9 @@
-import React, {FC, ReactNode} from 'react';
-import * as S from "../lib/styles/Wrapper-input-label-styles";
+import React, { FC, ReactNode } from 'react';
+import * as S from '../lib/styles/Wrapper-input-label-styles';
 
 type WrapperInputLabelType = {
-  label: string
-  children: ReactNode
+  label: string;
+  children: ReactNode;
 };
 
 export const WrapperInputLabel: FC<WrapperInputLabelType> = ({
@@ -11,7 +11,6 @@ export const WrapperInputLabel: FC<WrapperInputLabelType> = ({
   children,
   ...props
 }) => {
-
   return (
     <S.WrapperInputLabel {...props}>
       <S.Label>{label}</S.Label>

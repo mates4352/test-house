@@ -1,16 +1,13 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Auth-styles";
-import {Outlet} from "react-router-dom";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Auth-styles';
+import { Outlet } from 'react-router-dom';
 
-type AuthType = {
-
-};
+type AuthType = {};
 
 export const Auth: FC<AuthType> = ({}) => {
-
   return (
     <S.Auth>
-      <Outlet/>
+      <Outlet />
     </S.Auth>
   );
 };

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const LinkNews = styled(Link)`
   position: relative;
@@ -13,7 +13,7 @@ const LinkNews = styled(Link)`
   &:hover {
     background-color: #5a5aff;
   }
-`
+`;
 
 const PreviewText = styled.p`
   position: absolute;
@@ -27,7 +27,7 @@ const PreviewText = styled.p`
   ${LinkNews}:hover & {
     transform: translateY(0);
   }
-`
+`;
 
 const AdminPreviewText = styled.p`
   position: absolute;
@@ -44,6 +44,6 @@ const AdminPreviewText = styled.p`
     transform: translate(-50%, -50%) scale(1.15);
     opacity: 1;
   }
-`
+`;
 
-export {LinkNews, PreviewText, AdminPreviewText}
+export { LinkNews, PreviewText, AdminPreviewText };

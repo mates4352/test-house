@@ -1,15 +1,13 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const ListNews = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-`
+`;
 
-const Item = styled.li`
-
-`
+const Item = styled.li``;
 
 const LinkCreateNews = styled(Link)`
   display: flex;
@@ -23,6 +21,6 @@ const LinkCreateNews = styled(Link)`
   &:hover {
     border: 3px dashed #999;
   }
-`
+`;
 
-export {ListNews, Item, LinkCreateNews}
+export { ListNews, Item, LinkCreateNews };

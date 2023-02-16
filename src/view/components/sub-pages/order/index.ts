@@ -1,2 +1,2 @@
-import {Order} from './ui/Order'
-export {Order}
+import { Order } from './ui/Order';
+export { Order };

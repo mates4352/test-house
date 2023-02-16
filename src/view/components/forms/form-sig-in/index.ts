@@ -1,2 +1,2 @@
-import {FormSigIn} from './ui/Form-sig-in'
-export {FormSigIn}
+import { FormSigIn } from './ui/Form-sig-in';
+export { FormSigIn };

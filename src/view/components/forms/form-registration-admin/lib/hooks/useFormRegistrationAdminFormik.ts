@@ -1,12 +1,10 @@
-import {useFormik} from "formik";
-import {useNavigate} from "react-router-dom";
-import {
-  ValidationRegistrationAdminSchema
-} from "../../../../../../core/utils/helpers/validates/validation-registration-admin";
-import {LinkAuth} from "../../../../../../core/utils/enum/links/link-auth";
+import { useFormik } from 'formik';
+import { useNavigate } from 'react-router-dom';
+import { ValidationRegistrationAdminSchema } from '../../../../../../core/utils/helpers/validates/validation-registration-admin';
+import { LinkAuth } from '../../../../../../core/utils/enum/links/link-auth';
 
 export const useFormRegistrationAdminFormik = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       firstName: '',
@@ -23,11 +21,11 @@ export const useFormRegistrationAdminFormik = () => {
     validationSchema: ValidationRegistrationAdminSchema,
 
     onSubmit: values => {
-      console.log(values)
+      console.log(values);
       formik.resetForm();
-      navigate(LinkAuth.WELCOME)
+      navigate(LinkAuth.WELCOME);
     },
   });
 
-  return [formik]
-}
+  return [formik];
+};

@@ -1,2 +1,2 @@
-import {ListLinks} from './ui/List-links'
-export {ListLinks}
+import { ListLinks } from './ui/List-links';
+export { ListLinks };

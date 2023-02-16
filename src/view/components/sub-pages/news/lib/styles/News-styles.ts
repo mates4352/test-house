@@ -1,20 +1,18 @@
-import styled from "styled-components";
-import {ListNews} from "../../../../statics/list-news";
+import styled from 'styled-components';
+import { ListNews } from '../../../../statics/list-news';
 
-const News = styled.section`
-
-`
+const News = styled.section``;
 
 const Title = styled.h2`
   font-size: 32px;
   text-transform: uppercase;
   margin-bottom: 48px;
   text-align: center;
-`
+`;
 
 const List = styled(ListNews)`
   margin-bottom: 32px;
-`
+`;
 
 const Button = styled.button`
   display: block;
@@ -27,6 +25,6 @@ const Button = styled.button`
   &:hover {
     background-color: #ffdb9c;
   }
-`
+`;
 
-export {News, Title, List, Button}
+export { News, Title, List, Button };

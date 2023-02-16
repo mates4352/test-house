@@ -1,21 +1,22 @@
-import {useFormik} from "formik";
-import {
-  ValidationAdditionalContactSchema
-} from "../../../../../../core/utils/helpers/validates/validation-schema-additional-contact";
+import { useFormik } from 'formik';
+import { ValidationAdditionalContactSchema } from '../../../../../../core/utils/helpers/validates/validation-schema-additional-contact';
 
-export const useFormAdditionalContactFormik = (phone: string, onShowInput: () => void) => {
+export const useFormAdditionalContactFormik = (
+  phone: string,
+  onShowInput: () => void,
+) => {
   const formik = useFormik({
     initialValues: {
-      phone
+      phone,
     },
 
     validationSchema: ValidationAdditionalContactSchema,
 
     onSubmit: values => {
-      console.log(values)
-      onShowInput()
+      console.log(values);
+      onShowInput();
     },
   });
 
-  return [formik] as const
-}
+  return [formik] as const;
+};

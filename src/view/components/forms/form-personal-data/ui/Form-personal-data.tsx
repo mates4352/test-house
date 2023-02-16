@@ -1,15 +1,13 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styled/Form-personal-data-styles";
-import {useFormPersonalDataFormik} from "../lib/hooks/useFormPersonalDataFormik";
-import {WrapperInputLabel} from "../../../wrappers/wrapper-input-label";
-import {SelectContact} from "../../../actions/select-contact";
+import React, { FC } from 'react';
+import * as S from '../lib/styled/Form-personal-data-styles';
+import { useFormPersonalDataFormik } from '../lib/hooks/useFormPersonalDataFormik';
+import { WrapperInputLabel } from '../../../wrappers/wrapper-input-label';
+import { SelectContact } from '../../../actions/select-contact';
 
-type FormPersonalDataType = {
-
-};
+type FormPersonalDataType = {};
 
 export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
-  const [formik] = useFormPersonalDataFormik()
+  const [formik] = useFormPersonalDataFormik();
 
   return (
     <S.PersonalData>
@@ -73,7 +71,6 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
               {...formik.getFieldProps('apartment')}
               {...formik.getFieldMeta('apartment')}
             />
-
           </WrapperInputLabel>
 
           <WrapperInputLabel label={'Емайл'}>
@@ -91,7 +88,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
               type={'tel'}
               placeholder={'Номер телефона'}
               formik={formik}
-              mask={"+7-999-999-99-99"}
+              mask={'+7-999-999-99-99'}
             />
           </WrapperInputLabel>
 
@@ -116,7 +113,6 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
           </WrapperInputLabel>
         </S.Wrap>
 
-
         <S.Button
           type={'submit'}
           disabled={!formik.isValid}>
@@ -124,7 +120,7 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
         </S.Button>
       </S.FormPersonalData>
 
-      <SelectContact/>
+      <SelectContact />
     </S.PersonalData>
   );
 };

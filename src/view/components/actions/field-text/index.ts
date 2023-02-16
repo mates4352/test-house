@@ -1,2 +1,2 @@
-import {FieldText} from './ui/Field-text'
-export {FieldText}
+import { FieldText } from './ui/Field-text';
+export { FieldText };

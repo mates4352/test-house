@@ -1,2 +1,2 @@
-import {Appeal} from './ui/Appeal'
-export {Appeal}
+import { Appeal } from './ui/Appeal';
+export { Appeal };

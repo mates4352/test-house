@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { TableOrders } from '../../../../statics/table-orders';
 
-const ListOrders = styled.div`
-`
+const ListOrders = styled.div``;
 
-export {ListOrders}
+const Table = styled(TableOrders)`
+  margin-bottom: 48px;
+`;
+
+export { ListOrders, Table };

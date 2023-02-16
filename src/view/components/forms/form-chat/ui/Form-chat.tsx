@@ -1,10 +1,8 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Form-chat-styles";
-import {useFormChatFormik} from "../lib/hooks/userFormChatFormik";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Form-chat-styles';
+import { useFormChatFormik } from '../lib/hooks/userFormChatFormik';
 
-type FormChatType = {
-
-};
+type FormChatType = {};
 
 export const FormChat: FC<FormChatType> = ({}) => {
   const [formik] = useFormChatFormik();

@@ -1,14 +1,12 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
-import {TitleAuth} from "../../../../statics/titleAuth";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { TitleAuth } from '../../../../statics/titleAuth';
 
-const Welcome = styled.div`
-
-`
+const Welcome = styled.div``;
 
 const Title = styled(TitleAuth)`
   margin-bottom: 32px;
-`
+`;
 
 const Wrap = styled.div`
   display: grid;
@@ -16,7 +14,7 @@ const Wrap = styled.div`
   column-gap: 24px;
   width: 100%;
   max-width: 800px;
-`
+`;
 
 const LinkElement = styled(Link)`
   display: flex;
@@ -32,6 +30,6 @@ const LinkElement = styled(Link)`
   &:hover {
     background-color: #d7ecfd;
   }
-`
+`;
 
-export {Welcome, Title, Wrap, LinkElement}
+export { Welcome, Title, Wrap, LinkElement };

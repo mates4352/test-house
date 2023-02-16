@@ -1,2 +1,2 @@
-import {Auth} from './ui/Auth'
-export {Auth}
+import { Auth } from './ui/Auth';
+export { Auth };

@@ -1,21 +1,16 @@
-import {ActionReducerMapBuilder, createSlice} from "@reduxjs/toolkit";
-import {NoInfer} from "react-redux";
+import { ActionReducerMapBuilder, createSlice } from '@reduxjs/toolkit';
+import { NoInfer } from 'react-redux';
 
-export interface AppStateType {
-}
+export interface AppStateType {}
 
-const initialState: AppStateType = {
-
-}
+const initialState: AppStateType = {};
 
 const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {},
-  extraReducers: (builder: ActionReducerMapBuilder<NoInfer<any>>) => {
+  extraReducers: (builder: ActionReducerMapBuilder<NoInfer<any>>) => {},
+});
 
-  }
-})
-
-const {reducer} = appSlice;
+const { reducer } = appSlice;
 export const appReducer = reducer;

@@ -1,18 +1,10 @@
-import React, {FC, ReactNode} from 'react';
-import * as S from "../lib/styles/Title-auth-styles";
+import React, { FC, ReactNode } from 'react';
+import * as S from '../lib/styles/Title-auth-styles';
 
 type TitleAuthType = {
-  children: ReactNode
+  children: ReactNode;
 };
 
-export const TitleAuth: FC<TitleAuthType> = ({
-  children,
-  ...props
-}) => {
-
-  return (
-    <S.TitleAuth {...props}>
-      {children}
-    </S.TitleAuth>
-  );
+export const TitleAuth: FC<TitleAuthType> = ({ children, ...props }) => {
+  return <S.TitleAuth {...props}>{children}</S.TitleAuth>;
 };

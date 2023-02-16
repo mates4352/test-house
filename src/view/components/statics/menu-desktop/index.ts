@@ -1,2 +1,2 @@
-import {MenuDesktop} from './ui/Menu-desktop'
-export {MenuDesktop}
+import { MenuDesktop } from './ui/Menu-desktop';
+export { MenuDesktop };

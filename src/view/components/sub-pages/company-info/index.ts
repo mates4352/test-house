@@ -1,2 +1,2 @@
-import {CompanyInfo} from './ui/Company-info'
-export {CompanyInfo}
+import { CompanyInfo } from './ui/Company-info';
+export { CompanyInfo };

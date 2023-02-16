@@ -1,9 +1,7 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const LinkCompany = styled(Link)`
-
-`
+const LinkCompany = styled(Link)``;
 
 const Wrap = styled.div`
   display: grid;
@@ -11,21 +9,21 @@ const Wrap = styled.div`
   align-items: center;
   column-gap: 24px;
   transition: transform 200ms ease;
-  
+
   &:hover {
     transform: scale(1.02);
   }
-`
+`;
 
 const Image = styled.div`
   width: 120px;
   height: 120px;
   border-radius: 50%;
   background-color: #8989ff;
-`
+`;
 
 const Text = styled.p`
   font-size: 20px;
-`
+`;
 
-export {LinkCompany, Wrap, Image, Text}
+export { LinkCompany, Wrap, Image, Text };

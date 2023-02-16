@@ -1,12 +1,11 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 type BlockType = {
-  bg: string
-}
+  bg: string;
+};
 
-const Home = styled.div`
-`
+const Home = styled.div``;
 
 const Block = styled(Link)<BlockType>`
   display: flex;
@@ -22,6 +21,6 @@ const Block = styled(Link)<BlockType>`
   &:last-of-type {
     margin-bottom: unset;
   }
-`
+`;
 
-export {Home, Block}
+export { Home, Block };

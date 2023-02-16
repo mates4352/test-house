@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const SelectOptions = styled.div`
   position: relative;
-`
+`;
 
 const SelectButtonOpen = styled.button`
   width: 50px;
@@ -17,16 +17,15 @@ const SelectButtonOpen = styled.button`
     background-color: #d6dcff;
     color: #020b41;
   }
-`
+`;
 
 const Select = styled.ul`
   position: absolute;
   top: 30px;
   left: 0;
-`
+`;
 
-const SelectItem = styled.li`
-`
+const SelectItem = styled.li``;
 const SelectButton = styled.button`
   width: 50px;
   height: 30px;
@@ -40,6 +39,6 @@ const SelectButton = styled.button`
     background-color: #d6dcff;
     color: #020b41;
   }
-`
+`;
 
-export {SelectOptions, SelectButtonOpen, Select, SelectItem, SelectButton}
+export { SelectOptions, SelectButtonOpen, Select, SelectItem, SelectButton };

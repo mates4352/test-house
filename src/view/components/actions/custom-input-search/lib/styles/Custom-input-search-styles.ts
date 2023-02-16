@@ -1,7 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const CustomInputSearch = styled.input<any>`
+const CustomInputSearch = styled.input<any>``;
 
-`
-
-export {CustomInputSearch}
+export { CustomInputSearch };

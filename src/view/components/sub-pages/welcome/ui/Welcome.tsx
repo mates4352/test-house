@@ -1,13 +1,10 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Welcome-styles";
-import {LinkMain} from "../../../../../core/utils/enum/links/link-main";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Welcome-styles';
+import { LinkMain } from '../../../../../core/utils/enum/links/link-main';
 
-type WelcomeType = {
-
-};
+type WelcomeType = {};
 
 export const Welcome: FC<WelcomeType> = ({}) => {
-
   return (
     <S.Welcome>
       <S.Title>Добро пожаловать!</S.Title>

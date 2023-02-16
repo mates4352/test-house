@@ -1,2 +1,2 @@
-import {Footer} from './ui/Footer'
-export {Footer}
+import { Footer } from './ui/Footer';
+export { Footer };

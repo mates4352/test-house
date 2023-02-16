@@ -1,11 +1,13 @@
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from 'react';
 
 export const useChat = () => {
-  const refContent = useRef<any>(null)
+  const refContent = useRef<any>(null);
 
   useEffect(() => {
-    refContent.current.scrollTop = Math.ceil(refContent.current.scrollHeight - refContent.current.clientHeight);
-  }, [])
+    refContent.current.scrollTop = Math.ceil(
+      refContent.current.scrollHeight - refContent.current.clientHeight,
+    );
+  }, []);
 
-  return [refContent]
-}
+  return [refContent];
+};

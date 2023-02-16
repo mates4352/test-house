@@ -1,2 +1,2 @@
-import {FormChat} from './ui/Form-chat'
-export {FormChat}
+import { FormChat } from './ui/Form-chat';
+export { FormChat };

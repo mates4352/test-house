@@ -1,14 +1,12 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Form-appeal-styles";
-import {FieldText} from "../../../actions/field-text";
-import {useFormAppealFormik} from "../lib/hooks/useFormAppealFormik";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Form-appeal-styles';
+import { FieldText } from '../../../actions/field-text';
+import { useFormAppealFormik } from '../lib/hooks/useFormAppealFormik';
 
-type FormAppealType = {
-
-};
+type FormAppealType = {};
 
 export const FormAppeal: FC<FormAppealType> = ({}) => {
-  const [formik] = useFormAppealFormik()
+  const [formik] = useFormAppealFormik();
 
   return (
     <S.FormAppeal onSubmit={formik.handleSubmit}>

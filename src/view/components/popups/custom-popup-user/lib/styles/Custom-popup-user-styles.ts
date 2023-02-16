@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {NavLink} from "react-router-dom";
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const CustomPopupUser = styled.div`
   min-width: 120px;
@@ -8,17 +8,15 @@ const CustomPopupUser = styled.div`
   background-color: #fff;
   border: 1px solid bisque;
   border-radius: 8px;
-`
+`;
 
 const List = styled.ul`
   display: grid;
   grid-auto-rows: minmax(min-content, max-content);
   row-gap: 12px;
-`
+`;
 
-const Item = styled.li`
-
-`
+const Item = styled.li``;
 
 const LinkElement = styled(NavLink)`
   font-size: 20px;
@@ -31,6 +29,6 @@ const LinkElement = styled(NavLink)`
   &.active {
     color: #6780ff;
   }
-`
+`;
 
-export {List, Item, LinkElement, CustomPopupUser}
+export { List, Item, LinkElement, CustomPopupUser };

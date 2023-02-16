@@ -1,2 +1,2 @@
-import {ListOrders} from './ui/List-orders'
-export {ListOrders}
+import { ListOrders } from './ui/List-orders';
+export { ListOrders };

@@ -1,2 +1,2 @@
-import {LinkCompany} from './ui/Link-company'
-export {LinkCompany}
+import { LinkCompany } from './ui/Link-company';
+export { LinkCompany };

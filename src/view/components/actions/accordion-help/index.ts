@@ -1,2 +1,2 @@
-import {AccordionHelp} from './ui/Accordion-help'
-export {AccordionHelp}
+import { AccordionHelp } from './ui/Accordion-help';
+export { AccordionHelp };

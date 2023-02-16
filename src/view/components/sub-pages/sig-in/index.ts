@@ -1,2 +1,2 @@
-import {SigIn} from './ui/Sig-in'
-export {SigIn}
+import { SigIn } from './ui/Sig-in';
+export { SigIn };

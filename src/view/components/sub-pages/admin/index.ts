@@ -1,2 +1,2 @@
-import {Admin} from './ui/Admin'
-export {Admin}
+import { Admin } from './ui/Admin';
+export { Admin };

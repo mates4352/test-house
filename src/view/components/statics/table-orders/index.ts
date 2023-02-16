@@ -1,2 +1,2 @@
-import {TableOrders} from './ui/Table-orders'
-export {TableOrders}
+import { TableOrders } from './ui/Table-orders';
+export { TableOrders };

@@ -1,16 +1,20 @@
-import React, {FC} from 'react';
-import * as S from "../lib/styles/Admin-list-orders-styles";
-import {Pagination} from "../../../actions/pagination";
-import {useAdminListOrders} from "../lib/hooks/useAdminListOrders";
+import React, { FC } from 'react';
+import * as S from '../lib/styles/Admin-list-orders-styles';
+import { Pagination } from '../../../actions/pagination';
+import { useAdminListOrders } from '../lib/hooks/useAdminListOrders';
 
 type AdminListOrdersType = {};
 
 export const AdminListOrders: FC<AdminListOrdersType> = ({}) => {
-  const [arrayOrders, onDeleteOrder, onSearchTableStatus, onChangeStatusOrder] = useAdminListOrders()
+  const [arrayOrders, onDeleteOrder, onSearchTableStatus, onChangeStatusOrder] =
+    useAdminListOrders();
 
   return (
     <S.AdminListOrders>
-      <S.InputSearch onSearchInputValue={onSearchTableStatus} placeholder={'Поиск по статусу'}/>
+      <S.InputSearch
+        onSearchInputValue={onSearchTableStatus}
+        placeholder={'Поиск по статусу'}
+      />
       <S.Table
         admin
         arrayDataOrders={arrayOrders}
@@ -23,7 +27,7 @@ export const AdminListOrders: FC<AdminListOrdersType> = ({}) => {
         arrayOptionSelect={[10, 15, 20]}
         pageCount={8}
         currentPage={1}
-        pageCurrentCount={100}
+        pageCurrentCount={190}
         maxPageNumber={5}
       />
     </S.AdminListOrders>

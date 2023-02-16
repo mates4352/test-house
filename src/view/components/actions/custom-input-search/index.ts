@@ -1,2 +1,2 @@
-import {CustomInputSearch} from './ui/Custom-input-search'
-export {CustomInputSearch}
+import { CustomInputSearch } from './ui/Custom-input-search';
+export { CustomInputSearch };
