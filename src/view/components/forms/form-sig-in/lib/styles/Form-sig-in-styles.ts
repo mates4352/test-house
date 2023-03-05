@@ -5,14 +5,13 @@ import { CustomButton } from '../../../../actions/custom-button';
 const FormSigIn = styled.form``;
 
 const InputPhone = styled(CustomInputMask)`
-  max-width: 250px;
-  height: 40px;
-  font-size: 20px;
+  width: 400px;
+  height: 48px;
 `;
 
 const Button = styled(CustomButton)`
-  width: 110px;
-  height: 40px;
+  width: 208px;
+  height: 48px;
   margin: 20px auto 0 auto;
 `;
 

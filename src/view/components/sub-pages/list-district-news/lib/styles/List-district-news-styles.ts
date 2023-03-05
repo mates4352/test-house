@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ListNews } from '../../../../statics/list-news';
+import { Pagination } from '../../../../actions/pagination';
 
 const ListDistrictNews = styled.div``;
 const List = styled(ListNews)`
@@ -19,4 +20,8 @@ const Button = styled.button`
   }
 `;
 
-export { ListDistrictNews, List, Button };
+const PaginationDistrictNews = styled(Pagination)`
+  justify-content: center;
+`;
+
+export { ListDistrictNews, List, PaginationDistrictNews, Button };

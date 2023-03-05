@@ -1,6 +1,6 @@
 export enum LinkList {
-  LIST_ORDERS = '/Main/Admin/List/orders',
-  LIST_MODERATORS = '/Main/Admin/List/moderators',
+  LIST_MAIN = '/Main/Admin/List/Main',
+  LIST_MODERATORS = '/Main/Admin/List/Moderators',
   LIST_NEWS = '/Main/Admin/List/News',
-  LIST_LODGERS = '/Main/Admin/List/lodgers',
+  LIST_Person = '/Main/Admin/List/Person',
 }

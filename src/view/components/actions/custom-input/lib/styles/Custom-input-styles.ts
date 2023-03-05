@@ -3,40 +3,53 @@ import styled, { css } from 'styled-components';
 type CustomInputStylesType = any & {
   isError?: boolean;
   isValid?: boolean;
+  isActive?: boolean;
 };
 
 const Wrap = styled.div`
   display: grid;
-  grid-auto-rows: minmax(min-content, max-content);
-  row-gap: 12px;
+  grid-auto-rows: var(--grid-min-max);
   width: 100%;
 `;
 
 const CustomInput = styled.input<CustomInputStylesType>`
   width: 100%;
   height: 100%;
-  padding: 4px 12px;
-  border-radius: 4px;
+  padding: 14px 12px;
+  font: var(--text-16);
+  color: var(--black);
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid var(--light-grey);
   transition: border 350ms ease;
-  border: 2px solid #a6d7ff;
 
+  ${props =>
+    props.isActive &&
+    css`
+      border: 1px solid var(--black);
+    `}
   ${props =>
     props.isError &&
     css`
-      border: 2px solid red;
+      border: 1px solid var(--error) !important;
     `}
   ${props =>
     props.isValid &&
     css`
-      border: 2px solid green;
+      border: 1px solid var(--success) !important;
     `}
-  &::placeholder {
-    font-size: 16px;
+  
+  &:disabled {
+    background-color: var(--cultured);
+    pointer-events: none;
   }
 
-  &:disabled {
-    opacity: 0.7;
-    border: 2px solid #e1e3ff;
+  &:hover {
+    border: 1px solid var(--black);
+  }
+
+  &::placeholder {
+    color: var(--silver);
   }
 `;
 

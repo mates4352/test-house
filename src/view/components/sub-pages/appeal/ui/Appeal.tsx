@@ -3,92 +3,80 @@ import * as S from '../lib/styles/Appeal-styles';
 import { AccordionHelp } from '../../../actions/accordion-help';
 import { FormAppeal } from '../../../forms/form-appeal';
 import * as G from '../../../../global-styled-components/global-styled-components';
+import { windowScroll } from '../../../../../core/utils/helpers/functions/windowScroll';
 
 type AppealType = {};
 
 export const Appeal: FC<AppealType> = ({}) => {
+  windowScroll();
   return (
     <S.Appeal>
       <G.Container>
+        <S.Title>Обращения</S.Title>
+
         <FormAppeal />
+
+        <S.Title>FAQ</S.Title>
 
         <S.List>
           <li>
-            <AccordionHelp question={'2 + 2'}>
+            <AccordionHelp
+              question={'Как оплатить услуги ЖКХ и где внести данные?'}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusantium amet architecto atque consectetur consequatur
-                consequuntur delectus distinctio enim eos esse est eveniet, ex
-                expedita fugiat impedit iste itaque laboriosam laborum, libero
-                minima nam necessitatibus neque non nostrum officia omnis optio
-                porro quis suscipit temporibus tenetur totam voluptatibus
-                voluptatum? Illum modi neque porro quisquam ratione. Delectus
-                earum eum impedit ipsum iste magni maxime minima nemo reiciendis
-                vero! Commodi ex iure laboriosam quo sunt voluptatibus!
-                Doloribus facilis in inventore provident ratione? Autem commodi
-                dolor dolorum ipsum itaque perspiciatis placeat quod reiciendis
-                saepe voluptates? Aliquid esse libero mollitia, repellendus sunt
-                tenetur ullam voluptatum.
+                Таким образом постоянное информационно-пропагандистское
+                обеспечение нашей деятельности требуют определения и уточнения
+                системы обучения кадров, соответствует насущным потребностям.
+                Таким образом новая модель организационной деятельности требуют
+                от нас анализа форм развития. С другой стороны реализация
+                намеченных плановых заданий требуют от нас анализа новых
+                предложений. Товарищи! дальнейшее развитие различных форм
+                деятельности позволяет оценить значение форм развития. Не
+                следует, однако забывать, что консультация с широким активом
+                способствует подготовки и реализации существенных финансовых и
+                административных условий. Таким образом начало повседневной
+                работы по формированию позиции требуют определения и уточнения
+                позиций, занимаемых участниками в отношении поставленных задач.
               </p>
             </AccordionHelp>
           </li>
 
           <li>
-            <AccordionHelp question={'2 + 2'}>
+            <AccordionHelp
+              question={'Оформить страховку, необходимые документы'}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusantium amet architecto atque consectetur consequatur
-                consequuntur delectus distinctio enim eos esse est eveniet, ex
-                expedita fugiat impedit iste itaque laboriosam laborum, libero
-                minima nam necessitatibus neque non nostrum officia omnis optio
-                porro quis suscipit temporibus tenetur totam voluptatibus
-                voluptatum? Illum modi neque porro quisquam ratione. Delectus
-                earum eum impedit ipsum iste magni maxime minima nemo reiciendis
-                vero! Commodi ex iure laboriosam quo sunt voluptatibus!
-                Doloribus facilis in inventore provident ratione? Autem commodi
-                dolor dolorum ipsum itaque perspiciatis placeat quod reiciendis
-                saepe voluptates? Aliquid esse libero mollitia, repellendus sunt
-                tenetur ullam voluptatum.
+                Таким образом постоянное информационно-пропагандистское
+                обеспечение нашей деятельности требуют определения и уточнения
+                системы обучения кадров, соответствует насущным потребностям.
+                Таким образом новая модель организационной деятельности требуют
+                от нас анализа форм развития. С другой стороны реализация
+                намеченных плановых заданий требуют от нас анализа новых
+                предложений. Товарищи! дальнейшее развитие различных форм
+                деятельности позволяет оценить значение форм развития. Не
+                следует, однако забывать, что консультация с широким активом
+                способствует подготовки и реализации существенных финансовых и
+                административных условий. Таким образом начало повседневной
+                работы по формированию позиции требуют определения и уточнения
+                позиций, занимаемых участниками в отношении поставленных задач.
               </p>
             </AccordionHelp>
           </li>
 
           <li>
-            <AccordionHelp question={'2 + 2'}>
+            <AccordionHelp question={'Как зарегистрироваться на портале?'}>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusantium amet architecto atque consectetur consequatur
-                consequuntur delectus distinctio enim eos esse est eveniet, ex
-                expedita fugiat impedit iste itaque laboriosam laborum, libero
-                minima nam necessitatibus neque non nostrum officia omnis optio
-                porro quis suscipit temporibus tenetur totam voluptatibus
-                voluptatum? Illum modi neque porro quisquam ratione. Delectus
-                earum eum impedit ipsum iste magni maxime minima nemo reiciendis
-                vero! Commodi ex iure laboriosam quo sunt voluptatibus!
-                Doloribus facilis in inventore provident ratione? Autem commodi
-                dolor dolorum ipsum itaque perspiciatis placeat quod reiciendis
-                saepe voluptates? Aliquid esse libero mollitia, repellendus sunt
-                tenetur ullam voluptatum.
-              </p>
-            </AccordionHelp>
-          </li>
-
-          <li>
-            <AccordionHelp question={'2 + 2'}>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Accusantium amet architecto atque consectetur consequatur
-                consequuntur delectus distinctio enim eos esse est eveniet, ex
-                expedita fugiat impedit iste itaque laboriosam laborum, libero
-                minima nam necessitatibus neque non nostrum officia omnis optio
-                porro quis suscipit temporibus tenetur totam voluptatibus
-                voluptatum? Illum modi neque porro quisquam ratione. Delectus
-                earum eum impedit ipsum iste magni maxime minima nemo reiciendis
-                vero! Commodi ex iure laboriosam quo sunt voluptatibus!
-                Doloribus facilis in inventore provident ratione? Autem commodi
-                dolor dolorum ipsum itaque perspiciatis placeat quod reiciendis
-                saepe voluptates? Aliquid esse libero mollitia, repellendus sunt
-                tenetur ullam voluptatum.
+                Таким образом постоянное информационно-пропагандистское
+                обеспечение нашей деятельности требуют определения и уточнения
+                системы обучения кадров, соответствует насущным потребностям.
+                Таким образом новая модель организационной деятельности требуют
+                от нас анализа форм развития. С другой стороны реализация
+                намеченных плановых заданий требуют от нас анализа новых
+                предложений. Товарищи! дальнейшее развитие различных форм
+                деятельности позволяет оценить значение форм развития. Не
+                следует, однако забывать, что консультация с широким активом
+                способствует подготовки и реализации существенных финансовых и
+                административных условий. Таким образом начало повседневной
+                работы по формированию позиции требуют определения и уточнения
+                позиций, занимаемых участниками в отношении поставленных задач.
               </p>
             </AccordionHelp>
           </li>

@@ -1,27 +1,48 @@
 import React, { FC, useEffect } from 'react';
 import * as S from '../lib/styles/Company-info-styles';
 import * as G from '../../../../global-styled-components/global-styled-components';
+import uuid from 'react-uuid';
+import { windowScroll } from '../../../../../core/utils/helpers/functions/windowScroll';
 
 type CompanyInfoType = {};
 
 export const CompanyInfo: FC<CompanyInfoType> = ({}) => {
-  useEffect(() => {}, []);
+  windowScroll();
+
+  const data = {
+    id: uuid(),
+    title: 'Установка, замена индивидуальных приборов учета воды',
+    array: [
+      {
+        id: uuid(),
+        title: 'Как оплатить услуги ЖКХ и где внести данные?',
+        text: 'Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Таким образом новая модель организационной деятельности требуют от нас анализа форм развития. С другой стороны реализация намеченных плановых заданий требуют от нас анализа новых предложений. Товарищи! дальнейшее развитие различных форм деятельности позволяет оценить значение форм развития. Не следует, однако забывать, что консультация с широким активом способствует подготовки и реализации существенных финансовых и административных условий. Таким образом начало повседневной работы по формированию позиции требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.',
+      },
+
+      {
+        id: uuid(),
+        title: 'Как оплатить услуги ЖКХ и где внести данные?',
+        text: 'Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности требуют определения и уточнения системы обучения кадров, соответствует насущным потребностям. Таким образом новая модель организационной деятельности требуют от нас анализа форм развития. С другой стороны реализация намеченных плановых заданий требуют от нас анализа новых предложений. Товарищи! дальнейшее развитие различных форм деятельности позволяет оценить значение форм развития. Не следует, однако забывать, что консультация с широким активом способствует подготовки и реализации существенных финансовых и административных условий. Таким образом начало повседневной работы по формированию позиции требуют определения и уточнения позиций, занимаемых участниками в отношении поставленных задач.',
+      },
+    ],
+  };
 
   return (
     <S.CompanyInfo>
       <G.Container>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut
-        delectus, dignissimos dolorum ducimus ipsum libero magni, maiores nulla
-        officia quam quas, qui quisquam suscipit veniam! Atque illum odio
-        possimus. Accusamus accusantium aut culpa delectus, dolor doloremque
-        doloribus ducimus eos ex exercitationem id illo mollitia nostrum, omnis
-        porro quae reiciendis reprehenderit sapiente. Animi asperiores
-        assumenda, culpa ducimus enim facilis, harum labore laudantium minus
-        molestiae natus necessitatibus officiis, possimus tempora tempore. Animi
-        cumque incidunt praesentium qui repellat temporibus. Aliquam atque
-        cupiditate dolorem doloremque impedit labore, maiores odio repudiandae
-        sed soluta! Amet cum deserunt ducimus iure, laudantium molestiae omnis
-        quam sint soluta!
+        <S.ButtonBack />
+
+        <S.Title>{data.title}</S.Title>
+
+        <S.List>
+          {data.array.map(el => (
+            <S.Item key={el.id}>
+              <S.SubTitle>{el.title}</S.SubTitle>
+
+              <S.Text>{el.text}</S.Text>
+            </S.Item>
+          ))}
+        </S.List>
       </G.Container>
     </S.CompanyInfo>
   );

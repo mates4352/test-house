@@ -1,15 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.eaf28d6b.css",
-    "main.js": "/static/js/main.fce79386.js",
+    "main.css": "/static/css/main.b59a7efe.css",
+    "main.js": "/static/js/main.98651a63.js",
     "static/js/787.c75cd820.chunk.js": "/static/js/787.c75cd820.chunk.js",
+    "static/media/SegoeUI-Regular.woff": "/static/media/SegoeUI-Regular.f9d072ec3d5c7d9956d2.woff",
+    "static/media/SegoeUI-SemiBold.woff": "/static/media/SegoeUI-SemiBold.abaaa98155d53c0b454c.woff",
+    "static/media/SegoeUI-Regular.woff2": "/static/media/SegoeUI-Regular.a8b8657ebede05f16bae.woff2",
+    "static/media/SegoeUI-SemiBold.woff2": "/static/media/SegoeUI-SemiBold.aaed3f515c66146622e7.woff2",
+    "static/media/article.png": "/static/media/article.59dd53583d83792297c7.png",
+    "static/media/logo.svg": "/static/media/logo.cbe33a219b4d0dffdb681030d1603b9f.svg",
+    "static/media/cheked-square.svg": "/static/media/cheked-square.1879c7d81992a7a673273a8f0f8a9be3.svg",
+    "static/media/union.svg": "/static/media/union.b9d6cee8842820c42a2c7f23ea1cf790.svg",
     "index.html": "/index.html",
-    "main.eaf28d6b.css.map": "/static/css/main.eaf28d6b.css.map",
-    "main.fce79386.js.map": "/static/js/main.fce79386.js.map",
+    "static/media/ava.svg": "/static/media/ava.eb9f651669f240e94b81d7cc73e7e8d0.svg",
+    "main.b59a7efe.css.map": "/static/css/main.b59a7efe.css.map",
+    "main.98651a63.js.map": "/static/js/main.98651a63.js.map",
     "787.c75cd820.chunk.js.map": "/static/js/787.c75cd820.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.eaf28d6b.css",
-    "static/js/main.fce79386.js"
+    "static/css/main.b59a7efe.css",
+    "static/js/main.98651a63.js"
   ]
 }

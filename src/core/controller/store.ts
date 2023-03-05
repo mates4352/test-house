@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { appReducer } from './slice/App-slice';
+import { popupSliceReducer } from './slice/Popup-slice';
 
 const rootReducer = combineReducers({
   appReducer: appReducer,
+  popupReducer: popupSliceReducer,
 });
 
 export const store = configureStore({

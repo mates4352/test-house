@@ -5,7 +5,7 @@ const FormAdditionalContact = styled.form``;
 
 const Wrap = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, max-content));
+  grid-template-columns: repeat(2, var(--grid-min-max));
   align-items: center;
   column-gap: 24px;
 `;

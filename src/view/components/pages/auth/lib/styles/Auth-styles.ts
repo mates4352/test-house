@@ -2,9 +2,15 @@ import styled from 'styled-components';
 
 const Auth = styled.section`
   display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
 `;
 
-export { Auth };
+const Wrap = styled.div`
+  margin: auto;
+`;
+
+const Image = styled.img`
+  margin-bottom: 56px;
+`;
+
+export { Auth, Wrap, Image };

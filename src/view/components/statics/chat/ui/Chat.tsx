@@ -1,87 +1,32 @@
 import React, { FC } from 'react';
 import * as S from '../lib/styles/Chat-styles';
-import { FormChat } from '../../../forms/form-chat';
 import { useChat } from '../lib/hooks/useChat';
 
 type ChatType = {};
 
 export const Chat: FC<ChatType> = ({}) => {
-  const [refContent] = useChat();
-
-  const ArrayMessage: { id: string; status: 'admin' | 'user'; text: string }[] =
-    [
-      {
-        id: '1',
-        status: 'user',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deserunt enim ex fugiat magnam nulla quibusdam quidem quisquam quo.',
-      },
-
-      {
-        id: '2',
-        status: 'admin',
-        text: 'Lorem ipsum dolor sit amet',
-      },
-
-      {
-        id: '3',
-        status: 'admin',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deserunt enim ex fugiat magnam nulla quibusdam quidem quisquam quo.',
-      },
-
-      {
-        id: '4',
-        status: 'user',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deserunt enim ex fugiat magnam nulla quibusdam quidem quisquam quo.',
-      },
-
-      {
-        id: '5',
-        status: 'admin',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deserunt enim ex fugiat magnam nulla quibusdam quidem quisquam quo.',
-      },
-
-      {
-        id: '6',
-        status: 'user',
-        text: 'Lorem ipsum dolor sit amet',
-      },
-
-      {
-        id: '7',
-        status: 'admin',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deserunt enim ex fugiat magnam nulla quibusdam quidem quisquam quo.',
-      },
-
-      {
-        id: '8',
-        status: 'user',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deserunt enim ex fugiat magnam nulla quibusdam quidem quisquam quo.',
-      },
-
-      {
-        id: '9',
-        status: 'admin',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda culpa deserunt enim ex fugiat magnam nulla quibusdam quidem quisquam quo.',
-      },
-    ];
+  const [refList, arrayMessage, onSendMessage] = useChat();
 
   return (
     <S.Chat>
-      <S.Header>
-        <S.Admin>Admin</S.Admin>
-        <S.Title>Chat</S.Title>
-        <S.User>Максим</S.User>
-      </S.Header>
+      <S.Title>Переписка по обращению</S.Title>
 
-      <S.Content ref={refContent}>
-        {ArrayMessage.map(message => (
-          <S.Item key={message.id}>
-            <S.Message isUserAdmin={message.status}>{message.text}</S.Message>
-          </S.Item>
-        ))}
+      <S.Content>
+        <S.List ref={refList}>
+          {arrayMessage.map(message => (
+            <S.Item
+              key={message.id}
+              isLength={message.text.toString().length <= 78}>
+              <S.Message isUserAdmin={message.status}>
+                <S.Text>{message.text}</S.Text>
+                <S.Time>{message.time}</S.Time>
+              </S.Message>
+            </S.Item>
+          ))}
+        </S.List>
+
+        <S.InputMessage onCallback={onSendMessage} />
       </S.Content>
-
-      <FormChat />
     </S.Chat>
   );
 };

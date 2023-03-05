@@ -7,9 +7,7 @@ import {
 import { Auth } from '../../../pages/auth';
 import { Main } from '../../../pages/main';
 import { SigIn } from '../../../sub-pages/sig-in';
-import { RegistrationAdmin } from '../../../sub-pages/registration-admin';
 import { PhoneCode } from '../../../sub-pages/phone-code';
-import { Welcome } from '../../../sub-pages/welcome';
 import { Home } from '../../../sub-pages/home';
 import { News } from '../../../sub-pages/news';
 import { Contacts } from '../../../sub-pages/contacts';
@@ -26,16 +24,24 @@ import { PersonalData } from '../../../sub-pages/personal-data';
 import { Admin } from '../../../sub-pages/admin';
 import { RouterCabinet } from '../../../../../core/utils/enum/routers/router-cabinet';
 import { RouterAdmin } from '../../../../../core/utils/enum/routers/router-admin';
-import { AdminListOrders } from '../../../sub-pages/admin-list-orders';
 import { AdminListModerators } from '../../../sub-pages/admin-list-moderators';
-import { AdminListLodgers } from '../../../sub-pages/admin-list-lodgers';
+import { AdminListPerson } from '../../../sub-pages/admin-list-person';
 import { AdminListNews } from '../../../sub-pages/admin-list-news';
 import { AdminCreateNews } from '../../../sub-pages/admin-create-news';
 import { AdminListRouting } from '../../../sub-pages/admin-list-routing';
 import { RouterList } from '../../../../../core/utils/enum/routers/router-list';
 import { RouterNews } from '../../../../../core/utils/enum/routers/router-news';
-import { ListMainNews } from '../../../sub-pages/list-main-news';
+import { ListAllNews } from '../../../sub-pages/list-all-news';
 import { ListDistrictNews } from '../../../sub-pages/list-district-news';
+import { AdminEditPerson } from '../../../sub-pages/admin-edit-person';
+import { AdminEditModerator } from '../../../sub-pages/admin-edit-moderator/ui/Admin-edit-moderator';
+import { RouterAdminEditPerson } from '../../../../../core/utils/enum/routers/router-admin-edit-person';
+import { AdminEditPersonData } from '../../../sub-pages/admin-edit-person-data';
+import { AdminEditPersonListOrders } from '../../../sub-pages/admin-person-list-orders';
+import { AdminListMainOrders } from '../../../sub-pages/admin-list-main-orders/ui/Admin-list-main-orders';
+import { RouterMainOrders } from '../../../../../core/utils/enum/routers/router-admin-main-orders';
+import { AdminListOrders } from '../../../sub-pages/admin-list-orders';
+import { AdminOrderChat } from '../../../sub-pages/admin-order-chat';
 
 type WrapperRouterProviderType = {};
 
@@ -59,16 +65,6 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
           path: RouterAuth.PHONE_CODE,
           element: <PhoneCode />,
         },
-
-        {
-          path: RouterAuth.REGISTRATION_ADMIN,
-          element: <RegistrationAdmin />,
-        },
-
-        {
-          path: RouterAuth.WELCOME,
-          element: <Welcome />,
-        },
       ],
     },
 
@@ -87,7 +83,7 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
           children: [
             {
               path: RouterNews.LIST_MAIN_NEWS,
-              element: <ListMainNews />,
+              element: <ListAllNews />,
             },
 
             {
@@ -152,8 +148,18 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
               element: <AdminListRouting />,
               children: [
                 {
-                  path: RouterList.LIST_ORDERS,
-                  element: <AdminListOrders />,
+                  path: RouterList.LIST_MAIN,
+                  element: <AdminListMainOrders />,
+                  children: [
+                    {
+                      path: RouterMainOrders.LIST_ORDERS,
+                      element: <AdminListOrders />,
+                    },
+                    {
+                      path: RouterMainOrders.LIST_ORDER_CHAT_PARAMS,
+                      element: <AdminOrderChat />,
+                    },
+                  ],
                 },
 
                 {
@@ -162,8 +168,8 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
                 },
 
                 {
-                  path: RouterList.LIST_LODGERS,
-                  element: <AdminListLodgers />,
+                  path: RouterList.LIST_PERSON,
+                  element: <AdminListPerson />,
                 },
 
                 {
@@ -173,11 +179,30 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
               ],
             },
             {
-              path: RouterAdmin.LIST_CREATE_NEWS,
+              path: RouterAdmin.EDIT_MODERATOR_PARAMS,
+              element: <AdminEditModerator />,
+            },
+            {
+              path: RouterAdmin.EDIT_PERSON_PARAMS,
+              element: <AdminEditPerson />,
+              children: [
+                {
+                  path: RouterAdminEditPerson.DATA,
+                  element: <AdminEditPersonData />,
+                },
+
+                {
+                  path: RouterAdminEditPerson.LIST_ORDERS,
+                  element: <AdminEditPersonListOrders />,
+                },
+              ],
+            },
+            {
+              path: RouterAdmin.CREATE_NEWS,
               element: <AdminCreateNews />,
             },
             {
-              path: RouterAdmin.LIST_CREATE_NEWS_PARAMS,
+              path: RouterAdmin.CREATE_NEWS_PARAMS,
               element: <AdminCreateNews />,
             },
           ],

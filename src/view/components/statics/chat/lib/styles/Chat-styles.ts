@@ -1,4 +1,9 @@
 import styled, { css } from 'styled-components';
+import { FormChat } from '../../../../forms/form-chat';
+
+type ItemType = {
+  isLength: boolean;
+};
 
 type MessageType = {
   isUserAdmin: 'user' | 'admin';
@@ -6,56 +11,48 @@ type MessageType = {
 
 const Chat = styled.section``;
 
-const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px;
-
-  box-shadow: 0 1px 3px #afafaf;
-`;
-
 const Title = styled.h2`
-  font-size: 20px;
-`;
-
-const User = styled.div`
-  font-size: 20px;
-`;
-
-const Admin = styled.div`
-  font-size: 20px;
+  margin-bottom: 32px;
+  font: var(--h1);
+  color: var(--black);
 `;
 
 const Content = styled.ul`
-  width: 99%;
-  height: 400px;
+  position: relative;
   margin: 0 auto;
-  padding: 24px;
+  padding: 48px 10px 48px 80px;
+  background-color: var(--blue);
+  border-radius: 16px;
+`;
+
+const List = styled.ul`
+  padding-right: 70px;
   overflow: auto;
-  border: 1px solid #d9d9d9;
+  height: 400px;
 
   &::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: #f5f5f5;
+    width: 3px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #a0b7ff;
-    border-radius: 4px;
+    background-color: var(--black-3);
+    border-radius: 3px;
 
     &:active {
-      background-color: #6187ff;
+      background-color: var(--deep-blue);
     }
   }
 `;
 
-const Item = styled.li`
+const Item = styled.li<ItemType>`
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 46px;
+
+  ${props =>
+    props.isLength &&
+    css`
+      margin-bottom: 8px;
+    `}
 
   &:last-of-type {
     margin-bottom: unset;
@@ -63,15 +60,18 @@ const Item = styled.li`
 `;
 
 const Message = styled.article<MessageType>`
-  max-width: 80%;
-  padding: 12px;
-  border-radius: 12px;
+  position: relative;
+  max-width: 609px;
+  padding: 8px 57px 15px 26px;
+  word-break: break-word;
+  border-radius: 24px;
 
   ${props =>
     props.isUserAdmin === 'user' &&
     css`
       justify-content: flex-start;
-      background-color: #76caff;
+      background-color: var(--white);
+      border-bottom-left-radius: 8px;
     `}
 
   ${props =>
@@ -79,8 +79,27 @@ const Message = styled.article<MessageType>`
     css`
       justify-content: flex-end;
       margin-left: auto;
-      background-color: #acbaff;
+      background-color: var(--alice-blue);
+      border-bottom-right-radius: 8px;
     `}
 `;
 
-export { Message, Item, Content, Header, Title, User, Chat, Admin };
+const Text = styled.p`
+  font: var(--text-16);
+  color: var(--black);
+`;
+
+const Time = styled.time`
+  position: absolute;
+  bottom: 8px;
+  right: 20px;
+  font: var(--text-12);
+  color: var(--dark-grey);
+`;
+
+const InputMessage = styled(FormChat)`
+  margin-top: 10px;
+  padding-right: 70px;
+`;
+
+export { Message, Text, Time, Content, List, Item, Title, Chat, InputMessage };

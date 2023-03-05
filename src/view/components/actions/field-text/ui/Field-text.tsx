@@ -14,24 +14,37 @@ type FieldtextType = React.DetailedHTMLProps<
 export const FieldText: FC<FieldtextType> = ({
   onChange,
   touched,
+  value,
   error,
   ...props
 }) => {
-  const [TextareaRef, onChangeTextarea] = useChangeHeightTextarea(onChange);
-  const isError = touched && !!error;
-  const isValid = touched && !error;
+  const [
+    focusTextarea,
+    errorTextarea,
+    validTextarea,
+    textareaRef,
+    onChangeTextarea,
+    onFocusTextarea,
+  ] = useChangeHeightTextarea(touched, error, value, onChange);
 
   return (
     <S.Wrap>
       <S.Textarea
         {...props}
-        isValid={isValid}
-        isError={isError}
-        ref={TextareaRef}
+        isActive={focusTextarea}
+        isError={errorTextarea}
+        isValid={validTextarea}
+        ref={textareaRef}
         onChange={onChangeTextarea}
+        onFocus={onFocusTextarea}
+        value={value}
       />
 
-      <ErrorAnimation isError={isError}>{error}</ErrorAnimation>
+      <ErrorAnimation
+        isError={errorTextarea}
+        margin={'4px 0 0'}>
+        {error}
+      </ErrorAnimation>
     </S.Wrap>
   );
 };

@@ -6,7 +6,7 @@ import { LinkMain } from '../../../../../core/utils/enum/links/link-main';
 type ListDistrictNewsType = {};
 
 export const ListDistrictNews: FC<ListDistrictNewsType> = ({ ...props }) => {
-  const [arrayNews, getArrayNews] = useListDistrictNews();
+  const [arrayNews] = useListDistrictNews();
   return (
     <S.ListDistrictNews {...props}>
       <S.List
@@ -14,11 +14,14 @@ export const ListDistrictNews: FC<ListDistrictNewsType> = ({ ...props }) => {
         link={LinkMain.NEWS}
       />
 
-      <S.Button
-        type={'button'}
-        onClick={getArrayNews}>
-        Загрузить еще
-      </S.Button>
+      <S.PaginationDistrictNews
+        selectOptionValue={10}
+        arrayOptionSelect={[20, 30, 50, 100]}
+        pageCount={10}
+        currentPage={1}
+        pageCurrentCount={190}
+        maxPageNumber={5}
+      />
     </S.ListDistrictNews>
   );
 };

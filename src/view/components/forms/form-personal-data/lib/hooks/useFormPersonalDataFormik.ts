@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import { ValidationPersonalDataSchema } from '../../../../../../core/utils/helpers/validates/validation-personal-data';
+import { useCallback, useEffect, useState } from 'react';
 
 export const useFormPersonalDataFormik = () => {
   const formik = useFormik({
@@ -14,6 +15,7 @@ export const useFormPersonalDataFormik = () => {
       apartment: '26',
       car: 'Лада',
       parkingSpace: 'a203',
+      contacts: [''],
     },
 
     validationSchema: ValidationPersonalDataSchema,
@@ -24,5 +26,9 @@ export const useFormPersonalDataFormik = () => {
     },
   });
 
-  return [formik];
+  const onAddInputs = () => {
+    formik.setFieldValue('contacts', [...formik.values.contacts, '']);
+  };
+
+  return [formik, formik.values.contacts, onAddInputs] as const;
 };

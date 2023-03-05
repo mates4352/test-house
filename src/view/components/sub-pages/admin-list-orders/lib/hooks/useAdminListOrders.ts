@@ -1,42 +1,32 @@
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../../../../../core/utils/hooks/useAppDispatch';
 import { useCallback, useState } from 'react';
+import { arrayDataOrdersTest } from '../../../../statics/table-orders/data';
+import { showPopup } from '../../../../../../core/controller/slice/Popup-slice';
+import { StatusPopup } from '../../../../../../core/utils/enum/status/status-popup';
 import { StatusOrdersType } from '../../../../../../core/types/global/status/status-orders-type';
-import { arrayDataOrdersTest } from '../../../../statics/table-orders/lib/data-test/data';
+import { LinkAdminMainOrders } from '../../../../../../core/utils/enum/links/link-admin-main-orders';
 
 export const useAdminListOrders = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const [arrayOrders, setArrayOrder] = useState(arrayDataOrdersTest);
 
   const onDeleteOrder = useCallback(
     (id: string) => () => {
+      dispatch(showPopup(StatusPopup.POPUP_DELETE_STATUS));
       setArrayOrder(arrayOrders.filter(el => el.id !== id));
     },
     [arrayOrders],
   );
 
-  const onChangeStatusOrder = useCallback(
-    (id: string) => (status: StatusOrdersType) => () => {
-      setArrayOrder(
-        arrayOrders.map(el => (el.id === id ? { ...el, status: status } : el)),
-      );
-    },
-    [arrayOrders],
-  );
-
-  const onSearchTableStatus = (value: string) => {
-    if (value)
-      setArrayOrder(
-        arrayOrders.filter(
-          el =>
-            el.status.slice(0, value.length).toLowerCase() ===
-            value.toLowerCase(),
-        ),
-      );
-    else setArrayOrder(arrayDataOrdersTest);
+  const onRedirect = (id: string) => () => {
+    navigate(LinkAdminMainOrders.LIST_MAIN_ORDER_CHAT + '/' + id);
   };
 
-  return [
-    arrayOrders,
-    onDeleteOrder,
-    onSearchTableStatus,
-    onChangeStatusOrder,
-  ] as const;
+  const onChangeStatusOrder = (status: StatusOrdersType) => {
+    setArrayOrder(arrayDataOrdersTest.filter(el => el.status === status));
+  };
+
+  return [arrayOrders, onDeleteOrder, onRedirect, onChangeStatusOrder] as const;
 };

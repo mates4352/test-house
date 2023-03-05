@@ -2,27 +2,40 @@ import React, { FC } from 'react';
 import * as S from '../lib/styles/Order-styles';
 import { Chat } from '../../../statics/chat';
 import * as G from '../../../../global-styled-components/global-styled-components';
+import { StatusOrder } from '../../../../../core/utils/enum/status/status-order';
+import { windowScroll } from '../../../../../core/utils/helpers/functions/windowScroll';
 
 type OrderType = {};
 
 export const Order: FC<OrderType> = ({}) => {
+  windowScroll();
   return (
     <S.Order>
       <G.Container>
-        <S.Text>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-          earum error excepturi facilis, inventore natus pariatur quaerat quod
-          rem unde. Alias animi dolor enim laboriosam odit velit voluptatibus?
-          Animi architecto at culpa dolore eveniet facere, magnam nihil non
-          officia perspiciatis, quas quia quidem quos rem repudiandae similique
-          veniam. Ab at corporis et, expedita harum illum natus, non odit omnis
-          optio quibusdam quisquam reprehenderit rerum sequi sint soluta ullam
-          vel voluptate. Alias dolore impedit libero nemo quaerat sed velit.
-          Alias fuga iure mollitia optio sed tenetur. Alias aliquam beatae
-          consectetur consequatur dolores facilis incidunt labore minima,
-          numquam possimus quas reiciendis voluptatibus?
-        </S.Text>
+        <S.Wrap>
+          <S.Title>Обращение 13562-5618 </S.Title>
+          <S.StatusQuestion status={StatusOrder.SENT} />
 
+          <S.Text>
+            Таким образом постоянное информационно-пропагандистское обеспечение
+            нашей деятельности требуют определения и уточнения системы обучения
+            кадров, соответствует насущным потребностям. Таким образом новая
+            модель организационной деятельности требуют от нас анализа форм
+            развития. С другой стороны реализация намеченных плановых заданий
+            требуют от нас анализа новых предложений. Товарищи! дальнейшее
+            развитие различных форм деятельности позволяет оценить значение форм
+            развития. Не следует, однако забывать, что консультация с широким
+            активом способствует подготовки и реализации существенных финансовых
+            и административных условий. Таким образом начало повседневной работы
+            по формированию позиции требуют определения и уточнения позиций,
+            занимаемых участниками в отношении поставленных задач.
+          </S.Text>
+        </S.Wrap>
+        <S.ButtonDeleteText
+          property={'common'}
+          type={'button'}>
+          Удалить обращение
+        </S.ButtonDeleteText>
         <Chat />
       </G.Container>
     </S.Order>

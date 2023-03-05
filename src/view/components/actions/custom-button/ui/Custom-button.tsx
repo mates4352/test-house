@@ -4,8 +4,20 @@ import * as S from '../lib/styles/Custom-button-styles';
 type CustomButtonType = React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
-> & {};
+> & {
+  property?: 'common' | 'outlined';
+};
 
-export const CustomButton: FC<CustomButtonType> = ({ children, ...props }) => {
-  return <S.CustomButton {...props}>{children}</S.CustomButton>;
+export const CustomButton: FC<CustomButtonType> = ({
+  children,
+  property,
+  ...props
+}) => {
+  return (
+    <S.CustomButton
+      {...props}
+      property={property}>
+      {children}
+    </S.CustomButton>
+  );
 };

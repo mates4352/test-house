@@ -1,0 +1,18 @@
+:root {
+    --white: #FFFFFF;
+    --white-smoke: #F5F5F5;
+    --black: #1A1A1A;
+    --black-3: #9EAEB8;
+    --dark-grey: #737174;
+    --silver: #C5C5C5;
+    --light-grey: #D5D5D6;
+    --zircon: #E9EAEA;
+    --cultured: #F4F4F4;
+    --blue: #D7EEFB;
+    --deep-blue: #006FFF;
+    --bright-blue: #2A9AFF;
+    --alice-blue: #EDF5FF;
+    --error: #CB0000;
+    --process: #F6BA46;
+    --success: #399E4F;
+}

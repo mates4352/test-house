@@ -29,4 +29,6 @@ export const ValidationPersonalDataSchema = yup.object().shape({
   car: yup.string().required('Password is required'),
 
   parkingSpace: yup.string().required('Password is required'),
+
+  contacts: yup.array().of(yup.string().required('Contact is required')),
 });

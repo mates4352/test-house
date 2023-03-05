@@ -7,7 +7,7 @@ const Main = styled.div`
 `;
 
 const Content = styled.main`
-  padding: 44px 0;
+  padding: 64px 0 112px;
   flex-grow: 1;
 `;
 

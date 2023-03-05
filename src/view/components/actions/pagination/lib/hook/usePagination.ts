@@ -20,6 +20,12 @@ export const usePagination = (
   const [maxNumber, setMaxNumber] = useState<number>(maxPageNumber);
   const arrayButton: number[] = [];
   const maxNumberCount = Math.ceil(pageCurrentCount / pageCount); // Находим макс кол-во возможных элементов(кнопок).
+  const valuePaginationButtonPrevPages =
+    maxNumber >= maxPageNumber * 2 ? maxNumber + 1 - maxPageNumber * 2 : 1;
+  const valuePaginationButtonNextPages =
+    maxNumber >= maxNumberCount - maxPageNumber
+      ? maxNumberCount
+      : maxNumber + maxPageNumber;
 
   if (maxNumberCount > maxPageNumber) {
     // Каждый раз как прибавляем в maxNumber + 5 через ButtonPagination
@@ -44,25 +50,29 @@ export const usePagination = (
     }
   };
 
-  const isPaginationButton = (sign: signType) => {
-    const calc = {
-      '+': !(
-        maxNumberCount <=
-        arrayButton[arrayButton.length - 1] + maxPageNumber
-      ),
-      '-': maxNumber >= maxPageNumber * 2,
-    };
-
-    return calc[sign];
-  };
-
-  const onChangeMaxNumber = (sign: signType, number: number) => () => {
+  const onChangePage = (sign: signType, number: number) => () => {
     const calc = {
       '+': (value: number) => (value += number),
       '-': (value: number) => (value -= number),
     };
 
     setMaxNumber(calc[sign]);
+  };
+
+  const onBackPages = () => {
+    if (maxNumber < maxPageNumber * 2) {
+      onChangePage('-', maxNumber - maxPageNumber)();
+    } else {
+      onChangePage('-', maxPageNumber)();
+    }
+  };
+
+  const onNextPages = () => {
+    if (maxNumber >= maxNumberCount - maxPageNumber) {
+      onChangePage('+', maxNumberCount - maxNumber)();
+    } else {
+      onChangePage('+', maxPageNumber)();
+    }
   };
 
   const onChangeCurrentPage = (value: number) => () => {
@@ -72,9 +82,13 @@ export const usePagination = (
   return [
     maxNumber,
     arrayButton,
+    maxNumberCount,
+    valuePaginationButtonPrevPages,
+    valuePaginationButtonNextPages,
     disabledButtonPrevNext,
-    onChangeMaxNumber,
-    isPaginationButton,
+    onChangePage,
+    onBackPages,
+    onNextPages,
     arraySelect,
     selectValue,
     onChangeArraySelect,

@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { SectionHomeListNews } from '../../../../statics/section-home-list-news';
+import { SectionHomeOrders } from '../../../../statics/section-home-orders';
 
 type BlockType = {
   bg: string;
 };
 
 const Home = styled.div``;
+
+const SectionHomeNews = styled(SectionHomeListNews)`
+  margin-bottom: 112px;
+`;
+
+const SectionOrders = styled(SectionHomeOrders)`
+  margin-bottom: 112px;
+`;
 
 const Block = styled(Link)<BlockType>`
   display: flex;
@@ -23,4 +33,4 @@ const Block = styled(Link)<BlockType>`
   }
 `;
 
-export { Home, Block };
+export { Home, SectionHomeNews, SectionOrders, Block };

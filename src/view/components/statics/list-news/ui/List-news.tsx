@@ -1,16 +1,10 @@
 import React, { FC } from 'react';
 import * as S from '../lib/styles/List-news-styles';
 import { LinkNews } from '../../../actions/link-news';
-
-type NewType = {
-  id: string;
-  status: 'main' | 'area' | string;
-  image: string;
-  previewText: string;
-};
+import { LinkResponse } from '../../../actions/link-news/ui/Link-news';
 
 type ListNewsType = {
-  arrayNews: Array<NewType>;
+  arrayNews: Array<LinkResponse>;
   link: string;
   admin?: boolean;
 };
@@ -22,24 +16,22 @@ export const ListNews: FC<ListNewsType> = ({
   ...props
 }) => {
   return (
-    <S.ListNews {...props}>
-      {admin && (
-        <S.Item>
-          <S.LinkCreateNews to={link}>Добавить новость</S.LinkCreateNews>
-        </S.Item>
-      )}
-
-      {arrayNews.map(item => (
-        <S.Item key={item.id}>
-          <LinkNews
-            link={link}
-            srcImage={item.image}
-            previewText={item.previewText}
-            id={item.id}
-            admin={admin}
-          />
-        </S.Item>
-      ))}
-    </S.ListNews>
+    <>
+      <S.ListNews {...props}>
+        {arrayNews.map(item => (
+          <S.Item key={item.id}>
+            <LinkNews
+              link={link}
+              image={item.image}
+              tag={item.tag}
+              text={item.text}
+              subText={item.subText}
+              id={item.id}
+              admin={admin}
+            />
+          </S.Item>
+        ))}
+      </S.ListNews>
+    </>
   );
 };

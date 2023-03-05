@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "SegoeUI-Regular";
+    src: url("./../../fonts/SegoeUI-Regular.woff") format("woff"), url("./../../fonts/SegoeUI-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "SegoeUI-SemiBold";
+    src: url("./../../fonts/SegoeUI-SemiBold.woff") format("woff"), url("./../../fonts/SegoeUI-SemiBold.woff2") format("woff2");
+}
+
+:root {
+    --h1: 32px/1.1 'SegoeUI-SemiBold';
+    --text-24-semibold: 24px/1.2 'SegoeUI-SemiBold';
+    --text-24: 24px/1.1 'SegoeUI-Regular';
+    --text-18-semibold: 18px/1.25 'SegoeUI-SemiBold';
+    --text-18: 18px/1.25 'SegoeUI-Regular';
+    --text-16-semibold: 16px/1.2 'SegoeUI-SemiBold';
+    --text-16: 16px/1.25 'SegoeUI-Regular';
+    --text-14: 14px/1.25 'SegoeUI-Regular';
+    --text-12: 12px/1.25 'SegoeUI-Regular';
+}

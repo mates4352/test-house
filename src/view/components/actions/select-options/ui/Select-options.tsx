@@ -1,9 +1,10 @@
 import React, { FC, useState } from 'react';
 import * as S from '../lib/styles/Select-options-styles';
 import { useOnClickOutside } from '../../../../../core/utils/hooks/useOnClickOutside';
+import { IconArrow } from '../../../icons/Icon-arrow';
 
 type SelectOptionsType = {
-  arrayOptions: any;
+  arrayOptions: number[];
   onChooseOption: (value: number) => () => void;
   selectValue: number;
 };
@@ -26,18 +27,21 @@ export const SelectOptions: FC<SelectOptionsType> = ({
       ref={ref}>
       <S.SelectButtonOpen
         type={'button'}
-        onClick={onOpenSelect}>
+        onClick={onOpenSelect}
+        statusOpen={isSelect}>
         {selectValue}
+        <S.Arrow />
       </S.SelectButtonOpen>
 
       {isSelect && (
         <S.Select>
-          {arrayOptions.map((el: any, index: number) => (
+          {arrayOptions.map((el: number, index: number) => (
             <S.SelectItem key={index}>
               <S.SelectButton
                 type={'button'}
                 onClick={onChooseOption(el)}>
                 {el}
+                <S.Check />
               </S.SelectButton>
             </S.SelectItem>
           ))}

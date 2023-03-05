@@ -11,7 +11,7 @@ export const FormPhoneCode: FC<FormPhoneCodeType> = ({}) => {
     <S.FormPhoneCode onSubmit={formik.handleSubmit}>
       <S.InputCode
         type="text"
-        placeholder={'Code'}
+        placeholder={'Введите код из СМС'}
         maxLength={6}
         {...formik.getFieldProps('code')}
         {...formik.getFieldMeta('code')}
@@ -19,6 +19,7 @@ export const FormPhoneCode: FC<FormPhoneCodeType> = ({}) => {
 
       <S.Button
         type={'submit'}
+        property={'common'}
         disabled={!(formik.isValid && formik.dirty)}>
         войти
       </S.Button>

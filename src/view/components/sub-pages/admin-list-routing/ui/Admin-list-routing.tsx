@@ -9,15 +9,15 @@ import { LinkAdmin } from '../../../../../core/utils/enum/links/link-admin';
 type AdminListRoutingType = {};
 
 export const AdminListRouting: FC<AdminListRoutingType> = ({}) => {
-  useRedirect(LinkAdmin.LIST, LinkList.LIST_ORDERS);
+  useRedirect(LinkAdmin.LIST, LinkList.LIST_MAIN);
 
   return (
     <S.AdminListRouting>
       <ListLinks
         arrayLinks={[
-          { text: 'Список заявок', link: LinkList.LIST_ORDERS },
+          { text: 'Список заявок', link: LinkList.LIST_MAIN },
           { text: 'Список медераторов', link: LinkList.LIST_MODERATORS },
-          { text: 'Список жильцов', link: LinkList.LIST_LODGERS },
+          { text: 'Список жильцов', link: LinkList.LIST_Person },
           { text: 'Список новостей', link: LinkList.LIST_NEWS },
         ]}
       />

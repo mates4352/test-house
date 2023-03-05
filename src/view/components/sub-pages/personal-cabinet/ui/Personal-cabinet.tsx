@@ -6,11 +6,13 @@ import { useRedirect } from '../../../../../core/utils/hooks/useRedirect';
 import { ListLinks } from '../../../actions/list-links';
 import { LinkCabinet } from '../../../../../core/utils/enum/links/link-cabinet';
 import * as G from '../../../../global-styled-components/global-styled-components';
+import { windowScroll } from '../../../../../core/utils/helpers/functions/windowScroll';
 
 type PersonalCabinetType = {};
 
 export const PersonalCabinet: FC<PersonalCabinetType> = ({}) => {
   useRedirect(LinkMain.PERSONAL_CABINET, LinkCabinet.PERSONAL_CABINET_DATA);
+  windowScroll();
 
   return (
     <S.PersonalCabinet>

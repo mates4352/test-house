@@ -1,86 +1,48 @@
-import { useState } from 'react';
 import uuid from 'react-uuid';
+import { LinkResponse } from '../../../../actions/link-news/ui/Link-news';
 
 export const useListDistrictNews = () => {
-  const [arrayNews, setArrayNews] = useState<any>([
+  const arrayNews: Array<LinkResponse> = [
     {
       id: uuid(),
-      status: 'area',
-      image: '',
-      previewText:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+      tag: '',
+      text: 'Ликвидация граффити на улице Некрасова',
+      subText: '20.03.2030',
     },
 
     {
       id: uuid(),
-      status: 'area',
-      image: '',
-      previewText:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+      text: 'Ввод новых автобусных маршрутов',
+      subText: '21.08.2130',
     },
 
     {
       id: uuid(),
-      status: 'area',
-      image: '',
-      previewText:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+      text: 'Косметический ремонт парадной на Басковом переулке',
     },
 
     {
       id: uuid(),
-      status: 'area',
-      image: '',
-      previewText:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+      text: 'Ремонт кровли на Кирилловской улице',
     },
 
     {
       id: uuid(),
-      status: 'area',
-      image: '',
-      previewText:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+      text: 'Восстановление освещения в парадной на 9-й Советской улице',
     },
 
     {
       id: uuid(),
-      status: 'area',
-      image: '',
-      previewText:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
+      tag: '',
+      text: 'Поверка газовых счетчиков снабжения  9-й Советской улице',
     },
-  ]);
 
-  const getArrayNews = () => {
-    setArrayNews(
-      arrayNews.concat([
-        {
-          id: uuid(),
-          status: 'area',
-          image: '',
-          previewText:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-        },
+    {
+      id: uuid(),
+      tag: '',
+      text: 'Дезинсекционные работы на улице Некрасова 10',
+    },
+  ];
 
-        {
-          id: uuid(),
-          status: 'area',
-          image: '',
-          previewText:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-        },
-
-        {
-          id: uuid(),
-          status: 'area',
-          image: '',
-          previewText:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eius eos est expedita fugiat maxime nam provident tempore vitae, volupt...',
-        },
-      ]),
-    );
-  };
-
-  return [arrayNews, getArrayNews] as const;
+  return [arrayNews] as const;
 };

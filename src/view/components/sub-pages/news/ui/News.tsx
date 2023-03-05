@@ -6,11 +6,13 @@ import { ListLinks } from '../../../actions/list-links';
 import { LinkNews } from '../../../../../core/utils/enum/links/link-news';
 import { Outlet } from 'react-router-dom';
 import { useRedirect } from '../../../../../core/utils/hooks/useRedirect';
+import { windowScroll } from '../../../../../core/utils/helpers/functions/windowScroll';
 
 type NewsType = {};
 
 export const News: FC<NewsType> = ({}) => {
   useRedirect(LinkMain.NEWS, LinkNews.LIST_MAIN_NEWS);
+  windowScroll();
 
   return (
     <S.News>
@@ -18,7 +20,7 @@ export const News: FC<NewsType> = ({}) => {
         <S.Title>Новости</S.Title>
         <ListLinks
           arrayLinks={[
-            { text: 'Главные новости', link: LinkNews.LIST_MAIN_NEWS },
+            { text: 'Все новости', link: LinkNews.LIST_MAIN_NEWS },
             { text: 'Новости района', link: LinkNews.LIST_DISTRICT_NEWS },
           ]}
         />

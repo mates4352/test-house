@@ -1,0 +1,5 @@
+:root {
+    --container-width: 1240px;
+    --container-padding-rl: 100px;
+    --grid-min-max: minmax(min-content, max-content);
+}

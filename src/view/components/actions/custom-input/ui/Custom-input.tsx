@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import * as S from '../lib/styles/Custom-input-styles';
 import { ErrorAnimation } from '../../../statics/error';
 import { FieldInputProps, FieldMetaProps } from 'formik/dist/types';
+import { useCustomInput } from '../lib/hooks/useCustomInput';
 
 export type CustomInputType = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -15,18 +16,26 @@ export const CustomInput: FC<CustomInputType> = ({
   error,
   ...props
 }) => {
-  const isError = touched && !!error;
-  const isValid = touched && !error;
+  const [focusInput, errorInput, validInput, onFocusInput] = useCustomInput(
+    touched,
+    error,
+  );
 
   return (
     <S.Wrap>
       <S.CustomInput
         {...props}
-        isError={isError}
-        isValid={isValid}
+        isActive={focusInput}
+        isError={errorInput}
+        isValid={validInput}
+        onFocus={onFocusInput}
       />
 
-      <ErrorAnimation isError={isError}>{error}</ErrorAnimation>
+      <ErrorAnimation
+        isError={errorInput}
+        margin={'4px 0 0'}>
+        {error}
+      </ErrorAnimation>
     </S.Wrap>
   );
 };

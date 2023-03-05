@@ -12,13 +12,14 @@ export const FormSigIn: FC<FormSigInType> = ({}) => {
       <S.InputPhone
         name={'phone'}
         type={'tel'}
-        placeholder={'Phone'}
+        placeholder={'Номер телефона'}
         formik={formik}
         mask={'+7-999-999-99-99'}
       />
 
       <S.Button
         type={'submit'}
+        property={'common'}
         disabled={!(formik.isValid && formik.dirty)}>
         Отправить
       </S.Button>

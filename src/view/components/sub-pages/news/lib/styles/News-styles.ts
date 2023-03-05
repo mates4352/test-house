@@ -4,10 +4,9 @@ import { ListNews } from '../../../../statics/list-news';
 const News = styled.section``;
 
 const Title = styled.h2`
-  font-size: 32px;
-  text-transform: uppercase;
-  margin-bottom: 48px;
-  text-align: center;
+  font: var(--h1);
+  color: var(--black);
+  margin-bottom: 32px;
 `;
 
 const List = styled(ListNews)`

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import * as S from '../lib/styles/Pagination-styles';
 import { SelectOptions } from '../../select-options';
 import { usePagination } from '../lib/hook/usePagination';
-import { AnimationShow } from '../../../animation/AnimationShow';
+import { Point } from '../lib/styles/Pagination-styles';
 
 type PaginationType = {
   maxPageNumber: number; // Максимльное кол-во кнопок в pagination.
@@ -29,9 +29,13 @@ export const Pagination: FC<PaginationType> = ({
   const [
     maxNumber,
     arrayButton,
+    maxNumberCount,
+    valuePaginationButtonPrevPages,
+    valuePaginationButtonNextPages,
     disabledButtonPrevNext,
-    onChangeMaxNumber,
-    isPaginationButton,
+    onChangePage,
+    onBackPages,
+    onNextPages,
     arraySelect,
     selectValue,
     onChangeArraySelect,
@@ -46,30 +50,23 @@ export const Pagination: FC<PaginationType> = ({
     onClickPaginationButton,
   );
 
-  const AnimationOption = {
-    initial: { width: 0, scale: '0', opacity: 0 },
-    animate: { width: 'auto', scale: '1', opacity: 1 },
-    exit: { width: 0, scale: '0', opacity: 0 },
-  };
-
   return (
     <S.Pagination {...props}>
       <S.Wrap>
         <S.PaginationButtonPrev
           disabled={disabledButtonPrevNext('prev')}
-          onClick={onChangeMaxNumber('-', 1)}>
-          Prev
+          onClick={onChangePage('-', 1)}>
+          <S.IconArrowPrev />
         </S.PaginationButtonPrev>
 
-        <AnimationShow
-          isAnimation={isPaginationButton('-')}
-          variants={AnimationOption}>
-          <S.PaginationButton
-            onClick={onChangeMaxNumber('-', maxPageNumber)}
-            margin={'0 20px'}>
-            {maxNumber + -maxPageNumber}
-          </S.PaginationButton>
-        </AnimationShow>
+        <S.PaginationButton
+          onClick={onBackPages}
+          disabled={maxNumber === maxPageNumber}
+          margin={'0 4px'}>
+          {valuePaginationButtonPrevPages}
+        </S.PaginationButton>
+
+        <Point>...</Point>
 
         <S.List>
           {arrayButton.map(button => (
@@ -83,20 +80,19 @@ export const Pagination: FC<PaginationType> = ({
           ))}
         </S.List>
 
-        <AnimationShow
-          isAnimation={isPaginationButton('+')}
-          variants={AnimationOption}>
-          <S.PaginationButton
-            onClick={onChangeMaxNumber('+', maxPageNumber)}
-            margin={'0 20px'}>
-            {maxNumber + maxPageNumber}
-          </S.PaginationButton>
-        </AnimationShow>
+        <Point>...</Point>
+
+        <S.PaginationButton
+          onClick={onNextPages}
+          disabled={maxNumber === maxNumberCount}
+          margin={'0 4px'}>
+          {valuePaginationButtonNextPages}
+        </S.PaginationButton>
 
         <S.PaginationButtonNext
           disabled={disabledButtonPrevNext()}
-          onClick={onChangeMaxNumber('+', 1)}>
-          Prev
+          onClick={onChangePage('+', 1)}>
+          <S.IconArrowNext />
         </S.PaginationButtonNext>
       </S.Wrap>
 

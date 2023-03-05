@@ -19,6 +19,8 @@ export const Main: FC<MainType> = ({}) => {
         <Outlet />
       </S.Content>
 
+      <s />
+
       <Footer />
     </S.Main>
   );

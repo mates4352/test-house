@@ -6,23 +6,23 @@ const MenuDesktop = styled.nav``;
 const List = styled.ul`
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content, max-content);
-  column-gap: 24px;
+  grid-auto-columns: var(--grid-min-max);
+  column-gap: 32px;
 `;
 
 const Item = styled.li``;
 
 const LinkElement = styled(NavLink)`
-  font-size: 20px;
-  font-weight: 500;
+  font: var(--text-24);
+  color: var(--black);
   transition: color 200ms ease;
 
   &:hover {
-    color: #6780ff;
+    color: var(--deep-blue);
   }
 
   &.active {
-    color: #6780ff;
+    color: var(--deep-blue);
   }
 `;
 

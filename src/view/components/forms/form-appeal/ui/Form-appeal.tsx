@@ -17,17 +17,18 @@ export const FormAppeal: FC<FormAppealType> = ({}) => {
         {...formik.getFieldMeta('subject')}
       />
 
-      <FieldText
-        placeholder={'Обращение'}
+      <S.Textarea
+        placeholder={'Текст обращения'}
         {...formik.getFieldProps('appeal')}
         {...formik.getFieldMeta('appeal')}
       />
 
-      <S.ButtonForm
+      <S.Button
+        property={'common'}
         type={'submit'}
         disabled={!(formik.isValid && formik.dirty)}>
         Отправить
-      </S.ButtonForm>
+      </S.Button>
     </S.FormAppeal>
   );
 };

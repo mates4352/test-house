@@ -1,21 +1,45 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const CustomButton = styled.button<any>`
+type buttonType = {
+  property: 'common' | 'outlined';
+};
+
+const CustomButton = styled.button<any & buttonType>`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 8px;
-  background-color: aliceblue;
-  border: 1px solid antiquewhite;
+  padding: 15px 12px;
   border-radius: 8px;
-  transition: background-color 200ms ease;
+  border: 1px solid transparent;
+  transition: background-color 300ms ease, color 250ms ease,
+    border-color 300ms ease;
+
+  ${props =>
+    props.property === 'common' &&
+    css`
+      color: var(--white);
+      background-color: var(--deep-blue);
+    `}
+
+  ${props =>
+    props.property === 'outlined' &&
+    css`
+      color: var(--deep-blue);
+      background-color: transparent;
+      border: 1px solid var(--deep-blue);
+    `}
 
   &:hover {
-    background-color: #dbf1ff;
+    color: var(--white);
+    background-color: var(--bright-blue);
+    border: 1px solid transparent;
   }
 
-  &:disabled:hover {
-    background-color: aliceblue;
+  &:disabled {
+    color: var(--silver);
+    background-color: var(--zircon);
+    border: 1px solid transparent;
+    pointer-events: none;
   }
 `;
 export { CustomButton };

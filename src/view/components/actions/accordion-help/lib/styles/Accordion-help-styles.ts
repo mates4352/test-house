@@ -1,21 +1,44 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { IconCircleArrow } from '../../../../icons/Icon-circle-arrow';
 
-const AccordionHelp = styled.article`
-  background-color: #ffdfdf;
-  box-shadow: 0 0 3px #adadad;
-`;
+type ButtonType = {
+  isActive: boolean;
+};
 
-const Button = styled.button`
-  display: block;
+const AccordionHelp = styled.article``;
+
+const Button = styled.button<ButtonType>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  font-size: 18px;
-  padding: 12px;
+  padding: 42px 64px 42px 32px;
+  font: var(--text-24-semibold);
+  color: var(--black);
   text-align: left;
-  background-color: bisque;
+  background-color: var(--white);
+  border-radius: 24px;
+
+  ${props =>
+    props.isActive &&
+    css`
+      ${CircleArrow} {
+        transform: rotate(180deg);
+        color: var(--light-grey);
+      }
+    `}
 `;
 
 const Content = styled.div`
-  padding: 24px;
+  max-width: 800px;
+  padding: 0 32px;
 `;
 
-export { AccordionHelp, Button, Content };
+const CircleArrow = styled(IconCircleArrow)`
+  width: 40px;
+  height: 40px;
+  color: #bac3ca;
+  transition: transform 300ms ease, color 300ms ease;
+`;
+
+export { AccordionHelp, Button, CircleArrow, Content };

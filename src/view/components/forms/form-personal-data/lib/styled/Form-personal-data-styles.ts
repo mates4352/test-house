@@ -1,41 +1,66 @@
 import styled from 'styled-components';
 import { CustomInputMask, CustomInput } from '../../../../actions/custom-input';
 import { CustomButton } from '../../../../actions/custom-button';
+import { CustomButtonPlus } from '../../../../actions/custom-button-plus';
 
-const PersonalData = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, minmax(min-content, max-content));
-  column-gap: 48px;
-`;
+const PersonalData = styled.div``;
 
-const FormPersonalData = styled.form`
-  max-width: 550px;
-`;
+const FormPersonalData = styled.form``;
 
 const Wrap = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  justify-content: start;
-  gap: 12px 24px;
-  margin-bottom: 24px;
+  grid-auto-rows: var(--grid-min-max);
+  row-gap: 16px;
+  width: 100%;
+  margin-bottom: 48px;
+`;
+
+const WrapInputHousing = styled.div`
+  display: grid;
+  grid-template-columns: 397px 82px 105px;
+  align-items: start;
+  column-gap: 24px;
+`;
+
+const WrapInputCar = styled.div`
+  display: grid;
+  grid-template-columns: 397px 211px;
+  align-items: start;
+  column-gap: 24px;
 `;
 
 const Input = styled(CustomInput)`
-  height: 40px;
-  font-size: 20px;
+  max-width: 397px;
 `;
 
 const InputPhone = styled(CustomInputMask)`
-  height: 40px;
-  font-size: 20px;
+  max-width: 397px;
+`;
+
+const ButtonAddInputs = styled(CustomButtonPlus)``;
+
+const WrapInputsContacts = styled.div`
+  display: grid;
+  grid-auto-rows: var(--grid-min-max);
+  row-gap: 16px;
+  width: 100%;
+  margin-top: 16px;
 `;
 
 const Button = styled(CustomButton)`
-  width: 250px;
-  height: 55px;
-  margin-left: auto;
-  font-size: 18px;
-  font-weight: 600;
+  margin-top: 64px;
+  width: 397px;
 `;
 
-export { PersonalData, FormPersonalData, Wrap, Input, InputPhone, Button };
+export {
+  PersonalData,
+  FormPersonalData,
+  Wrap,
+  WrapInputHousing,
+  WrapInputCar,
+  Input,
+  InputPhone,
+  ButtonAddInputs,
+  WrapInputsContacts,
+  Button,
+};

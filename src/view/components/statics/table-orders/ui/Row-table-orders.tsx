@@ -1,72 +1,47 @@
-import React, { FC, useState } from 'react';
-import { useOnClickOutside } from '../../../../../core/utils/hooks/useOnClickOutside';
+import React, { FC } from 'react';
 import * as S from '../lib/styles/Table-orders-styles';
-import { LinkMain } from '../../../../../core/utils/enum/links/link-main';
-import { StatusOrdersType } from '../../../../../core/types/global/status/status-orders-type';
+import { IconDelete } from '../../../icons/Icon-delete';
+import { Status } from '../../status';
 
 type RowTableOrdersType = {
   el: any;
   admin?: boolean;
   onDeleteOrder: (id: string) => () => void;
-  onChangeStatusOrder?: (status: StatusOrdersType) => () => void;
+  onRedirect: (id: string) => () => void;
 };
 
 export const RowTableOrders: FC<RowTableOrdersType> = React.memo(
-  ({ el, admin, onDeleteOrder, onChangeStatusOrder, ...props }) => {
-    const [isPopup, setPopup] = useState<boolean>(false);
-    const onShowPopup = () => {
-      setPopup(value => !value);
-    };
-    const [refPopup] = useOnClickOutside(onShowPopup);
-
+  ({ el, admin, onDeleteOrder, onRedirect, ...props }) => {
     return (
-      <S.Tr
-        {...props}
-        status={el.status}>
-        <S.Td>
-          <S.Status>{el.status}</S.Status>
+      <S.Tr {...props}>
+        <S.Td onClick={onRedirect(el.id)}>
+          <S.Text>{el.id}</S.Text>
         </S.Td>
 
-        <S.Td>
-          <S.Name>{el.nameOrder}</S.Name>
+        <S.Td onClick={onRedirect(el.id)}>
+          <S.Name>{el.name}</S.Name>
         </S.Td>
 
-        <S.Td>
+        <S.Td onClick={onRedirect(el.id)}>
           <S.Date dateTime={el.date}>18 ноября 2015</S.Date>
         </S.Td>
 
-        <S.Td>
-          <S.Wrap>
-            {admin && (
-              <S.WrapButtons>
-                <button
-                  type={'button'}
-                  onClick={onShowPopup}>
-                  Изменить статус
-                </button>
+        <S.Td onClick={onRedirect(el.id)}>
+          <Status status={el.status} />
+        </S.Td>
 
-                {isPopup && (
-                  <S.PopupEditStatus
-                    onChangeStatusOrder={
-                      onChangeStatusOrder && onChangeStatusOrder
-                    }
-                    ref={refPopup}
-                  />
-                )}
-              </S.WrapButtons>
-            )}
-
-            <button
+        {admin && (
+          <S.Td>
+            <S.ButtonDelete
               type={'button'}
               onClick={onDeleteOrder(el.id)}>
-              Удалить
-            </button>
-
-            <S.LinkElement to={LinkMain.ORDER + `/${el.id}`}>
-              Перейти к заявке
-            </S.LinkElement>
-          </S.Wrap>
-        </S.Td>
+              <IconDelete
+                width={20}
+                height={23}
+              />
+            </S.ButtonDelete>
+          </S.Td>
+        )}
       </S.Tr>
     );
   },
