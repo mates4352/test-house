@@ -4,31 +4,14 @@ import { CustomLink } from '../../../actions/custom-link';
 import { LinkCabinet } from '../../../../../core/utils/enum/links/link-cabinet';
 import { CustomButtonPlus } from '../../../actions/custom-button-plus';
 import { TableOrders } from '../../table-orders';
-import { useNavigate } from 'react-router-dom';
-import { arrayDataOrdersTest } from '../../table-orders/data';
-import { LinkMain } from '../../../../../core/utils/enum/links/link-main';
 import { RowTableOrders } from '../../table-orders/ui/Row-table-orders';
+import { useSectionHomeOrders } from '../lib/hooks/useSectionHomeOrders';
 
 type SectionHomeOrdersType = {};
 
 export const SectionHomeOrders: FC<SectionHomeOrdersType> = ({ ...props }) => {
-  const [arrayOrders, setArrayOrder] = useState(arrayDataOrdersTest);
-  const navigate = useNavigate();
-
-  const onDeleteOrder = useCallback(
-    (id: string) => () => {
-      setArrayOrder(arrayOrders.filter(el => el.id !== id));
-    },
-    [arrayOrders],
-  );
-
-  const onButtonRedirect = () => {
-    navigate(LinkMain.APPEAL);
-  };
-
-  const onRedirect = (id: string) => () => {
-    navigate(LinkMain.ORDER + '/' + id);
-  };
+  const [arrayOrders, onDeleteOrder, onButtonRedirect, onRedirect] =
+    useSectionHomeOrders();
 
   const returnArrayRow = (admin: boolean) => {
     return arrayOrders.map((el: any) => (
