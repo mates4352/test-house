@@ -94,7 +94,6 @@ export const FormPersonalData: FC<FormPersonalDataType> = ({}) => {
         {arrayContacts && (
           <S.WrapInputsContacts>
             {arrayContacts.map((el, index) => {
-              console.log(index);
               return (
                 <S.Input
                   key={index}

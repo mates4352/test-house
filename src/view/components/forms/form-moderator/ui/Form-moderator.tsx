@@ -58,7 +58,7 @@ export const FormModerator: FC<FormModeratorType> = ({}) => {
       <S.Button
         property={'common'}
         type={'submit'}>
-        Отправить
+        Сохранить изменения
       </S.Button>
     </S.FormModerator>
   );

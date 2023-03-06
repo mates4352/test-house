@@ -15,7 +15,7 @@ export const AdminListRouting: FC<AdminListRoutingType> = ({}) => {
     <S.AdminListRouting>
       <ListLinks
         arrayLinks={[
-          { text: 'Список заявок', link: LinkList.LIST_MAIN },
+          { text: 'Список заявок', link: '' },
           { text: 'Список медераторов', link: LinkList.LIST_MODERATORS },
           { text: 'Список жильцов', link: LinkList.LIST_Person },
           { text: 'Список новостей', link: LinkList.LIST_NEWS },

@@ -1,27 +1,14 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC } from 'react';
 import * as S from '../lib/styles/List-orders-styles';
-import { arrayDataOrdersTest } from '../../../statics/table-orders/data';
 import { Pagination } from '../../../actions/pagination';
-import { LinkMain } from '../../../../../core/utils/enum/links/link-main';
-import { useNavigate } from 'react-router-dom';
 import { RowTableOrders } from '../../../statics/table-orders/ui/Row-table-orders';
+import { useListOrders } from '../lib/hooks/useListOrders';
 
 type ListOrdersType = {};
 
 export const ListOrders: FC<ListOrdersType> = ({ ...props }) => {
-  const [arrayOrders, setArrayOrder] = useState(arrayDataOrdersTest);
-  const navigate = useNavigate();
-
-  const onDeleteOrder = useCallback(
-    (id: string) => () => {
-      setArrayOrder(arrayOrders.filter(el => el.id !== id));
-    },
-    [arrayOrders],
-  );
-
-  const onRedirect = (id: string) => () => {
-    navigate(LinkMain.ORDER + '/' + id);
-  };
+  const [arrayOrders, onDeleteOrder, onRedirect, onChangeStatusOrder] =
+    useListOrders();
 
   const returnArrayRow = (admin: boolean) => {
     return arrayOrders.map((el: any) => (
@@ -37,6 +24,12 @@ export const ListOrders: FC<ListOrdersType> = ({ ...props }) => {
 
   return (
     <S.ListOrders {...props}>
+      <S.SelectOrder
+        optionAllOrder
+        title={'Сортировка по статусу'}
+        onCallbackStatus={onChangeStatusOrder}
+      />
+
       <S.Table
         arrayTh={['Номер', 'Название', 'Дата обращения', 'Статус']}
         returnArrayRow={returnArrayRow}

@@ -4,10 +4,17 @@ import { Chat } from '../../../statics/chat';
 import * as G from '../../../../global-styled-components/global-styled-components';
 import { StatusOrder } from '../../../../../core/utils/enum/status/status-order';
 import { windowScroll } from '../../../../../core/utils/helpers/functions/windowScroll';
+import { useAppDispatch } from '../../../../../core/utils/hooks/useAppDispatch';
+import { showPopup } from '../../../../../core/controller/slice/Popup-slice';
+import { StatusPopup } from '../../../../../core/utils/enum/status/status-popup';
 
 type OrderType = {};
 
 export const Order: FC<OrderType> = ({}) => {
+  const dispath = useAppDispatch();
+  const onDeleteOrder = () => {
+    dispath(showPopup(StatusPopup.POPUP_DELETE_ORDER));
+  };
   windowScroll();
   return (
     <S.Order>
@@ -33,7 +40,8 @@ export const Order: FC<OrderType> = ({}) => {
         </S.Wrap>
         <S.ButtonDeleteText
           property={'common'}
-          type={'button'}>
+          type={'button'}
+          onClick={onDeleteOrder}>
           Удалить обращение
         </S.ButtonDeleteText>
         <Chat />

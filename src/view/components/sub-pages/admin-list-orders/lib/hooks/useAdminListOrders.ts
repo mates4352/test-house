@@ -6,6 +6,7 @@ import { showPopup } from '../../../../../../core/controller/slice/Popup-slice';
 import { StatusPopup } from '../../../../../../core/utils/enum/status/status-popup';
 import { StatusOrdersType } from '../../../../../../core/types/global/status/status-orders-type';
 import { LinkAdminMainOrders } from '../../../../../../core/utils/enum/links/link-admin-main-orders';
+import { StatusOrder } from '../../../../../../core/utils/enum/status/status-order';
 
 export const useAdminListOrders = () => {
   const navigate = useNavigate();
@@ -25,7 +26,11 @@ export const useAdminListOrders = () => {
   };
 
   const onChangeStatusOrder = (status: StatusOrdersType) => {
-    setArrayOrder(arrayDataOrdersTest.filter(el => el.status === status));
+    if (status === StatusOrder.ALL) {
+      setArrayOrder(arrayDataOrdersTest);
+    } else {
+      setArrayOrder(arrayDataOrdersTest.filter(el => el.status === status));
+    }
   };
 
   return [arrayOrders, onDeleteOrder, onRedirect, onChangeStatusOrder] as const;

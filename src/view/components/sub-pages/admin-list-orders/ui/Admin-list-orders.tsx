@@ -23,6 +23,7 @@ export const AdminListOrders: FC<AdminListOrdersType> = ({}) => {
   return (
     <S.AdminListOrders>
       <S.SelectStatus
+        optionAllOrder
         title={'Сортировка по статусу'}
         onCallbackStatus={onChangeStatusOrder}
       />

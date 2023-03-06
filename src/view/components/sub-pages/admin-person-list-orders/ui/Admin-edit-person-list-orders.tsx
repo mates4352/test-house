@@ -9,13 +9,8 @@ type AdminEditPersonListOrdersType = {};
 export const AdminEditPersonListOrders: FC<
   AdminEditPersonListOrdersType
 > = ({}) => {
-  const [
-    arrayOrders,
-    onDeleteOrder,
-    onButtonRedirect,
-    onRedirect,
-    onChangeStatusOrder,
-  ] = useAdminEditPersonListOrders();
+  const [arrayOrders, onDeleteOrder, onRedirect, onChangeStatusOrder] =
+    useAdminEditPersonListOrders();
   const returnArrayRow = (admin: boolean) => {
     return arrayOrders.map((el: any) => (
       <RowTableOrders
@@ -31,6 +26,7 @@ export const AdminEditPersonListOrders: FC<
   return (
     <S.AdminEditPersonListOrders>
       <S.SelectOrder
+        optionAllOrder
         title={'Сортировка по статусу'}
         onCallbackStatus={onChangeStatusOrder}
       />

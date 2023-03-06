@@ -36,7 +36,16 @@ export const WrapperPopups: FC<WrapperPopupsType> = ({
       case StatusPopup.POPUP_DELETE_PERSON:
         return (
           <CustomPopupDelete
-            title={'Удалить Жителя ?'}
+            title={'Удалить Жильца ?'}
+            text={'Какой-то текст, если это необходимо'}
+            onCallbackButton={onClearPopup}
+            onClearPopup={onClearPopup}
+          />
+        );
+      case StatusPopup.POPUP_DELETE_ORDER:
+        return (
+          <CustomPopupDelete
+            title={'Удалить Обращение ?'}
             text={'Какой-то текст, если это необходимо'}
             onCallbackButton={onClearPopup}
             onClearPopup={onClearPopup}

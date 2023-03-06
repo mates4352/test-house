@@ -82,7 +82,7 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
           element: <News />,
           children: [
             {
-              path: RouterNews.LIST_MAIN_NEWS,
+              index: true,
               element: <ListAllNews />,
             },
 
@@ -123,7 +123,7 @@ export const WrapperRouterProvider: FC<WrapperRouterProviderType> = ({}) => {
           element: <PersonalCabinet />,
           children: [
             {
-              path: RouterCabinet.PERSONAL_CABINET_DATA,
+              index: true,
               element: <PersonalData />,
             },
 

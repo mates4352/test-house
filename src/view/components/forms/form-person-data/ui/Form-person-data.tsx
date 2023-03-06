@@ -5,7 +5,7 @@ import { useFormPersonData } from '../lib/hooks/useFormPersonData';
 type FormPersonDataType = {};
 
 export const FormPersonData: FC<FormPersonDataType> = ({}) => {
-  const [formik] = useFormPersonData();
+  const [formik, onDeletePerson] = useFormPersonData();
   return (
     <S.FormPersonData onSubmit={formik.handleSubmit}>
       <S.Wrap>
@@ -105,7 +105,8 @@ export const FormPersonData: FC<FormPersonDataType> = ({}) => {
 
         <S.Button
           property={'outlined'}
-          type={'button'}>
+          type={'button'}
+          onClick={onDeletePerson}>
           Удалить жильца
         </S.Button>
       </S.WrapButtons>

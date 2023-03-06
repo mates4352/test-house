@@ -11,7 +11,6 @@ import { windowScroll } from '../../../../../core/utils/helpers/functions/window
 type PersonalCabinetType = {};
 
 export const PersonalCabinet: FC<PersonalCabinetType> = ({}) => {
-  useRedirect(LinkMain.PERSONAL_CABINET, LinkCabinet.PERSONAL_CABINET_DATA);
   windowScroll();
 
   return (
@@ -21,7 +20,7 @@ export const PersonalCabinet: FC<PersonalCabinetType> = ({}) => {
 
         <ListLinks
           arrayLinks={[
-            { text: 'Данные', link: LinkCabinet.PERSONAL_CABINET_DATA },
+            { text: 'Данные', link: '' },
             {
               text: 'Список заявок',
               link: LinkCabinet.PERSONAL_CABINET_LIST_ORDERS,

@@ -5,7 +5,7 @@ import { useCallback, useEffect, useState } from 'react';
 export const useFormPersonalDataFormik = () => {
   const formik = useFormik({
     initialValues: {
-      firstName: 'Миксим',
+      firstName: 'Максим',
       lastName: 'Красивый',
       surname: 'Николаевич',
       email: 'ddddd2005@mail.ru',
@@ -15,7 +15,7 @@ export const useFormPersonalDataFormik = () => {
       apartment: '26',
       car: 'Лада',
       parkingSpace: 'a203',
-      contacts: [''],
+      contacts: ['Сосед с лева'],
     },
 
     validationSchema: ValidationPersonalDataSchema,

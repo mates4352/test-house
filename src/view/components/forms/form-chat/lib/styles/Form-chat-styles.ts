@@ -9,14 +9,18 @@ const Wrap = styled.div`
   position: relative;
 `;
 
-const Input = styled.input`
+const Textarea = styled.textarea`
   width: 100%;
+  min-height: 64px;
   height: 64px;
-  padding: 0 24px;
+  padding: 24px 68px 24px 24px;
   font: var(--text-16);
   color: var(--black);
   background-color: var(--white);
   border-radius: 16px;
+  border: none;
+  resize: none;
+  overflow: hidden;
 
   &::placeholder {
     color: var(--silver);
@@ -35,4 +39,4 @@ const Icon = styled(IconSend)`
   height: 32px;
 `;
 
-export { FormChat, Wrap, Input, ButtonSend, Icon };
+export { FormChat, Wrap, Textarea, ButtonSend, Icon };

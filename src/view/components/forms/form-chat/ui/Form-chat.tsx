@@ -7,18 +7,19 @@ type FormChatType = {
 };
 
 export const FormChat: FC<FormChatType> = ({ onCallback, ...props }) => {
-  const [formik] = useFormChatFormik(onCallback);
+  const [formik, ref, onChangeTextarea] = useFormChatFormik(onCallback);
 
   return (
     <S.FormChat
       onSubmit={formik.handleSubmit}
       {...props}>
       <S.Wrap>
-        <S.Input
-          type="text"
+        <S.Textarea
           placeholder={'Message...'}
           {...formik.getFieldProps('message')}
           {...formik.getFieldMeta('message')}
+          ref={ref}
+          onChange={onChangeTextarea}
         />
 
         <S.ButtonSend type={'submit'}>

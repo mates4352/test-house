@@ -7,10 +7,12 @@ import { StatusOrdersType } from '../../../../../core/types/global/status/status
 
 type SelectStatusType = {
   title: string;
+  optionAllOrder?: boolean;
   onCallbackStatus: (status: StatusOrdersType) => void;
 };
 
 export const SelectStatus: FC<SelectStatusType> = ({
+  optionAllOrder,
   title,
   onCallbackStatus,
   ...props
@@ -35,6 +37,17 @@ export const SelectStatus: FC<SelectStatusType> = ({
 
       <AnimationShow isAnimation={isList}>
         <S.List>
+          {optionAllOrder && (
+            <S.Item>
+              <S.ButtonStatus
+                type={'button'}
+                isActive={valueMainButton === StatusOrder.ALL}
+                onClick={onChangeValueMainButton(StatusOrder.ALL)}>
+                {StatusOrder.ALL}
+              </S.ButtonStatus>
+            </S.Item>
+          )}
+
           <S.Item>
             <S.ButtonStatus
               type={'button'}
