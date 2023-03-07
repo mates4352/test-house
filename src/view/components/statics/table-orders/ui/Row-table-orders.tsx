@@ -3,12 +3,14 @@ import * as S from '../lib/styles/Table-orders-styles';
 import { IconDelete } from '../../../icons/Icon-delete';
 import { Status } from '../../status';
 
-type RowTableOrdersType = {
-  el: any;
-  admin?: boolean;
-  onDeleteOrder: (id: string) => () => void;
-  onRedirect: (id: string) => () => void;
-};
+type RowTableOrdersType =
+  | {
+      el: any;
+      admin?: boolean;
+      onDeleteOrder: (id: string) => () => void;
+      onRedirect: (id: string) => () => void;
+    }
+  | any;
 
 export const RowTableOrders: FC<RowTableOrdersType> = React.memo(
   ({ el, admin, onDeleteOrder, onRedirect, ...props }) => {

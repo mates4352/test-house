@@ -17,11 +17,16 @@ const ButtonSelect = styled.button<ButtonSelectType>`
   background-color: var(--white);
   border: 1px solid var(--light-grey);
   border-radius: 8px;
-  transition: color 300ms ease, border-color 300ms ease;
+  transition: color 300ms ease, border-color 300ms ease,
+    transform 350ms cubic-bezier(0, 1.64, 0, 1.9);
 
   &:hover {
     border-color: var(--deep-blue);
     color: var(--deep-blue);
+  }
+
+  &:active {
+    transform: scale(0.96);
   }
 
   ${props =>

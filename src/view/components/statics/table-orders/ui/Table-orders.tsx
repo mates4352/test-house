@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import * as S from '../lib/styles/Table-orders-styles';
-import { RowTableOrders } from './Row-table-orders';
 
 type TableOrdersType = {
   admin?: boolean;
