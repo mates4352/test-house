@@ -13,6 +13,8 @@ export const AdminOrderChat: FC<AdminOrderChatType> = ({}) => {
   };
   return (
     <S.AdminOrderChat>
+      <S.ButtonBack />
+
       <S.Title>Обращение 13562-5618 </S.Title>
 
       <S.SelectStatusOrder

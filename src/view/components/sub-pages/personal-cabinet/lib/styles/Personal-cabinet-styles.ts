@@ -1,10 +1,6 @@
 import styled from 'styled-components';
+import { Container } from '../../../../../global-styled-components/global-styled-components';
 
-const PersonalCabinet = styled.section``;
+const PersonalCabinet = styled(Container)``;
 
-const Title = styled.h2`
-  font-size: 28px;
-  margin-bottom: 28px;
-`;
-
-export { PersonalCabinet, Title };
+export { PersonalCabinet };

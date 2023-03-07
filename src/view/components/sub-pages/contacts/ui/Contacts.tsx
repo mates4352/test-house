@@ -14,6 +14,7 @@ export const Contacts: FC<ContactsType> = ({}) => {
     <S.Contacts>
       <G.Container>
         <S.Title>Справочник</S.Title>
+
         <S.ListCard
           array={arrayCompany}
           link={LinkMain.CONTACTS}

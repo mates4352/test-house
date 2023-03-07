@@ -3,10 +3,10 @@ import * as yup from 'yup';
 export const ValidationAppealSchema = yup.object().shape({
   subject: yup
     .string()
-    .required('Password is required')
-    .max(60, 'Max 60 characters'),
+    .required('Поле не заполнено')
+    .max(60, 'Максимальное количество симоволо 60'),
   appeal: yup
     .string()
-    .required('Password is required')
-    .max(800, 'Max 800 characters'),
+    .required('Поле не заполнено')
+    .max(800, 'Максимальное количество символов 60'),
 });

@@ -2,8 +2,13 @@ import styled from 'styled-components';
 import { QuestionText } from '../../../../statics/question-text';
 import { Status } from '../../../../statics/status';
 import { CustomButton } from '../../../../actions/custom-button';
+import { CustomButtonBack } from '../../../../actions/custom-button-back';
 
 const Order = styled.section``;
+
+const ButtonBack = styled(CustomButtonBack)`
+  margin-bottom: 32px;
+`;
 
 const Wrap = styled.div`
   display: grid;
@@ -37,4 +42,12 @@ const ButtonDeleteText = styled(CustomButton)`
   margin-bottom: 112px;
 `;
 
-export { Order, Wrap, Title, StatusQuestion, Text, ButtonDeleteText };
+export {
+  Order,
+  ButtonBack,
+  Wrap,
+  Title,
+  StatusQuestion,
+  Text,
+  ButtonDeleteText,
+};

@@ -3,32 +3,38 @@ import * as yup from 'yup';
 export const ValidationPersonalDataSchema = yup.object().shape({
   firstName: yup
     .string()
-    .required('Password is required')
-    .max(30, 'Max 30 characters'),
+    .required('Поле не заполнено')
+    .max(30, 'Максимальное количество симоволо 30'),
 
   lastName: yup
     .string()
-    .required('Password is required')
-    .max(30, 'Max 30 characters'),
+    .required('Поле не заполнено')
+    .max(30, 'Максимальное количество симоволо 30'),
 
   surname: yup
     .string()
-    .required('Password is required')
-    .max(30, 'Max 30 characters'),
+    .required('Поле не заполнено')
+    .max(30, 'Максимальное количество симоволо 30'),
 
-  email: yup.string().required('Password is required').email('Invalid email'),
+  email: yup
+    .string()
+    .required('Поле не заполнено')
+    .email('Не корректно введен емайл'),
 
-  phone: yup.string().required('Phone is required').min(16, 'No valid phone'),
+  phone: yup
+    .string()
+    .required('Поле не заполнено')
+    .min(16, 'Не корректно введен номер телефона'),
 
-  street: yup.string().required('Password is required'),
+  street: yup.string().required('Поле не заполнено'),
 
-  house: yup.string().required('Password is required'),
+  house: yup.string().required('Поле не заполнено'),
 
-  apartment: yup.string().required('Password is required'),
+  apartment: yup.string().required('Поле не заполнено'),
 
-  car: yup.string().required('Password is required'),
+  car: yup.string().required('Поле не заполнено'),
 
-  parkingSpace: yup.string().required('Password is required'),
+  parkingSpace: yup.string().required('Поле не заполнено'),
 
-  contacts: yup.array().of(yup.string().required('Contact is required')),
+  contacts: yup.array().of(yup.string().required('Поле не заполнено')),
 });

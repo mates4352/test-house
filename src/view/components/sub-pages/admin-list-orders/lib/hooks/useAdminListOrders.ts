@@ -5,8 +5,8 @@ import { arrayDataOrdersTest } from '../../../../statics/table-orders/data';
 import { showPopup } from '../../../../../../core/controller/slice/Popup-slice';
 import { StatusPopup } from '../../../../../../core/utils/enum/status/status-popup';
 import { StatusOrdersType } from '../../../../../../core/types/global/status/status-orders-type';
-import { LinkAdminMainOrders } from '../../../../../../core/utils/enum/links/link-admin-main-orders';
 import { StatusOrder } from '../../../../../../core/utils/enum/status/status-order';
+import { LinkAdmin } from '../../../../../../core/utils/enum/links/link-admin';
 
 export const useAdminListOrders = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export const useAdminListOrders = () => {
   );
 
   const onRedirect = (id: string) => () => {
-    navigate(LinkAdminMainOrders.LIST_MAIN_ORDER_CHAT + '/' + id);
+    navigate(LinkAdmin.CHAT + '/' + id);
   };
 
   const onChangeStatusOrder = (status: StatusOrdersType) => {

@@ -1,11 +1,11 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { FC } from 'react';
 import * as S from '../lib/styles/Section-home-orders-styles';
 import { CustomLink } from '../../../actions/custom-link';
-import { LinkCabinet } from '../../../../../core/utils/enum/links/link-cabinet';
 import { CustomButtonPlus } from '../../../actions/custom-button-plus';
 import { TableOrders } from '../../table-orders';
 import { RowTableOrders } from '../../table-orders/ui/Row-table-orders';
 import { useSectionHomeOrders } from '../lib/hooks/useSectionHomeOrders';
+import { LinkMain } from '../../../../../core/utils/enum/links/link-main';
 
 type SectionHomeOrdersType = {};
 
@@ -36,7 +36,7 @@ export const SectionHomeOrders: FC<SectionHomeOrdersType> = ({ ...props }) => {
           </CustomButtonPlus>
         </S.WrapButton>
 
-        <CustomLink to={LinkCabinet.PERSONAL_CABINET_LIST_ORDERS}>
+        <CustomLink to={LinkMain.PERSONAL_CABINET_LIST_ORDERS}>
           Посмотреть все
         </CustomLink>
       </S.Wrap>

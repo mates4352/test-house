@@ -1,13 +1,12 @@
 import { useCallback, useState } from 'react';
 import { StatusOrder } from '../../../../../../core/utils/enum/status/status-order';
 import { useNavigate } from 'react-router-dom';
-import { LinkMain } from '../../../../../../core/utils/enum/links/link-main';
-import { LinkAdminMainOrders } from '../../../../../../core/utils/enum/links/link-admin-main-orders';
 import { StatusOrdersType } from '../../../../../../core/types/global/status/status-orders-type';
 import { arrayDataOrdersTest } from '../../../../statics/table-orders/data';
 import { showPopup } from '../../../../../../core/controller/slice/Popup-slice';
 import { StatusPopup } from '../../../../../../core/utils/enum/status/status-popup';
 import { useAppDispatch } from '../../../../../../core/utils/hooks/useAppDispatch';
+import { LinkAdmin } from '../../../../../../core/utils/enum/links/link-admin';
 
 export const useAdminEditPersonListOrders = () => {
   const dispatch = useAppDispatch();
@@ -23,7 +22,7 @@ export const useAdminEditPersonListOrders = () => {
   );
 
   const onRedirect = (id: string) => () => {
-    navigate(LinkAdminMainOrders.LIST_MAIN_ORDER_CHAT + '/' + id);
+    navigate(LinkAdmin.CHAT + '/' + id);
   };
 
   const onChangeStatusOrder = (status: StatusOrdersType) => {

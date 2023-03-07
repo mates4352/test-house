@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { QuestionText } from '../../../../statics/question-text';
 import { SelectStatus } from '../../../../actions/select-status';
+import { CustomButtonBack } from '../../../../actions/custom-button-back';
 
 const AdminOrderChat = styled.div``;
+
+const ButtonBack = styled(CustomButtonBack)`
+  margin-bottom: 32px;
+`;
 
 const Title = styled.h2`
   margin-bottom: 48px;
@@ -19,4 +24,4 @@ const Text = styled(QuestionText)`
   margin-bottom: 112px;
 `;
 
-export { AdminOrderChat, Title, SelectStatusOrder, Text };
+export { AdminOrderChat, ButtonBack, Title, SelectStatusOrder, Text };
