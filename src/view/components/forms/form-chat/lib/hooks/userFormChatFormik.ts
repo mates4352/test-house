@@ -1,10 +1,18 @@
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
-import { LinkMain } from '../../../../../../core/utils/enum/links/link-main';
-import { ChangeEvent, useRef } from 'react';
+import { ChangeEvent, KeyboardEvent, useRef, useState } from 'react';
+import { useAddFileImage } from '../../../../../../core/utils/hooks/useAddFileImage';
 
-export const useFormChatFormik = (onCallback: (value: string) => void) => {
+export const useFormChatFormik = (
+  onCallback: (value: string, image?: string) => void,
+) => {
+  const [isButton, setButton] = useState(false);
   const ref = useRef<any>(null);
+
+  const addImageMessage = (image?: string) => {
+    onCallback('', String(image));
+  };
+
+  const [image, addFileImage] = useAddFileImage('', addImageMessage);
 
   const formik = useFormik({
     initialValues: {
@@ -25,7 +33,35 @@ export const useFormChatFormik = (onCallback: (value: string) => void) => {
     ref.current.style.height = 0;
     ref.current.style.height = ref.current.scrollHeight + 'px';
     formik.handleChange(e);
+
+    if (!e.currentTarget.value) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
   };
 
-  return [formik, ref, onChangeTextarea] as const;
+  const onKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      formik.submitForm();
+    }
+  };
+
+  const AnimationShowButton = {
+    initial: { width: 0, opacity: 0, overflow: 'hidden' },
+    animate: { width: 'auto', opacity: 1 },
+    exit: { width: 0, opacity: 0 },
+  };
+
+  return [
+    formik,
+    ref,
+    isButton,
+    image,
+    addFileImage,
+    AnimationShowButton,
+    onChangeTextarea,
+    onKeyDown,
+  ] as const;
 };

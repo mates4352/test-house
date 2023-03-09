@@ -90,6 +90,11 @@ const Text = styled.p`
   color: var(--black);
 `;
 
+const Image = styled.img`
+  width: 240px;
+  margin-top: 8px;
+`;
+
 const Time = styled.time`
   position: absolute;
   bottom: 8px;
@@ -103,4 +108,15 @@ const InputMessage = styled(FormChat)`
   padding-right: 70px;
 `;
 
-export { Message, Text, Time, Content, List, Item, Title, Chat, InputMessage };
+export {
+  Message,
+  Text,
+  Image,
+  Time,
+  Content,
+  List,
+  Item,
+  Title,
+  Chat,
+  InputMessage,
+};

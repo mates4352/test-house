@@ -15,7 +15,7 @@ export const AddImage: FC<AddImageType> = ({
   src,
   ...props
 }) => {
-  const [image, onChangeFileImage, onDeleteImage, AnimationDeleteButton] =
+  const [image, addFileImage, onDeleteImage, AnimationDeleteButton] =
     useAddImage(src);
   return (
     <S.AddImage {...props}>
@@ -24,7 +24,7 @@ export const AddImage: FC<AddImageType> = ({
       <S.Wrap>
         <S.ButtonEditImage
           isInput
-          onCallbackInput={onChangeFileImage}>
+          onCallbackInput={addFileImage}>
           {textButton}
         </S.ButtonEditImage>
 
