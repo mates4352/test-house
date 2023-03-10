@@ -42,7 +42,11 @@ const ButtonWrap = styled.div`
   column-gap: 12px;
 `;
 
-const ButtonSend = styled.button``;
+const ButtonSend = styled.button`
+  &:active {
+    transform: scale(0.97);
+  }
+`;
 
 const Icon = styled(IconSend)`
   width: 32px;

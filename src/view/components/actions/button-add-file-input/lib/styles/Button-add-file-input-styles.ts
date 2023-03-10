@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { IconAttachFile } from '../../../../icons/Icon-attach-file';
 
-const ButtonAddFileInput = styled.div``;
+const ButtonAddFileInput = styled.button`
+  &:active {
+    transform: scale(0.97);
+  }
+`;
 
 const IconFile = styled(IconAttachFile)`
   width: 32px;
